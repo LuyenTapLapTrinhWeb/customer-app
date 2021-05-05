@@ -1,0 +1,17 @@
+.customers {
+  &--container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  &--itemlist {
+    width: 300px;
+    height: auto;
+    margin: 5px;
+  }
+  &--image {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="container-todo-view">
+    <div class="row">
+        <a mat-button class="navigateButton" routerLink="howto" routerLinkActive="active-child" appHightlight>HOW-TO</a>
+        <a mat-button class="navigateButton" routerLink="examples" routerLinkActive="active-child"
+            appHightlight>EXAMPLES</a>
+    </div>
+    <div class="row" [@focusPanel]='state'>
+        <mat-form-field class="example-form-field">
+            <input matInput class="addinput" type="text" on-focus="toggleFocus()" (keyup.enter)="submititem($event)"
+                placeholder="Add an item here." maxlength="20">
+        </mat-form-field>
+        <p class="hint" [@note]="state">Hit Enter to add</p>
+    </div>
+    <div class="small-12">
+        <div class="medium-6 panel">
+            <div class="item-container" *ngFor="let item of subsItems; let i = index" [attr.data-index]="i"
+                [@itemEnter]="state">
+                <div class="identifier">
+                    <p class="p-typography">{{item}}</p>
+                    <a mat-button class="closed-button" (click)="removeItem($event, i)">X</a>
+                </div>
+            </div>
+        </div>
+        <div class="medium-6 nplr">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

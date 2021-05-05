@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.highlight {
+  background-color: pink !important;
+  border: 1px solid darkslategrey;
+  z-index: 1;
+  transform: scale(1.01);
+}
+.active {
+  background: #282a2c;
+  color: white;
+}
+.active-child {
+  color: #282a2c;
+  background: white;
+}

@@ -1,0 +1,7 @@
+<div class="open-close-container" >
+    <button mat-button (click)="toggleState()" color="primary">toggle</button>
+
+    <ul>
+        <li *ngFor="let item of items" class="state-flex" [@myTrigger]="state">{{item}}</li>
+    </ul>
+</div>

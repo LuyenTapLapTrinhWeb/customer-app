@@ -1,0 +1,12 @@
+<div *ngIf="customers" [@toggleTrigger]='toggleTriggerState'>
+    <div class="customers--container">
+        <mat-card class="customers--itemlist" *ngFor="let c of customers" [routerLink]="['/customers', c.id]"
+            appHightlight>
+            <img class="customers--image" [src]="BaseUrl + c.avatar.avatar" alt="{{c.name}}">
+        </mat-card>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div *ngIf="!customers" [@toggleTrigger]='toggleTriggerState'>
+    <mat-spinner></mat-spinner>
+</div>

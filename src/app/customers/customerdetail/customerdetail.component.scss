@@ -1,0 +1,31 @@
+.example-card {
+  max-width: 400px;
+  margin-left: 1em;
+}
+.example-card:first-child {
+  margin-left: 0;
+}
+.example-header-image {
+  background-size: cover;
+}
+.example-header-image-list {
+  display: flex;
+  flex-flow: row wrap;
+  background-size: cover;
+}
+.example {
+  &--container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  &--image {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+  }
+}
+.flex-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

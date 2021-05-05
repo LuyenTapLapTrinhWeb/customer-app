@@ -1,0 +1,16 @@
+.list-link-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  li {
+    font-family: Arial, "Courier New", serif;
+    margin: 5px;
+    a {
+      font-size: 20px;
+    }
+  }
+}
+.wrapper {
+  // margin: 30px;
+}
