@@ -1,0 +1,22 @@
+.active-child {
+  color: #1e88e5;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  .navigateButton {
+    text-decoration: none;
+    margin: 5px;
+  }
+  &--left-circle {
+    border: 1px solid black;
+    background-color: black;
+  }
+}

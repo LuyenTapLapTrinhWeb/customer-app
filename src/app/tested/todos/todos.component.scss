@@ -1,7 +1,10 @@
-.container-todo-view {
+.container {
   border-radius: 0px;
   background: #282a2c;
   color: #fff;
+  width: 100%;
+}
+.container-font {
   font-family: Roboto;
   font-size: 20px;
   font-style: normal;
@@ -9,21 +12,20 @@
   line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-
-  .row {
-    margin: 35px 231px;
-    background: #2e3437;
-    padding: 42px 44px;
-    .mat-button {
-      margin-right: 29px;
-      width: 15%;
-    }
+}
+.row {
+  margin: 35px 231px;
+  background: #2e3437;
+  padding: 42px 44px;
+  .mat-button {
+    margin-right: 29px;
+    width: 15%;
   }
-  .row:last-child {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
+}
+.row:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .example-form-field {
   width: 100%;

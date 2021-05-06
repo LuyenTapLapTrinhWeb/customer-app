@@ -1,10 +1,13 @@
-<div class="row">
-    <ul class="list-link-flex">
-        <li><a mat-button routerLink="todo" routerLinkActive="active" appHightlight>To-Do</a></li>
-        <li><a mat-button routerLink="codetogether" routerLinkActive="active" appHightlight>Code-Together</a></li>
-        <li><a mat-button routerLink="openclosed" routerLinkActive="active" appHightlight>Open-Closed</a></li>
-    </ul>
-</div>
-<div class="wrapper">
-    <router-outlet></router-outlet>
+<div class="container">
+    <div class="column--4">
+        <ul class="list-link-flex">
+            <li><a mat-button routerLink="subcribing" routerLinkActive="active" appHightlight>Subcribing</a></li>
+            <li><a mat-button routerLink="todo" routerLinkActive="active" appHightlight>To-Do</a></li>
+            <li><a mat-button routerLink="codetogether" routerLinkActive="active" appHightlight>Code-Together</a></li>
+            <li><a mat-button routerLink="openclosed" routerLinkActive="active" appHightlight>Open-Closed</a></li>
+        </ul>
+    </div>
+    <div class="column--8">
+        <router-outlet></router-outlet>
+    </div>
 </div>

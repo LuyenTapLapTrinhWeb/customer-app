@@ -8,6 +8,10 @@ import { ExamplesComponent } from './examples/examples.component';
 import { SharingModule } from '../shared/sharing.module';
 import { MaterialModule } from '../shared/material/material.module';
 import { TodosComponent } from './todos/todos.component';
+import { SubcribingComponent } from './subcribing/subcribing.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfigComponent } from './config/config.component';
+import { HeroesComponent } from './heroes/heroes.component';
 
 
 @NgModule({
@@ -15,13 +19,17 @@ import { TodosComponent } from './todos/todos.component';
     TestComponent,
     HowtoComponent,
     ExamplesComponent,
-    TodosComponent
+    TodosComponent,
+    SubcribingComponent,
+    ConfigComponent,
+    HeroesComponent,
   ],
   imports: [
     CommonModule,
     SharingModule,
     MaterialModule,
     TestRoutingModule,
+    HttpClientModule
   ]
 })
 export class TestModule { }

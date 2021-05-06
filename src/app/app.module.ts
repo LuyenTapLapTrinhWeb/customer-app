@@ -20,11 +20,11 @@ import { TestModule } from './tested/test.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    AppRoutingModule,
     SharingModule,
-    BrowserAnimationsModule,
     TestModule
   ],
   providers: [{ provide: 'BaseUrl', useValue: BaseUrl }],
