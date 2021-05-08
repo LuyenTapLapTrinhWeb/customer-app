@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
+import { transitionPage } from 'src/app/animations/reuse/transitionPage.animation';
 import { ConfigService } from './config.service';
 import { Config } from './configUrl';
 import { DownloaderService } from './downloader.service';
@@ -19,7 +20,8 @@ import { DownloaderService } from './downloader.service';
         style({ transform: 'translateX(100%)', opacity: 1 }),
         animate('500ms ease-out')]
       )
-    ])
+    ]),
+    transitionPage()
   ]
 })
 export class ConfigComponent implements OnInit {

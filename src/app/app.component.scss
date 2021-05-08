@@ -25,6 +25,11 @@
 .wrapper {
   margin: 0;
   padding: 0;
+  background-image: url("../../public/images/avatar/cat-217679.jpg");
+  background-size: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .active {
   background: black;

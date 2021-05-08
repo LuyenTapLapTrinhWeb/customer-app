@@ -27,7 +27,8 @@ const testComponent = {
   path: 'subcribing', component: SubcribingComponent, children: [
     { path: 'config', component: ConfigComponent },
     { path: 'heroes', component: HeroesComponent },
-    communicatingComponent
+    communicatingComponent,
+    { path: '**', redirectTo: 'communicating', pathMatch: 'full' },
   ]
 };
 const todoComponent = {
