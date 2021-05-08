@@ -54,7 +54,7 @@ export class TodosComponent implements OnInit {
       'start the new app project',
       'work on blog',
       'lunch at 1pm'
-    ]
+    ];
   }
   toggleFocus(): void {
     this.state = (this.state === 'inactive' ? 'active' : 'inactive');
