@@ -1,0 +1,26 @@
+<section [@transition]>
+    <article>
+        <h1>Welcome to communication with a template</h1>
+        <ul>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="introduction" routerLinkActive="active-child"
+                    appHightlight>Introduction</a>
+            </li>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="bindingandstructuredirectives"
+                    routerLinkActive="active-child" appHightlight>Binding and structure directives</a>
+            </li>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="twowaybinding" routerLinkActive="active-child"
+                    appHightlight>Two-way binding</a>
+            </li>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="gettersandsetters" routerLinkActive="active-child"
+                    appHightlight>Getters and setters</a>
+            </li>
+        </ul>
+    </article>
+    <article>
+        <router-outlet></router-outlet>
+    </article>
+</section>

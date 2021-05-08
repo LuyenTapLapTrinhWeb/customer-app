@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
+import { transitionPage } from 'src/app/animations/reuse/transitionPage.animation';
 
 @Component({
   selector: 'app-subcribing',
   templateUrl: './subcribing.component.html',
-  styleUrls: ['./subcribing.component.scss']
+  styleUrls: ['./subcribing.component.scss'],
+  animations: [
+    transitionPage()
+  ]
 })
 export class SubcribingComponent implements OnInit {
   constructor() { }

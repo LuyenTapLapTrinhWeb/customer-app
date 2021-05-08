@@ -1,10 +1,21 @@
-<div class="container">
-    <div class="column">
+<div class="container" [@transition]>
+    <div class="column--10">
         <router-outlet></router-outlet>
     </div>
-    <div class="column">
-        <a class="navigateButton" routerLink="config" routerLinkActive="active-child" appHightlight>Config</a>
-        <a class="navigateButton" routerLink="heroes" routerLinkActive="active-child" appHightlight> <span
-                class="left-circle"></span> Heroes</a>
+    <div class="column--2">
+        <ul>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="heroes" routerLinkActive="active-child"
+                    appHightlight>Heroes</a>
+            </li>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="communicating" routerLinkActive="active-child"
+                    appHightlight>Communicating</a>
+            </li>
+            <li class="left-circle">
+                <a mat-button class="navigateButton" routerLink="config" routerLinkActive="active-child"
+                    appHightlight>Config</a>
+            </li>
+        </ul>
     </div>
 </div>

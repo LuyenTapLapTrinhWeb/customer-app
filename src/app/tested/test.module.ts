@@ -12,6 +12,11 @@ import { SubcribingComponent } from './subcribing/subcribing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigComponent } from './config/config.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { ComunicatingComponent } from './comunicating/comunicating.component';
+import { TwowaybindingComponent } from './comunicating/twowaybinding/twowaybinding.component';
+import { BindingandstructuredirectivesComponent } from './comunicating/bindingandstructuredirectives/bindingandstructuredirectives.component';
+import { GettersandsettersComponent } from './comunicating/gettersandsetters/gettersandsetters.component';
+import { IntroductionComponent } from './comunicating/introduction/introduction.component';
 
 
 @NgModule({
@@ -23,6 +28,11 @@ import { HeroesComponent } from './heroes/heroes.component';
     SubcribingComponent,
     ConfigComponent,
     HeroesComponent,
+    ComunicatingComponent,
+    TwowaybindingComponent,
+    BindingandstructuredirectivesComponent,
+    GettersandsettersComponent,
+    IntroductionComponent,
   ],
   imports: [
     CommonModule,

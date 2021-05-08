@@ -1,0 +1,9 @@
+<h2>Binding and structure directives</h2>
+<div *ngIf="avatar">
+    <mat-card>
+        <img mat-card-image [src]="avatar" alt="">
+    </mat-card>
+</div>
+<div *ngIf="!avatar">
+    <mat-spinner></mat-spinner>
+</div>

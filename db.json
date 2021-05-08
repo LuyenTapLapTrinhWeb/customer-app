@@ -1,4 +1,16 @@
 {
+  "heroes": [
+    { "id": 11, "name": "Dr Nice" },
+    { "id": 12, "name": "Narco" },
+    { "id": 13, "name": "Bombasto" },
+    { "id": 14, "name": "Celeritas" },
+    { "id": 15, "name": "Magneta" },
+    { "id": 16, "name": "RubberMan" },
+    { "id": 17, "name": "Dynama" },
+    { "id": 18, "name": "Dr IQ" },
+    { "id": 19, "name": "Magma" },
+    { "id": 20, "name": "Tornado" }
+  ],
   "configUrl": [
     {
       "heroesUrl": "api/heroes",
@@ -37,6 +49,52 @@
         "avatar": "images/avatar/178519307_474655787134895_7008506823394071524_n.jpg"
       },
       "bio": "178519307_474655787134895_7008506823394071524_n"
+    },
+    {
+      "id": "4",
+      "name": "113349",
+      "avatar": {
+        "avatar": "images/avatar/Ảnh chụp màn hình 2021-05-08 113349.png"
+      },
+      "bio": "Ảnh chụp màn hình 2021-05-08 113349"
+    },
+    {
+      "id": "5",
+      "name": "Ảnh chụp màn hình 2021-05-08 120506",
+      "avatar": {
+        "avatar": "images/avatar/Ảnh chụp màn hình 2021-05-08 120506.png"
+      },
+      "bio": "Ảnh chụp màn hình 2021-05-08 120506"
+    },
+    {
+      "id": "6",
+      "name": "132138",
+      "avatar": {
+        "avatar": "images/avatar/132138.png",
+        "avatars": [
+          {
+            "id": "1",
+            "avatar": "images/avatar/132138.png"
+          },
+          {
+            "id": "2",
+            "avatar": "images/avatar/132428.png"
+          },
+          {
+            "id": "3",
+            "avatar": "images/avatar/143407.png"
+          },
+          {
+            "id": "4",
+            "avatar": "images/avatar/Ảnh chụp màn hình 2021-05-08 151335.png"
+          },
+          {
+            "id": "5",
+            "avatar": "images/avatar/Ảnh chụp màn hình 2021-05-08 151527.png"
+          }
+        ]
+      },
+      "bio": "132138.png"
     }
   ],
   "dishes": [

@@ -1,6 +1,7 @@
 .active-child {
   color: #1e88e5;
   font-size: 20px;
+  background: #fafafa;
 }
 .container {
   display: flex;
@@ -8,15 +9,42 @@
   justify-content: space-around;
   font-size: 20px;
 }
+.navigateButton {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  li.left-circle {
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+}
+
 .column {
   display: flex;
   flex-direction: column;
-  .navigateButton {
-    text-decoration: none;
-    margin: 5px;
+  &--1 {
+    width: 8.333333333333333%;
   }
-  &--left-circle {
-    border: 1px solid black;
-    background-color: black;
+  &--2 {
+    width: calc(8.333333333333333% * 2);
+  }
+  &--3 {
+    width: calc(8.333333333333333% * 3);
+  }
+  &--4 {
+    width: calc(8.333333333333333% * 4);
+  }
+  &--6 {
+    width: calc(8.333333333333333% * 6);
+  }
+  &--8 {
+    width: calc(8.333333333333333% * 8);
+  }
+  &--10 {
+    width: calc(8.333333333333333% * 10);
+  }
+  &--12 {
+    width: calc(8.333333333333333% * 12);
   }
 }

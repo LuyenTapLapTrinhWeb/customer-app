@@ -62,7 +62,7 @@ export function myFadeInTrigger(): any {
 }
 export function flyInOut(): any {
     return trigger('flyInOut', [
-        state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+        state('*', style({ opacity: 1, transform: 'translateX(0)', height: '100%'})),
         transition(':enter', [style({ opacity: 0, transform: 'translateX(-5%)' }), animate('600ms 1s ease-in')]),
         // transition(':leave', [style({ opacity: 0, transform: 'translateY(100%)' }), animate('500ms ease-out')]),
     ]);

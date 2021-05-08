@@ -1,0 +1,19 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: small;
+  font-family: "Courier New", Courier, monospace;
+}
+mat-card {
+  width: 600px;
+  height: auto;
+}

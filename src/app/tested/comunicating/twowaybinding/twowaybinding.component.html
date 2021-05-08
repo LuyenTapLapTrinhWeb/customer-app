@@ -1,0 +1,28 @@
+<div [@transition]>
+    <h2>Two-way binding, the Long Way</h2>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Id of Image</mat-label>
+            <input matInput type="number" name="idofimage" placeholder="id of image" [ngModel]="idofimage"
+                (ngModelChange)="onChangeIDOfImage($event)" min="1">
+        </mat-form-field>
+    </form>
+    <div [hidden]="!idofimage">
+        <div *ngIf="!errorMessage">
+            <p>You has select id <b>{{idofimage | json}}</b> of image</p>
+        </div>
+        <div *ngIf="errorMessage">
+            <b class="error">{{errorMessage}}</b>
+        </div>
+    </div>
+    <div *ngIf="avatar2" [@transitionY]>
+        <mat-card>
+            <img mat-card-image [src]="avatar2" [alt]="avatar2.name">
+        </mat-card>
+    </div>
+    <div *ngIf="!avatar2">
+        <div *ngIf="!errorMessage">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+</div>

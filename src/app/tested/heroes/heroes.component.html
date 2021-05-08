@@ -1,1 +1,41 @@
-<p>heroes works!</p>
+<section [@transitionY]>
+    <article>
+        <h2>Welcome to heroes</h2>
+    </article>
+    <article>
+        <h3>List of heroes</h3>
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef [@transitionY] mat-sort-header> No. </th>
+                <td mat-cell *matCellDef="let element" [@transitionY]> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef [@transitionY] mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let element" [@transitionY]> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef [@transitionY]>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row" [@transitionY]>
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </article>
+</section>

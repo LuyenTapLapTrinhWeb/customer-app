@@ -22,6 +22,15 @@
     width: 15%;
   }
 }
+@media only screen and (max-width: 600px) {
+  .row {
+    margin: 35px 0;
+    .mat-button {
+      margin-right: 20px;
+      width: auto;
+    }
+  }
+}
 .row:last-child {
   display: flex;
   flex-direction: row;
@@ -42,6 +51,17 @@
   display: flex;
   flex-flow: row wrap;
   margin: 35px 231px;
+}
+@media only screen and (max-width: 600px) {
+  .small-12 {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 35px 0;
+    .medium-6 {
+      width: auto;
+      margin-bottom: 35px;
+    }
+  }
 }
 .medium-6 {
   width: 48%;
@@ -113,6 +133,12 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
+}
+@media only screen and (max-width: 600px) {
+  .navigateButton {
+    font-size: 0.7rem;
+     
+  }
 }
 .mat-input-element {
   caret-color: #fff;
