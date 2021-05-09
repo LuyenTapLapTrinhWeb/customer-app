@@ -14,6 +14,14 @@ import { TwowaybindingComponent } from './comunicating/twowaybinding/twowaybindi
 import { GettersandsettersComponent } from './comunicating/gettersandsetters/gettersandsetters.component';
 import { BindingandstructuredirectivesComponent } from './comunicating/bindingandstructuredirectives/bindingandstructuredirectives.component';
 import { IntroductionComponent } from './comunicating/introduction/introduction.component';
+import { ViewchildandviewchildrenComponent } from './viewchildandviewchildren/viewchildandviewchildren.component';
+import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailviewchildren/detailviewchildren.component';
+const viewChildAndViewChildredComponent = {
+  path: 'viewchildandviewchildren', component: ViewchildandviewchildrenComponent, children: [
+    { path: ':id', component: DetailviewchildrenComponent },
+    { path: '**', redirectTo: '', pathMatch: 'full' },
+  ],
+};
 const communicatingComponent = {
   path: 'communicating', component: ComunicatingComponent, children: [
     { path: 'introduction', component: IntroductionComponent },
@@ -28,6 +36,8 @@ const testComponent = {
     { path: 'config', component: ConfigComponent },
     { path: 'heroes', component: HeroesComponent },
     communicatingComponent,
+    viewChildAndViewChildredComponent,
+    // { path: 'viewchildandviewchildren/:id', component: DetailviewchildrenComponent },
     { path: '**', redirectTo: 'communicating', pathMatch: 'full' },
   ]
 };

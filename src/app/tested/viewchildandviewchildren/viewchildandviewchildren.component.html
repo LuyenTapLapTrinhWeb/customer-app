@@ -1,0 +1,34 @@
+<section *ngIf="customers" [@transition]>
+    <article>
+        <div class="container">
+            <h1>Welcome to <b>View Child</b> and <b>View Children</b></h1>
+        </div>
+    </article>
+    <article>
+        <div class="container row">
+            <mat-card *ngIf="customers?.avatar" [@transitionY]>
+                <img mat-card-image [src]="baseUrl + customers.avatar.avatar" [alt]="customers.avatar.name">
+                <mat-card-content>
+                    <p>
+                        Purpous referrent to only one element by @ViewChild or @ViewChildren
+                    </p>
+                </mat-card-content>
+                <mat-card-actions class="top-left">
+                    <ul *ngFor="let link of links">
+                        <li class="left-circle">
+                            <a mat-button class="navigateButton" [routerLink]="link.id" routerLinkActive="active-child"
+                                appHightlight>{{link.name | titlecase}}</a>
+                        </li>
+                    </ul>
+                </mat-card-actions>
+            </mat-card>
+            <article>
+                <router-outlet></router-outlet>
+            </article>
+        </div>
+    </article>
+</section>
+<section *ngIf="!customers">
+    <mat-spinner *ngIf="!errorMessage"></mat-spinner>
+    <h2 class="error" *ngIf="errorMessage">{{errorMessage}}</h2>
+</section>

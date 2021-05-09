@@ -2,19 +2,11 @@
     <div class="column--10">
         <router-outlet></router-outlet>
     </div>
-    <div class="column--2">
-        <ul>
+    <div class="column--2--xs">
+        <ul *ngFor="let link of links">
             <li class="left-circle">
-                <a mat-button class="navigateButton" routerLink="heroes" routerLinkActive="active-child"
-                    appHightlight>Heroes</a>
-            </li>
-            <li class="left-circle">
-                <a mat-button class="navigateButton" routerLink="communicating" routerLinkActive="active-child"
-                    appHightlight>Communicating</a>
-            </li>
-            <li class="left-circle">
-                <a mat-button class="navigateButton" routerLink="config" routerLinkActive="active-child"
-                    appHightlight>Config</a>
+                <a mat-button class="navigateButton" routerLink="{{link.link}}" routerLinkActive="active-child"
+                    appHightlight>{{link.name | titlecase}}</a>
             </li>
         </ul>
     </div>

@@ -17,6 +17,8 @@ import { TwowaybindingComponent } from './comunicating/twowaybinding/twowaybindi
 import { BindingandstructuredirectivesComponent } from './comunicating/bindingandstructuredirectives/bindingandstructuredirectives.component';
 import { GettersandsettersComponent } from './comunicating/gettersandsetters/gettersandsetters.component';
 import { IntroductionComponent } from './comunicating/introduction/introduction.component';
+import { ViewchildandviewchildrenComponent } from './viewchildandviewchildren/viewchildandviewchildren.component';
+import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailviewchildren/detailviewchildren.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { IntroductionComponent } from './comunicating/introduction/introduction.
     BindingandstructuredirectivesComponent,
     GettersandsettersComponent,
     IntroductionComponent,
+    ViewchildandviewchildrenComponent,
+    DetailviewchildrenComponent,
   ],
   imports: [
     CommonModule,

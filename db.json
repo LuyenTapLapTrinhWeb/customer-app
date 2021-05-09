@@ -1,4 +1,10 @@
 {
+  "viewchildandviewchildren": [
+    { "id": 1, "name": "@ViewChild" },
+    { "id": 2, "name": "@ViewChildren" },
+    { "id": 3, "name": "ViewChild and Angular form" },
+    { "id": 4, "name": "ViewChild and ngIf" }
+  ],
   "heroes": [
     { "id": 11, "name": "Dr Nice" },
     { "id": 12, "name": "Narco" },
@@ -65,6 +71,14 @@
         "avatar": "images/avatar/Ảnh chụp màn hình 2021-05-08 120506.png"
       },
       "bio": "Ảnh chụp màn hình 2021-05-08 120506"
+    },
+    {
+      "id": "7",
+      "name": "Ảnh chụp màn hình 2021-05-09 122026",
+      "avatar": {
+        "avatar": "images/avatar/Ảnh chụp màn hình 2021-05-09 122026.png"
+      },
+      "bio": "Ảnh chụp màn hình 2021-05-09 122026"
     },
     {
       "id": "6",

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { transitionPage } from 'src/app/animations/reuse/transitionPage.animation';
+import { Link } from './link';
+import { LINKS } from './links';
 
 @Component({
   selector: 'app-subcribing',
@@ -11,9 +13,12 @@ import { transitionPage } from 'src/app/animations/reuse/transitionPage.animatio
   ]
 })
 export class SubcribingComponent implements OnInit {
-  constructor() { }
+  links: Link[];
 
+  constructor() {
+  }
   ngOnInit(): void {
+    this.links = LINKS;
     // create a simple observable that emits three values
     const myObservable = of(1, 2, 3);
 

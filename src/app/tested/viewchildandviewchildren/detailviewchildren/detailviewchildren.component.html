@@ -1,0 +1,9 @@
+<section *ngIf="viewchildrend" [@transitionY]>
+    <article>
+        <h1>Welcome to {{viewchildrend.name}} detail content</h1>
+    </article>
+</section>
+<section *ngIf="!viewchildrend" [@transitionY]>
+    <mat-spinner *ngIf="!errorMessage"></mat-spinner>
+    <h2 class="error" *ngIf="errorMessage">{{errorMessage}}</h2>
+</section>
