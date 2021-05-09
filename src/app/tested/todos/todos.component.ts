@@ -1,53 +1,30 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Event } from '@angular/router';
+import { focusPanel, itemEnter, note } from 'src/app/animations/reuse/todos.animation';
+import { transitionPage } from 'src/app/animations/reuse/transitionPage.animation';
 
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.scss'],
   animations: [
-    trigger('focusPanel', [
-      state('inactive', style({ transform: 'scale(1)' })),
-      state('active', style({ transform: 'scale(1.04)' })),
-      transition('inactive=>active', animate('500ms ease-in')),
-      transition('active=>inactive', animate('500ms ease-out')),
-    ]),
-    trigger('note', [
-      state('inactive', style({ opacity: 0 })),
-      state('active', style({ opacity: 1 })),
-      transition('inactive=>active', [
-        animate(300, keyframes([
-          style({ opacity: 0, transform: 'translateY(0)', offset: 0 }),
-          style({ opacity: 1, transform: 'translateY(-15px)', offset: 0.6 }),
-          style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
-        ]))
-      ]),
-      transition('active=>inactive', [
-        animate(300, keyframes([
-          style({ opacity: 1, transform: 'translateY(0)', offset: 0 }),
-          style({ opacity: 1, transform: 'translateY(-15px)', offset: 0.7 }),
-          style({ opacity: 0, transform: 'translateY(100%)', offset: 1 }),
-        ]))
-      ]),
-    ]),
-    trigger('itemEnter', [
-      state('in', style({ transform: 'translateY(0)' })),
-      transition('void=>*', [
-        style({ transform: 'translateY(-100%)', opacity: 0 }),
-        animate('300ms ease-in')
-      ]),
-      transition('*=>void', [
-        style({ transform: 'translateY(200px) scaleY(0)' }),
-        animate('300ms ease-out')
-      ]),
-    ])
+    focusPanel(), note(), itemEnter()
   ]
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent implements OnInit, AfterViewInit {
   state = 'inactive';
   subsItems: string[];
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  @ViewChild('viewchildinput') viewchildinput: ElementRef;
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private cd: ChangeDetectorRef) {
+  }
+  ngAfterViewInit(): void {
+    // console.log(this.viewchildinput);
+    this.viewchildinput.nativeElement.focus();
   }
   ngOnInit(): void {
     this.subsItems = [
@@ -58,6 +35,7 @@ export class TodosComponent implements OnInit {
   }
   toggleFocus(): void {
     this.state = (this.state === 'inactive' ? 'active' : 'inactive');
+    this.cd.detectChanges();
   }
   submititem(event: any): void {
     if (!event.target.value) {

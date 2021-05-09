@@ -4,15 +4,18 @@
         <a mat-button class="navigateButton" routerLink="examples" routerLinkActive="active-child"
             appHightlight>EXAMPLES</a>
     </div>
-    <div class="row" [@focusPanel]='state'>
+    <div class="row">
         <mat-form-field class="example-form-field">
-            <input matInput class="addinput" type="text" on-focus="toggleFocus()" (keyup.enter)="submititem($event)"
-                placeholder="Add an item here." maxlength="20">
+            <input matInput class="addinput" type="text" [@focusPanel]='state' on-focus="toggleFocus()"
+                (keyup.enter)="submititem($event)" placeholder="Add an item here." maxlength="20" #viewchildinput>
         </mat-form-field>
         <p class="hint" [@note]="state">Hit Enter to add</p>
     </div>
     <div class="small-12">
-        <div class="medium-6 panel">
+        <div class="medium-6 panel" *ngIf="!subsItems?.length">
+            <h3>No item here</h3>
+        </div>
+        <div class="medium-6 panel" *ngIf="subsItems?.length">
             <div class="item-container" *ngFor="let item of subsItems; let i = index" [attr.data-index]="i"
                 [@itemEnter]="state">
                 <div class="identifier">
