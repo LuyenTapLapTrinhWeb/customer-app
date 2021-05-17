@@ -11,6 +11,7 @@ import { SharingModule } from './shared/sharing.module';
 import { OpenclosedComponent } from './tested/openclosed/openclosed.component';
 import { Codetogether1Component } from './tested/codetogether1/codetogether1.component';
 import { TestModule } from './tested/test.module';
+import { TestapiModule } from './testapi/testapi.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TestModule } from './tested/test.module';
     HttpClientModule,
     AppRoutingModule,
     SharingModule,
-    TestModule
+    TestModule,
+    TestapiModule
   ],
   providers: [{ provide: 'BaseUrl', useValue: BaseUrl }],
   bootstrap: [AppComponent]

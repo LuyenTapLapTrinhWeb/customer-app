@@ -13,7 +13,6 @@ import { flyInOut, toggleTrigger, visibility } from 'src/app/animations/reuse/ap
   // tslint:disable-next-line:no-host-metadata-property
   host: {
     '[@flyInOut]': 'true',
-    style: 'display: block'
   },
   animations: [
     visibility(),

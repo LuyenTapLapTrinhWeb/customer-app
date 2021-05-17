@@ -1,0 +1,34 @@
+<section [@flyInOut] *ngIf="anhquans" class="lichthisvs">
+    <article>
+        <div class="lichthisvs--container">
+            <mat-card class="lichthisvs--container--card" *ngFor="let anhquan of anhquans" [@visibility]="state"
+                hightlight>
+                <mat-card-header>
+                    <img mat-card-avatar [src]="anhquan.src" alt="">
+                    <mat-card-title>{{anhquan.title | uppercase}}</mat-card-title>
+                    <mat-card-subtitle>{{anhquan.subtitle | titlecase}}</mat-card-subtitle>
+                </mat-card-header>
+                <img class="lichthisvs--container--image" mat-card-image [src]="anhquan.src" alt="">
+                <mat-card-content> {{anhquan.subtitle | titlecase}} </mat-card-content>
+                <mat-card-actions>
+                    <button *ngIf="anhquan.opened === true" class="lichthisvs--container--button-opened" mat-button
+                        [routerLink]="anhquan.routerlink" routerLinkActive="active">{{anhquan.title |
+                        titlecase}}</button>
+                    <button *ngIf="anhquan.opened === false" class="lichthisvs--container--button-clocked" mat-button
+                        [routerLink]="anhquan.routerlink" routerLinkActive="active">{{anhquan.title |
+                        titlecase}}</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </article>
+    <article>
+        <router-outlet></router-outlet>
+    </article>
+</section>
+<section *ngIf="!anhquans" class="cover-black">
+    <article>
+        <div class="lichthisvs--container">
+            <mat-spinner></mat-spinner>
+        </div>
+    </article>
+</section>

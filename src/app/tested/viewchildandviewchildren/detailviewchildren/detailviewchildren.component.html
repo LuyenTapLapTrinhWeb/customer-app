@@ -1,6 +1,22 @@
-<section *ngIf="viewchildrend" [@transitionY]>
+<section>
     <article>
-        <h1>Welcome to {{viewchildrend.name}} detail content</h1>
+        <div class="container" *ngIf="viewchildrend" [@transitionY]>
+            <h1 [@transition]>Welcome to {{viewchildrend.name}} detail content</h1>
+        </div>
+    </article>
+    <article>
+        <div class="container" [@transitionY]>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Favorite food</mat-label>
+                    <input matInput placeholder="Ex. Pizza" name="listFilter" [(ngModel)]="listFilter"
+                        #focusInputViewChildElement>
+                </mat-form-field>
+            </form>
+            <div [hidden]='!listFilter'>
+                You are filter by '{{listFilter}}'
+            </div>
+        </div>
     </article>
 </section>
 <section *ngIf="!viewchildrend" [@transitionY]>

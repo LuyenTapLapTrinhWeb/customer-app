@@ -1,1 +1,22 @@
-<p [@toggleTrigger]>orders works!</p>
+<section [@toggleTrigger]>
+    <article>
+        <h1>Welcome to Order page!</h1>
+    </article>
+    <article>
+        <div class="container">
+            <h2>Logo CSS</h2>
+            <div class="bgcolor--primary relative" (mouseover)="changeCircle($event)">
+                <div [@stretching]="circleState" class="circle small center relative flex-middle">
+                    <div class="square relative flex-middle center">
+                        <div class="circle--2 big center absolute flex-between">
+                            <div class="square--2"></div>
+                            <div class="square--2"></div>
+                            <div class="square--2"></div>
+                            <div class="square--2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

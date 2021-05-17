@@ -1,9 +1,6 @@
-import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef } from '@angular/core';
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Event } from '@angular/router';
 import { focusPanel, itemEnter, note } from 'src/app/animations/reuse/todos.animation';
-import { transitionPage } from 'src/app/animations/reuse/transitionPage.animation';
 
 @Component({
   selector: 'app-todos',

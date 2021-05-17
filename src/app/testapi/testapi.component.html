@@ -1,0 +1,22 @@
+<section [@flyInOut] class="lichthisvs">
+    <article>
+        <div class="lichthisvs--container">
+            <mat-card class="lichthisvs--container--card" [@toggleTrigger]>
+                <mat-card-header>
+                    <mat-icon mat-card-avatar class="logo_anh_quan" svgIcon="Logo_Anh_Quan"></mat-icon>
+                    <mat-card-title>{{title | uppercase}}</mat-card-title>
+                    <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+                </mat-card-header>
+                <!-- <img class="lichthisvs--container--image" mat-card-image [src]="src" alt=""> -->
+                <mat-icon mat-card-image class="logo_anh_quan" svgIcon="Logo_Anh_Quan"></mat-icon>
+                <mat-card-actions>
+                    <button class="lichthisvs--container--button" mat-button [routerLink]="['aq']"
+                        routerLinkActive="active">{{title | titlecase}}</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </article>
+    <article>
+        <router-outlet></router-outlet>
+    </article>
+</section>

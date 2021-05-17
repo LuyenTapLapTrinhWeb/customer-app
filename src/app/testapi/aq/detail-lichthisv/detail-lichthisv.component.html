@@ -1,0 +1,85 @@
+<section [@flyInOut] *ngIf="lichthisv" class="lichthisvs">
+    <article>
+        <div class="lichthisvs--container-column relative">
+            <button mat-button class="left">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            <h1>Xin chào, {{bmssv}}</h1>
+            <h2>Niên học - học kỳ {{nhhk}}</h2>
+            <p>Lịch thi chi tiết</p>
+            <button mat-button class="right">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+            <mat-paginator class="full-width" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+    </article>
+    <article>
+        <div class="lichthisvs--container">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                <ng-container matColumnDef="ma_mon_hoc">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã môn học. </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.ma_mon_hoc}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="ten_mon_hoc">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tên môn học </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ten_mon_hoc}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="hinh_thuc">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Hình thức </th>
+                    <td mat-cell *matCellDef="let element"> {{element.hinh_thuc}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="ma_phong">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã phòng </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ma_phong}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="ngay_thi">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ngày Thi </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ngay_thi}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nhom_thi">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nhóm thi </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nhom_thi}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="so_phut">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Số phút </th>
+                    <td mat-cell *matCellDef="let element"> {{element.so_phut}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="so_tiet">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Số Tiết </th>
+                    <td mat-cell *matCellDef="let element"> {{element.so_tiet}} </td>
+                </ng-container>
+                <ng-container matColumnDef="ten_phong">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tên phòng </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ten_phong}} </td>
+                </ng-container>
+                <ng-container matColumnDef="tiet_bat_dau">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tiết bắt đầu </th>
+                    <td mat-cell *matCellDef="let element"> {{element.tiet_bat_dau}} </td>
+                </ng-container>
+                <ng-container matColumnDef="to_thi">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tờ thi </th>
+                    <td mat-cell *matCellDef="let element"> {{element.to_thi}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </article>
+</section>
+<section *ngIf="!lichthisv" class="cover-black">
+    <article>
+        <div class="lichthisvs--container">
+            <mat-spinner></mat-spinner>
+        </div>
+    </article>
+</section>

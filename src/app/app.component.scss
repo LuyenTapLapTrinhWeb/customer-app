@@ -15,6 +15,13 @@
 .example-sidenav {
   padding: 20px;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  .text-left {
+    text-align: left;
+  }
+}
 .mat-nav-list {
   flex-flow: row wrap;
 }

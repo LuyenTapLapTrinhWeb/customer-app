@@ -1,0 +1,39 @@
+.lichthisvs {
+  &--container {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    &--card {
+      height: 446px;
+      width: 331px;
+      border-radius: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      margin: 5px;
+    }
+
+    &--button {
+      width: 100%;
+      &-opened {
+        cursor: pointer;
+      }
+      &-closed {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cover-black {
+  background-color: black;
+  opacity: 0.5;
+  animation: opacity background-color 2s ease-in-out;
+}

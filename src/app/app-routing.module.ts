@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'tested', loadChildren: () => import('./tested/test.module').then(m => m.TestModule) },
-  { path: '**', redirectTo: 'tested', pathMatch: 'full' },
+  { path: 'testapi', loadChildren: () => import('./testapi/testapi.module').then(m => m.TestapiModule) },
+  { path: '**', redirectTo: 'testapi', pathMatch: 'full' },
 ];
 
 @NgModule({
