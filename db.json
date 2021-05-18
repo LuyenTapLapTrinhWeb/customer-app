@@ -6,7 +6,8 @@
       "subtitle": "thông báo lịch thi sinh viên",
       "src": "https://namsaigon.edu.vn/wp-content/uploads/2019/05/Thon-bao-lich-thi.jpg",
       "routerlink": "lichthisv",
-      "opened": true
+      "opened": true,
+      "svg": "LICHTHI"
     },
     {
       "id": "1",
@@ -14,7 +15,8 @@
       "subtitle": "Thông báo thời khóa biểu tuần sinh viên",
       "src": "https://lh3.googleusercontent.com/proxy/bqxtD3F761Gs8u5BoVjRt8hTKT90D5g0eYNh1I-e-aWUUiP3zTITmF8Ph_kQI9EXrk_uL-z7NAtR2fV25gmLYG7J6hD2sYAQgGkdmw5tRSrcbIg0tTpMGOPA7AavftAhdwz-weNBiWN04wkIwQhMoSJ-lYeGLdk3CU1EREZ7K0JHb8Dg_ilYOPHc5cPIQIrcD0aEmQ",
       "routerlink": "tkbtuansv",
-      "opened": false
+      "opened": false,
+      "svg": "THOIKHOABIEU"
     },
     {
       "id": "3",
@@ -22,7 +24,8 @@
       "subtitle": "Thông báo điểm học kỳ sinh viên",
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1P2OuAkj1Pcj3P6I7RYVsSochtAJbgg1d-GI5biNkAj09mmmFzPfTc5za90bYIhvbz_s&usqp=CAU",
       "routerlink": "diemhksv",
-      "opened": false
+      "opened": false,
+      "svg": "DIEMTHI"
     }
   ],
   "tkbtuansv": [

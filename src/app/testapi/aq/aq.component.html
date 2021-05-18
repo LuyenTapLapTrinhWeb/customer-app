@@ -4,15 +4,19 @@
             <mat-card class="lichthisvs--container--card" *ngFor="let anhquan of anhquans" [@visibility]="state"
                 hightlight>
                 <mat-card-header>
-                    <img mat-card-avatar [src]="anhquan.src" alt="">
+                    <mat-icon mat-card-avatar class="logo_anh_quan" [svgIcon]="anhquan.svg"></mat-icon>
+                    <!-- <img mat-card-avatar [src]="anhquan.src" alt=""> -->
                     <mat-card-title>{{anhquan.title | uppercase}}</mat-card-title>
                     <mat-card-subtitle>{{anhquan.subtitle | titlecase}}</mat-card-subtitle>
                 </mat-card-header>
-                <img class="lichthisvs--container--image" mat-card-image [src]="anhquan.src" alt="">
+                <mat-icon mat-card-image class="lichthisvs--container--image" [svgIcon]="anhquan.svg"
+                    [alt]="anhquan.title">
+                </mat-icon>
+                <!-- <img class="lichthisvs--container--image" mat-card-image [src]="anhquan.src" alt=""> -->
                 <mat-card-content> {{anhquan.subtitle | titlecase}} </mat-card-content>
                 <mat-card-actions>
                     <button *ngIf="anhquan.opened === true" class="lichthisvs--container--button-opened" mat-button
-                        [routerLink]="anhquan.routerlink" routerLinkActive="active">
+                        [routerLink]="anhquan.routerlink" routerLinkActive="active">Xem
                         {{anhquan.title | titlecase}}</button>
                     <button *ngIf="anhquan.opened === false" class="lichthisvs--container--button-clocked"
                         mat-button>{{anhquan.title | titlecase}}</button>

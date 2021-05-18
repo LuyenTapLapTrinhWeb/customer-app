@@ -12,8 +12,12 @@
       justify-content: space-between;
       align-items: stretch;
       margin: 5px;
+      border-radius: 10px;
     }
-
+    &--image {
+      object-fit: cover;
+      height: 100%;
+    }
     &--button {
       width: 100%;
       &-opened {
@@ -23,6 +27,7 @@
       &-clocked {
         width: 100%;
         cursor: not-allowed;
+        opacity: 0.5;
       }
     }
   }
@@ -38,4 +43,8 @@ section {
   background-color: black;
   opacity: 0.5;
   animation: opacity background-color 2s ease-in-out;
+}
+.logo_anh_quan {
+  object-fit: cover;
+  height: 100%;
 }
