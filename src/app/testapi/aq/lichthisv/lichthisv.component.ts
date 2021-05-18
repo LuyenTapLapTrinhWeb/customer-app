@@ -3,7 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSelect } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { switchMap } from 'rxjs/operators';
 import { flyInOut, toggleTrigger, visibility } from 'src/app/animations/reuse/app.animation';
+import { LichThi } from '../../model/lichthi';
 import { LichThiSV } from '../../model/lichthisv';
 import { Nhhk } from '../../model/nhhk';
 import { LichthisvService } from '../../services/lichthisv.service';
@@ -65,28 +67,25 @@ export class LichthisvComponent implements OnInit, AfterViewInit {
 
   }
   ngAfterViewInit(): void {
-    this.lichthisvservice.getLichThiSV().subscribe(
-      lichthisvs => {
-        this.lichthisvs = lichthisvs;
+    this.lichthisvservice.getLichThiSV().subscribe(lichthisvs => {
+      this.lichthisvs = lichthisvs;
+      this.lichthisvservice.getNhhkLichSV().subscribe(
+        nhhklichsv => {
+          this.nhhklichsv = nhhklichsv;
 
-        this.dataSource = new MatTableDataSource(lichthisvs);
-        this.isLoadingResults = false;
-        if (this.sort) {
-          this.dataSource.sort = this.sort;
-        }
-        if (this.paginator) {
-          this.dataSource.paginator = this.paginator;
-        }
+          this.dataSource = new MatTableDataSource(lichthisvs);
 
-        // this.searchInput.nativeElement.focus();
-        this.cd.detectChanges();
-      },
-      errorMessage => { this.errorMessage = errorMessage; }
-    );
-    this.lichthisvservice.getNhhkLichSV().subscribe(
-      nhhklichsv => { this.nhhklichsv = nhhklichsv; },
-      errorMessage => { this.errorMessage = errorMessage; }
-    );
+          if (this.paginator) {
+            this.dataSource.paginator = this.paginator;
+          }
+          if (this.sort) {
+            this.dataSource.sort = this.sort;
+          }
+          this.isLoadingResults = false;
+        },
+        errorMessage => { this.errorMessage = errorMessage; }
+      );
+    });
   }
   resetPaging(): void {
     this.paginator.pageIndex = 0;
