@@ -1,42 +1,41 @@
 <section [@flyInOut] *ngIf="lichthisvs" class="lichthisvs">
     <article>
-        <div class="lichthisvs--container">
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-                <!--- Note that these columns can be defined in any order.
-                      The actual rendered columns are set as a property on the row definition" -->
-
-                <!-- Position Column -->
-                <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef> Mã Số Sinh Viên. </th>
+        <div class="lichthisvs--container-column">
+            <form class="lichthisvs--container--form">
+                <div class="lichthisvs--container--form-column">
+                    <mat-form-field class="full-width focusanimation">
+                        <mat-label>Mã Số Sinh Viên.</mat-label>
+                        <input matInput placeholder="Mã Số Sinh Viên." (keyup)="applyFilter($event)">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Năm học - học kỳ</mat-label>
+                        <mat-select #namhoc (selectionChange)="selectStage($event)">
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let nhhk of nhhklichsv" [value]="nhhk.nhhk">
+                                {{nhhk.ten_nhhk}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </form>
+            <table mat-table [dataSource]="dataSource" *ngIf="dataSource" matSort class="mat-elevation-z8"
+                matSortActive="bmssv" matSortDisableClear matSortDirection="desc" (matSortChange)="resetPaging()">
+                <ng-container matColumnDef="bmssv">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã Số Sinh Viên. </th>
                     <td mat-cell *matCellDef="let element">
                         <a [routerLink]="[ './', element.bmssv ]">{{element.bmssv}}</a>
                     </td>
                 </ng-container>
 
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef> Năm học - Học Kỳ </th>
+                <ng-container matColumnDef="nhhk">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Năm học - Học Kỳ </th>
                     <td mat-cell *matCellDef="let element"> {{element.nhhk }} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="select">
-                    <th mat-header-cell *matHeaderCellDef>
-                        <mat-checkbox (change)="$event ? masterToggle() : null"
-                            [checked]="selection.hasValue() && isAllSelected()"
-                            [indeterminate]="selection.hasValue() && !isAllSelected()">
-                        </mat-checkbox>
-                    </th>
-                    <td mat-cell *matCellDef="let row">
-                        <mat-checkbox (click)="$event.stopPropagation()"
-                            (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
-                        </mat-checkbox>
-                    </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+            <mat-paginator class="full-width" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
         </div>
     </article>
 </section>

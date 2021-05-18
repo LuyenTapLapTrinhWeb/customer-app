@@ -1,21 +1,33 @@
-<section [@flyInOut] *ngIf="lichthisv" class="lichthisvs">
+<section [@flyInOut] class="lichthisvs">
     <article>
         <div class="lichthisvs--container-column relative">
-            <button mat-button class="left">
-                <mat-icon>chevron_left</mat-icon>
+            <button mat-button class="left" [routerLink]="['/lichthisv']">
+                <mat-icon class="font-icon">chevron_left</mat-icon>
             </button>
             <h1>Xin chào, {{bmssv}}</h1>
-            <h2>Niên học - học kỳ {{nhhk}}</h2>
+            <h1 *ngIf="nhhk" [@visibility]="state">{{nhhk.ten_nhhk}}</h1>
+            <h2 *ngIf="!nhhk" class="waiting"></h2>
             <p>Lịch thi chi tiết</p>
-            <button mat-button class="right">
+            <!-- <button mat-button class="right">
                 <mat-icon>chevron_right</mat-icon>
-            </button>
-            <mat-paginator class="full-width" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </button> -->
         </div>
+
     </article>
-    <article>
-        <div class="lichthisvs--container">
-            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <article *ngIf="lichthisv" [@toggleTrigger]>
+        <div class="lichthisvs--container-column">
+            <form class="lichthisvs--container--form">
+                <mat-form-field class="focusanimation">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Tìm kiếm" #searchInput>
+                </mat-form-field>
+            </form>
+            <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
+                <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+            </div>
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" *ngIf="dataSource"
+                [@toggleTrigger] matSortActive="ma_mon_hoc" matSortDisableClear matSortDirection="desc"
+                (matSortChange)="resetPaging()">
                 <ng-container matColumnDef="ma_mon_hoc">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã môn học. </th>
                     <td mat-cell *matCellDef="let element">
@@ -73,6 +85,7 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+            <mat-paginator class="full-width" [pageSizeOptions]="[2,4,6]" showFirstLastButtons></mat-paginator>
         </div>
     </article>
 </section>

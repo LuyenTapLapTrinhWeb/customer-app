@@ -17,9 +17,11 @@
     &--button {
       width: 100%;
       &-opened {
+        width: 100%;
         cursor: pointer;
       }
-      &-closed {
+      &-clocked {
+        width: 100%;
         cursor: not-allowed;
       }
     }

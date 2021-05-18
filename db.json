@@ -547,7 +547,111 @@
     {
       "id": 5,
       "bmssv": "BA20EX005",
-      "nhhk": "20201",
+      "nhhk": "20202",
+      "lichthisv": [
+        {
+          "ma_mon_hoc": "IS062IU",
+          "ten_mon_hoc": "E-Logistics in Supply Chain Management",
+          "ma_phong": "A1.201",
+          "ten_phong": "Ban",
+          "gio_bat_dau": "15:15",
+          "so_phut": "120",
+          "tiet_bat_dau": "9",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "01",
+          "ngay_thi": "12/01/2021"
+        },
+        {
+          "ma_mon_hoc": "BA032IU",
+          "ten_mon_hoc": "Sales Management",
+          "ma_phong": "A2.402",
+          "ten_phong": "Ban",
+          "gio_bat_dau": "10:15",
+          "so_phut": "120",
+          "tiet_bat_dau": "3",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "02",
+          "ngay_thi": "13/01/2021"
+        },
+        {
+          "ma_mon_hoc": "IS035IU",
+          "ten_mon_hoc": "Systems Engineering",
+          "ma_phong": "A1.603",
+          "ten_phong": "Ban",
+          "gio_bat_dau": "08:00",
+          "so_phut": "120",
+          "tiet_bat_dau": "1",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "01",
+          "ngay_thi": "14/01/2021"
+        },
+        {
+          "ma_mon_hoc": "BA003IU",
+          "ten_mon_hoc": "Principles of Marketing",
+          "ma_phong": "A2.313",
+          "ten_phong": "Ban",
+          "gio_bat_dau": "10:15",
+          "so_phut": "120",
+          "tiet_bat_dau": "3",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "09",
+          "ngay_thi": "14/01/2021"
+        },
+        {
+          "ma_mon_hoc": "IS045IU",
+          "ten_mon_hoc": "Leadership",
+          "ma_phong": "A2.508",
+          "ten_phong": "Ban",
+          "gio_bat_dau": "08:00",
+          "so_phut": "120",
+          "tiet_bat_dau": "1",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "01",
+          "ngay_thi": "19/01/2021"
+        },
+        {
+          "ma_mon_hoc": "IS067IU",
+          "ten_mon_hoc": "International transportation & Logistics",
+          "ma_phong": "A2.408",
+          "ten_phong": "Ghe",
+          "gio_bat_dau": "13:00",
+          "so_phut": "120",
+          "tiet_bat_dau": "7",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "01",
+          "ngay_thi": "20/01/2021"
+        },
+        {
+          "ma_mon_hoc": "IS019IU",
+          "ten_mon_hoc": "Production Management",
+          "ma_phong": "A1.401",
+          "ten_phong": "Ban",
+          "gio_bat_dau": "10:15",
+          "so_phut": "120",
+          "tiet_bat_dau": "3",
+          "so_tiet": "2",
+          "hinh_thuc": "Thi tập trung",
+          "to_thi": "001",
+          "nhom_thi": "02",
+          "ngay_thi": "22/01/2021"
+        }
+      ]
+    },
+    {
+      "bmssv": "BA20EX006",
+      "nhhk": "20193",
       "lichthisv": [
         {
           "ma_mon_hoc": "IS062IU",
@@ -656,6 +760,18 @@
       "nam_hoc": "2020",
       "nhhk": "20201",
       "ten_nhhk": "Học kỳ 1 - Năm học 2020-2021"
+    },
+    {
+      "hoc_ky": "3",
+      "nam_hoc": "2020",
+      "nhhk": "20203",
+      "ten_nhhk": "Học kỳ 3 - Năm học 2020-2021"
+    },
+    {
+      "hoc_ky": "2",
+      "nam_hoc": "2020",
+      "nhhk": "20202",
+      "ten_nhhk": "Học kỳ 2 - Năm học 2020-2021"
     },
     {
       "hoc_ky": "3",

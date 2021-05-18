@@ -1,12 +1,16 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { HttpClient } from '@angular/common/http';
+import { OnChanges, SimpleChanges } from '@angular/core';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatInput } from '@angular/material/input';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSelect } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { merge } from 'rxjs';
 import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 import { flyInOut, toggleTrigger, visibility } from 'src/app/animations/reuse/app.animation';
+import { LichThi } from '../../model/lichthi';
 import { LichThiSV } from '../../model/lichthisv';
 import { Nhhk } from '../../model/nhhk';
 import { LichthisvService } from '../../services/lichthisv.service';
@@ -37,32 +41,30 @@ const ELEMENT_DATA = [
     toggleTrigger()
   ]
 })
-export class LichthisvComponent implements OnInit {
+export class LichthisvComponent implements OnInit, AfterViewInit {
   lichthisvs: LichThiSV[];
   nhhklichsv: Nhhk[];
   errorMessage: string;
-
-  displayedColumns: string[] = ['position', 'name'];
-  selection: any;
-  dataSource: any;
+  displayedColumns: string[] = ['bmssv', 'nhhk'];
+  dataSource = new MatTableDataSource<LichThiSV>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(
-    private lichthisvservice: LichthisvService,
-  ) {
-    const initialSelection = [];
-    const allowMultiSelect = true;
-    this.selection = new SelectionModel<LichThiSV>(allowMultiSelect, initialSelection);
-  }
+  constructor(private lichthisvservice: LichthisvService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+  ngAfterViewInit(): void {
     this.lichthisvservice.getLichThiSV().subscribe(
       lichthisvs => {
         this.lichthisvs = lichthisvs;
-        this.dataSource = new MatTableDataSource(this.lichthisvs);
-        this.dataSource.sort = this.sort;
+        this.dataSource = new MatTableDataSource<LichThiSV>(lichthisvs);
+        if (this.paginator) {
+          this.dataSource.paginator = this.paginator;
+        }
+        if (this.sort) {
+          this.dataSource.sort = this.sort;
+        }
       },
       errorMessage => { this.errorMessage = errorMessage; }
     );
@@ -71,19 +73,12 @@ export class LichthisvComponent implements OnInit {
       errorMessage => { this.errorMessage = errorMessage; }
     );
   }
-  /** Whether the number of selected elements matches the total number of rows. */
   // tslint:disable-next-line:typedef
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  // tslint:disable-next-line:typedef
-  masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach((row: any) => this.selection.select(row));
+  resetPaging(): void {
+    this.paginator.pageIndex = 0;
   }
 }

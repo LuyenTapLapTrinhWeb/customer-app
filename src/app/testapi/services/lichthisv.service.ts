@@ -10,6 +10,7 @@ import { Nhhk } from '../model/nhhk';
   providedIn: 'root'
 })
 export class LichthisvService {
+
   url: string;
   baseUrl: string;
 
@@ -29,6 +30,22 @@ export class LichthisvService {
       catchError(this.handleError<LichThiSV[]>(`getLichThiSVByBMSSV`))
     );
   }
+  getLichThiCondition(bmssv: string, nhhk: string): Observable<LichThiSV[]> {
+    if (!bmssv) {
+      this.getLichThiSV();
+    }
+    if (bmssv) {
+      this.getLichThiSVByBMSSV(bmssv);
+    }
+    if (!nhhk?.length) {
+      this.getLichThiSV();
+    }
+    this.url = this.baseUrl + `lichthisv/?nhhk=${nhhk}`;
+    return this.http.get<LichThiSV[]>(this.url).pipe(
+      tap(data => { console.log(data); }),
+      catchError(this.handleError<LichThiSV[]>(`getLichThiCondition`))
+    );
+  }
   getAnhQuans(): Observable<AnhQuan[]> {
     this.url = this.baseUrl + 'anhquan';
     return this.http.get<AnhQuan[]>(this.url).pipe(
@@ -42,6 +59,14 @@ export class LichthisvService {
     return this.http.get<Nhhk[]>(this.url).pipe(
       tap(data => { console.log(data); }),
       catchError(this.handleError<Nhhk[]>(`getNhhkLichSV`))
+    );
+  }
+  getNhhkLichSVBynhhk(nhhk: string): Observable<Nhhk> {
+    // this.url = 'http://edusoft.net.vn:8080/TestAPI/aq/nhhklichthisv';
+    this.url = this.baseUrl + `nhhklichthisv/?nhhk=${nhhk}`;
+    return this.http.get<Nhhk>(this.url).pipe(
+      tap(data => { console.log(data); }),
+      catchError(this.handleError<Nhhk>(`getNhhkLichSV`))
     );
   }
   /**

@@ -16,7 +16,7 @@ import { DetailLichthisvComponent } from './aq/detail-lichthisv/detail-lichthisv
     TestapiComponent,
     AqComponent,
     LichthisvComponent,
-    DetailLichthisvComponent
+    DetailLichthisvComponent,
   ],
   imports: [
     CommonModule,

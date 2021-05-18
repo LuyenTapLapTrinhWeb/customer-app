@@ -12,11 +12,10 @@
                 <mat-card-content> {{anhquan.subtitle | titlecase}} </mat-card-content>
                 <mat-card-actions>
                     <button *ngIf="anhquan.opened === true" class="lichthisvs--container--button-opened" mat-button
-                        [routerLink]="anhquan.routerlink" routerLinkActive="active">{{anhquan.title |
-                        titlecase}}</button>
-                    <button *ngIf="anhquan.opened === false" class="lichthisvs--container--button-clocked" mat-button
-                        [routerLink]="anhquan.routerlink" routerLinkActive="active">{{anhquan.title |
-                        titlecase}}</button>
+                        [routerLink]="anhquan.routerlink" routerLinkActive="active">
+                        {{anhquan.title | titlecase}}</button>
+                    <button *ngIf="anhquan.opened === false" class="lichthisvs--container--button-clocked"
+                        mat-button>{{anhquan.title | titlecase}}</button>
                 </mat-card-actions>
             </mat-card>
         </div>
