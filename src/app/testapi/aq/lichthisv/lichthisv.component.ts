@@ -1,20 +1,20 @@
-import { SelectionModel } from '@angular/cdk/collections';
-import { HttpClient } from '@angular/common/http';
-import { OnChanges, SimpleChanges } from '@angular/core';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatInput } from '@angular/material/input';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSelect } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { merge } from 'rxjs';
-import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 import { flyInOut, toggleTrigger, visibility } from 'src/app/animations/reuse/app.animation';
-import { LichThi } from '../../model/lichthi';
 import { LichThiSV } from '../../model/lichthisv';
 import { Nhhk } from '../../model/nhhk';
 import { LichthisvService } from '../../services/lichthisv.service';
-const ELEMENT_DATA = [
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
   { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
   { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
@@ -45,26 +45,41 @@ export class LichthisvComponent implements OnInit, AfterViewInit {
   lichthisvs: LichThiSV[];
   nhhklichsv: Nhhk[];
   errorMessage: string;
+  selectednhhk: string;
   displayedColumns: string[] = ['bmssv', 'nhhk'];
-  dataSource = new MatTableDataSource<LichThiSV>();
+
+  isLoadingResults = true;
+
+  dataSource: MatTableDataSource<LichThiSV>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private lichthisvservice: LichthisvService) { }
+  @ViewChild('searchInput') searchInput: ElementRef;
+  @ViewChild(MatSelect) nhhk: MatSelect;
 
-  ngOnInit(): void { }
+
+  constructor(private cd: ChangeDetectorRef, private lichthisvservice: LichthisvService) { }
+
+  ngOnInit(): void {
+
+  }
   ngAfterViewInit(): void {
     this.lichthisvservice.getLichThiSV().subscribe(
       lichthisvs => {
         this.lichthisvs = lichthisvs;
-        this.dataSource = new MatTableDataSource<LichThiSV>(lichthisvs);
-        if (this.paginator) {
-          this.dataSource.paginator = this.paginator;
-        }
+
+        this.dataSource = new MatTableDataSource(lichthisvs);
+        this.isLoadingResults = false;
         if (this.sort) {
           this.dataSource.sort = this.sort;
         }
+        if (this.paginator) {
+          this.dataSource.paginator = this.paginator;
+        }
+
+        // this.searchInput.nativeElement.focus();
+        this.cd.detectChanges();
       },
       errorMessage => { this.errorMessage = errorMessage; }
     );
@@ -73,12 +88,22 @@ export class LichthisvComponent implements OnInit, AfterViewInit {
       errorMessage => { this.errorMessage = errorMessage; }
     );
   }
+  resetPaging(): void {
+    this.paginator.pageIndex = 0;
+  }
   // tslint:disable-next-line:typedef
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
-  resetPaging(): void {
-    this.paginator.pageIndex = 0;
+
+  selectStage(event): void {
+    this.lichthisvservice.getLichThiCondition(this.searchInput.nativeElement.value, event.value).subscribe(
+      lichthisvs => { this.dataSource = new MatTableDataSource(lichthisvs); },
+      errorMessage => { this.errorMessage = errorMessage; }
+    );
   }
 }

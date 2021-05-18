@@ -1,6 +1,5 @@
 import { AfterViewInit, ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatInput } from '@angular/material/input';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -35,7 +34,7 @@ export class DetailLichthisvComponent implements OnInit, AfterViewInit {
   nhhk: Nhhk;
   state = 'hidden';
   displayedColumns: string[] = ['ma_mon_hoc', 'ten_mon_hoc', 'hinh_thuc', 'ma_phong', 'ngay_thi', 'nhom_thi', 'so_phut', 'so_tiet', 'ten_phong', 'tiet_bat_dau', 'to_thi'];
-  dataSource = new MatTableDataSource<LichThi>();
+  dataSource: MatTableDataSource<LichThi>;
 
   isLoadingResults = true;
 

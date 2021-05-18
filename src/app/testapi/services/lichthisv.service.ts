@@ -31,20 +31,19 @@ export class LichthisvService {
     );
   }
   getLichThiCondition(bmssv: string, nhhk: string): Observable<LichThiSV[]> {
-    if (!bmssv) {
-      this.getLichThiSV();
+    if (!bmssv && nhhk === undefined) {
+      return this.getLichThiSV();
     }
     if (bmssv) {
-      this.getLichThiSVByBMSSV(bmssv);
+      return this.getLichThiSVByBMSSV(bmssv);
     }
-    if (!nhhk?.length) {
-      this.getLichThiSV();
+    if (nhhk) {
+      this.url = this.baseUrl + `lichthisv/?nhhk=${nhhk}`;
+      return this.http.get<LichThiSV[]>(this.url).pipe(
+        tap(data => { console.log(data); }),
+        catchError(this.handleError<LichThiSV[]>(`getLichThiCondition`))
+      );
     }
-    this.url = this.baseUrl + `lichthisv/?nhhk=${nhhk}`;
-    return this.http.get<LichThiSV[]>(this.url).pipe(
-      tap(data => { console.log(data); }),
-      catchError(this.handleError<LichThiSV[]>(`getLichThiCondition`))
-    );
   }
   getAnhQuans(): Observable<AnhQuan[]> {
     this.url = this.baseUrl + 'anhquan';

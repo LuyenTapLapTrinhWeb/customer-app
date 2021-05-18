@@ -18,8 +18,9 @@
         <div class="lichthisvs--container-column">
             <form class="lichthisvs--container--form">
                 <mat-form-field class="focusanimation">
-                    <mat-label>Filter</mat-label>
-                    <input matInput (keyup)="applyFilter($event)" placeholder="Tìm kiếm" #searchInput>
+                    <mat-label>Tìm kiếm</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Tìm kiếm thông tin lịch thi"
+                        #searchInput>
                 </mat-form-field>
             </form>
             <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
