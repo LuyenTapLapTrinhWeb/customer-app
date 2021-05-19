@@ -67,7 +67,7 @@ export class LichthisvComponent implements OnInit, AfterViewInit {
 
   }
   ngAfterViewInit(): void {
-    this.lichthisvservice.getLichThiSV().subscribe(lichthisvs => {
+    this.lichthisvservice.getLichSVTenNhhk().subscribe(lichthisvs => {
       this.lichthisvs = lichthisvs;
       this.lichthisvservice.getNhhkLichSV().subscribe(
         nhhklichsv => {
