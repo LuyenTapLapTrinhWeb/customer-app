@@ -25,7 +25,7 @@ export function toggleTrigger(): any {
             }),
             animate('500ms')
         ])
-    ])
+    ]);
 }
 export function myFadeInTrigger(): any {
     return trigger('myTrigger', [

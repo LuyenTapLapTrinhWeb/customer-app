@@ -50,7 +50,7 @@ export class CustomerdetailComponent implements OnInit {
     this.route.params.pipe(
       switchMap((params: Params) => {
         this.visibilityState = 'hidden';
-        return this.customersService.getCustomer(+params['id']);
+        return this.customersService.getCustomer(+params.id);
       }))
       .subscribe(customer => {
         this.customer = customer;
