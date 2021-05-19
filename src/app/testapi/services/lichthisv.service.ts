@@ -23,6 +23,19 @@ export class LichthisvService {
       catchError(this.handleError<LichThiSV[]>(`getLichThiSV`))
     );
   }
+  /* GET heroes whose name contains search term */
+  searchLichThiSV(term: string): Observable<LichThiSV[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<LichThiSV[]>(`${this.baseUrl}lichthisv/?bmssv=${term}`).pipe(
+      tap(x => x.length ?
+        this.log(`found Student matching "${term}"`) :
+        this.log(`no Student matching "${term}"`)),
+      catchError(this.handleError<LichThiSV[]>('searchLichThiSV', []))
+    );
+  }
   getLichThiSVByBMSSV(bmssv?: string): Observable<LichThiSV[]> {
     this.url = this.baseUrl + 'lichthisv/?bmssv=';
     return this.http.get<LichThiSV[]>(this.url + bmssv).pipe(

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../shared/material/material.module';
 import { SharingModule } from '../shared/sharing.module';
 import { DetailLichthisvComponent } from './aq/detail-lichthisv/detail-lichthisv.component';
+import { SearchMsssvComponent } from './aq/search-msssv/search-msssv.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DetailLichthisvComponent } from './aq/detail-lichthisv/detail-lichthisv
     AqComponent,
     LichthisvComponent,
     DetailLichthisvComponent,
+    SearchMsssvComponent,
   ],
   imports: [
     CommonModule,
