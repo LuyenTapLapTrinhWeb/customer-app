@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { AnhQuan } from '../model/anhquan';
 import { LichThiSV } from '../model/lichthisv';
 import { Nhhk } from '../model/nhhk';
@@ -67,6 +67,19 @@ export class LichthisvService {
       tap(data => { console.log(data); }),
       catchError(this.handleError<Nhhk>(`getNhhkLichSV`))
     );
+  }
+  getLichSVTenNhhk(): Observable<LichThiSV[]> {
+    const nhhks$ = this.getNhhkLichSV();
+    const lichsvs$ = this.getLichThiSV();
+    return combineLatest([nhhks$, lichsvs$])
+      .pipe(
+        map(([nhhks, lichsvs]) =>
+          lichsvs.map(lichsv => ({
+            ...lichsv,
+            nhhk: nhhks.find(c => lichsv.nhhk === c.nhhk).ten_nhhk
+          }) as LichThiSV)
+        )
+      );
   }
   /**
    * Handle Http operation that failed.
