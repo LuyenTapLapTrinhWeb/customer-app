@@ -10,6 +10,7 @@ import { MaterialModule } from '../shared/material/material.module';
 import { SharingModule } from '../shared/sharing.module';
 import { DetailLichthisvComponent } from './aq/detail-lichthisv/detail-lichthisv.component';
 import { SearchMsssvComponent } from './aq/search-msssv/search-msssv.component';
+import { CardAnimationComponent } from './custom-component/card-animation/card-animation.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SearchMsssvComponent } from './aq/search-msssv/search-msssv.component';
     LichthisvComponent,
     DetailLichthisvComponent,
     SearchMsssvComponent,
+    CardAnimationComponent,
   ],
   imports: [
     CommonModule,
