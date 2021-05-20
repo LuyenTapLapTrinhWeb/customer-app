@@ -1,5 +1,17 @@
 <section [@flyInOut] *ngIf="lichthisvs" class="lichthisvs">
     <article>
+        <div class="lichthisvs--container-column relative">
+            <h1>Danh sách sinh viên tìm kiếm lịch thi theo MSSV</h1>
+            <button mat-button class="left" (click)="goback()">
+                <mat-icon class="font-icon">chevron_left</mat-icon>
+            </button>
+            <h2 *ngIf="!dataSource" class="waiting"></h2>
+            <!-- <button mat-button class="right">
+                <mat-icon>chevron_right</mat-icon>
+            </button> -->
+        </div>
+    </article>
+    <article>
         <div class="lichthisvs--container-column">
             <form class="lichthisvs--container--form">
                 <div class="lichthisvs--container--form-column">

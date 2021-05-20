@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSelect } from '@angular/material/select';
@@ -61,7 +62,10 @@ export class LichthisvComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSelect) nhhk: MatSelect;
 
 
-  constructor(private cd: ChangeDetectorRef, private lichthisvservice: LichthisvService) { }
+  constructor(
+    private location: Location,
+    private lichthisvservice: LichthisvService
+  ) { }
 
   ngOnInit(): void {
 
@@ -104,5 +108,9 @@ export class LichthisvComponent implements OnInit, AfterViewInit {
       lichthisvs => { this.dataSource = new MatTableDataSource(lichthisvs); },
       errorMessage => { this.errorMessage = errorMessage; }
     );
+  }
+  goback(): void {
+    // this.router.navigateByUrl('/aq/lichthisv');
+    this.location.back();
   }
 }

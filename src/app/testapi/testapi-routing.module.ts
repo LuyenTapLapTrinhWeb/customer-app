@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', component: TestapiComponent },
   { path: 'aq', component: AqComponent },
   { path: 'aq/lichthisv', component: LichthisvComponent },
-  { path: 'aq/lichthisv/:bmssv', component: DetailLichthisvComponent }
+  { path: 'aq/lichthisv/:bmssv', component: DetailLichthisvComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

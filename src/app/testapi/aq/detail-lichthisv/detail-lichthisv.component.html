@@ -1,7 +1,7 @@
 <section [@flyInOut] class="lichthisvs">
     <article>
         <div class="lichthisvs--container-column relative">
-            <button mat-button class="left" [routerLink]="['/lichthisv']">
+            <button mat-button class="left" (click)="goback()">
                 <mat-icon class="font-icon">chevron_left</mat-icon>
             </button>
             <h1>Xin chào, {{bmssv}}</h1>

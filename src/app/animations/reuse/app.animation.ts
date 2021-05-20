@@ -18,7 +18,7 @@ export function toggleTrigger(): any {
         state('fadeIn', style({
             opacity: 1,
         })),
-        transition('void => *', [
+        transition('* => *', [
             style({
                 opacity: 0,
                 transform: 'translateY(20px)'

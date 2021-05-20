@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { AfterViewInit, ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -44,7 +45,8 @@ export class DetailLichthisvComponent implements OnInit, AfterViewInit {
 
   constructor(
     private lichthiservice: LichthisvService,
-    private route: ActivatedRoute) {
+    private location: Location,
+    private activatedroute: ActivatedRoute) {
   }
   ngOnInit(): void {
 
@@ -55,7 +57,7 @@ export class DetailLichthisvComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   ngAfterViewInit(): void {
-    this.route.params.pipe(
+    this.activatedroute.params.pipe(
       switchMap((params: Params) => {
         this.state = 'hidden';
         this.isLoadingResults = true;
@@ -85,5 +87,9 @@ export class DetailLichthisvComponent implements OnInit, AfterViewInit {
   }
   resetPaging(): void {
     this.paginator.pageIndex = 0;
+  }
+  goback(): void {
+    // this.router.navigateByUrl('/aq/lichthisv');
+    this.location.back();
   }
 }

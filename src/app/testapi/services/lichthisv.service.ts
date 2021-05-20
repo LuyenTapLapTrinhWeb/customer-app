@@ -51,11 +51,17 @@ export class LichthisvService {
       return this.getLichThiSVByBMSSV(bmssv);
     }
     if (nhhk) {
-      this.url = this.baseUrl + `lichthisv/?nhhk=${nhhk}`;
-      return this.http.get<LichThiSV[]>(this.url).pipe(
-        tap(data => { console.log(data); }),
-        catchError(this.handleError<LichThiSV[]>(`getLichThiCondition`))
-      );
+      const nnhkdetail$ = this.http.get<LichThiSV[]>(this.baseUrl + `lichthisv/?nhhk=${nhhk}`);
+      const nhhklist$ = this.http.get<Nhhk[]>(this.baseUrl + `nhhklichthisv/?nhhk=${nhhk}`);
+      return combineLatest([nhhklist$, nnhkdetail$])
+        .pipe(
+          map(([nhhklist, lichthisvs]) =>
+            lichthisvs.map(lichthisv => ({
+              ...lichthisv,
+              nhhk: nhhklist.find(nnhk => lichthisv.nhhk === nnhk.nhhk).ten_nhhk
+            }) as LichThiSV)
+          )
+        );
     }
   }
   getAnhQuans(): Observable<AnhQuan[]> {
