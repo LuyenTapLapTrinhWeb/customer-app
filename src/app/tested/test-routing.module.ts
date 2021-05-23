@@ -16,6 +16,7 @@ import { BindingandstructuredirectivesComponent } from './comunicating/bindingan
 import { IntroductionComponent } from './comunicating/introduction/introduction.component';
 import { ViewchildandviewchildrenComponent } from './viewchildandviewchildren/viewchildandviewchildren.component';
 import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailviewchildren/detailviewchildren.component';
+import { RxComponent } from './rx/rx.component';
 const viewChildAndViewChildredComponent = {
   path: 'viewchildandviewchildren', component: ViewchildandviewchildrenComponent, children: [
     { path: ':id', component: DetailviewchildrenComponent },
@@ -55,7 +56,8 @@ const routes: Routes = [
       { path: 'codetogether', component: Codetogether1Component },
       { path: 'openclosed', component: OpenclosedComponent },
       todoComponent,
-      { path: '**', redirectTo: 'subcribing', pathMatch: 'full' },
+      { path: 'rxjs', component: RxComponent }
+      // { path: '**', redirectTo: 'subcribing', pathMatch: 'full' },
     ],
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },

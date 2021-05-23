@@ -19,6 +19,7 @@ import { GettersandsettersComponent } from './comunicating/gettersandsetters/get
 import { IntroductionComponent } from './comunicating/introduction/introduction.component';
 import { ViewchildandviewchildrenComponent } from './viewchildandviewchildren/viewchildandviewchildren.component';
 import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailviewchildren/detailviewchildren.component';
+import { RxComponent } from './rx/rx.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailvi
     IntroductionComponent,
     ViewchildandviewchildrenComponent,
     DetailviewchildrenComponent,
+    RxComponent,
   ],
   imports: [
     CommonModule,
