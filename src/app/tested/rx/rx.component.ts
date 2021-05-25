@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fromEvent, interval, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-rx',
   templateUrl: './rx.component.html',
-  styleUrls: ['./rx.component.scss']
+  styleUrls: ['./rx.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class RxComponent implements OnInit {
+export class RxComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
   ngOnInit(): void {
+
+
+  }
+  ngAfterViewInit(): void {
     const timeDiv = document.getElementById('times');
     const button = document.getElementById('timerButton');
     const timer$ = new Observable(subscribe => {
@@ -32,7 +37,5 @@ export class RxComponent implements OnInit {
     fromEvent(button, 'click').subscribe(event => {
       timerSubcritptions.unsubscribe();
     });
-
   }
-
 }
