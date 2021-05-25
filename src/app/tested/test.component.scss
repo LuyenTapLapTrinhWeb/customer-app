@@ -3,11 +3,27 @@
   flex-flow: column wrap;
   justify-content: space-around;
   list-style-type: none;
+  font-family: "Work Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
+    sans-serif;
   li {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, #007a78, #79fffd);
+    height: 6rem;
+    border-radius: 3px;
     font-family: Arial, "Courier New", serif;
     margin: 5px;
+    box-shadow: -1px -1px #ccc;
     a {
-      font-size: 20px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .graphic-text {
+      background: -webkit-linear-gradient(#ffc745, #ffb300);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fromEvent, interval } from 'rxjs';
+import { fromEvent, interval, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-rx',
@@ -13,7 +13,16 @@ export class RxComponent implements OnInit {
   ngOnInit(): void {
     const timeDiv = document.getElementById('times');
     const button = document.getElementById('timerButton');
-    const timer$ = interval(1000);
+    const timer$ = new Observable(subscribe => {
+      let i = 0;
+      const intervalID = setInterval(() => {
+        subscribe.next(i++);
+      }, 1000);
+      return () => {
+        console.log('Executing teardown code.');
+        clearInterval(intervalID);
+      };
+    });
 
     const timerSubcritptions = timer$.subscribe(
       value => timeDiv.innerHTML += `${new Date().toLocaleTimeString()} (${value}) <br>`,
@@ -23,6 +32,7 @@ export class RxComponent implements OnInit {
     fromEvent(button, 'click').subscribe(event => {
       timerSubcritptions.unsubscribe();
     });
+
   }
 
 }

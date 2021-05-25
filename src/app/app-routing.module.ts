@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'tested', loadChildren: () => import('./tested/test.module').then(m => m.TestModule) },
   { path: 'testapi', loadChildren: () => import('./testapi/testapi.module').then(m => m.TestapiModule) },
-  { path: '**', redirectTo: 'testapi', pathMatch: 'full' },
+  { path: '', loadChildren: () => import('./tested/test.module').then(m => m.TestModule) },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
