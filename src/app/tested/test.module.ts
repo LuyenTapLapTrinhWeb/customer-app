@@ -20,6 +20,8 @@ import { IntroductionComponent } from './comunicating/introduction/introduction.
 import { ViewchildandviewchildrenComponent } from './viewchildandviewchildren/viewchildandviewchildren.component';
 import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailviewchildren/detailviewchildren.component';
 import { RxComponent } from './rx/rx.component';
+import { RxOperatorComponent } from './rx/rx-operator/rx-operator.component';
+import { CancelingOservationComponent } from './rx/canceling-oservation/canceling-oservation.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { RxComponent } from './rx/rx.component';
     ViewchildandviewchildrenComponent,
     DetailviewchildrenComponent,
     RxComponent,
+    RxOperatorComponent,
+    CancelingOservationComponent,
   ],
   imports: [
     CommonModule,

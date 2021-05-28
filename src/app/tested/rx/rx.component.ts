@@ -1,41 +1,34 @@
-import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { fromEvent, interval, Observable } from 'rxjs';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-rx',
   templateUrl: './rx.component.html',
   styleUrls: ['./rx.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class RxComponent implements OnInit, AfterViewInit {
-
+  navbar: HTMLElement;
+  sticky: number;
   constructor() { }
 
   ngOnInit(): void {
-
-
   }
   ngAfterViewInit(): void {
-    const timeDiv = document.getElementById('times');
-    const button = document.getElementById('timerButton');
-    const timer$ = new Observable(subscribe => {
-      let i = 0;
-      const intervalID = setInterval(() => {
-        subscribe.next(i++);
-      }, 1000);
-      return () => {
-        console.log('Executing teardown code.');
-        clearInterval(intervalID);
-      };
-    });
-
-    const timerSubcritptions = timer$.subscribe(
-      value => timeDiv.innerHTML += `${new Date().toLocaleTimeString()} (${value}) <br>`,
-      null,
-      () => { console.log('All done!'); }
-    );
-    fromEvent(button, 'click').subscribe(event => {
-      timerSubcritptions.unsubscribe();
-    });
+    // When the user scrolls the page, execute myFunction
+    // window.onscroll = () => { this.myFunction(); };
+    // Get the navbar
+    this.navbar = document.getElementById('navbar');
+    this.sticky = this.navbar.offsetTop;
+    fromEvent(this.navbar, 'scroll').subscribe(event => { this.myFunction(); });
+  }
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  // tslint:disable-next-line:typedef
+  myFunction() {
+    // Get the offset position of the navbar
+    if (window.pageYOffset >= this.sticky) {
+      this.navbar.classList.add('sticky');
+    } else {
+      this.navbar.classList.remove('sticky');
+    }
   }
 }

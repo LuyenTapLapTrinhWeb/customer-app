@@ -8,7 +8,7 @@
   li {
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to bottom right, #007a78, #79fffd);
+    background-image: linear-gradient(to bottom right, #007a78, #2b9e9c);
     height: 6rem;
     border-radius: 3px;
     font-family: Arial, "Courier New", serif;
@@ -21,7 +21,7 @@
       width: 100%;
     }
     .graphic-text {
-      background: -webkit-linear-gradient(#ffc745, #ffb300);
+      background: -webkit-linear-gradient(#ffc745, #ffd87d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -29,7 +29,7 @@
 }
 .container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   font-size: 20px;
   width: 100%;
   min-width: 100%;
@@ -65,15 +65,34 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  li {
-    margin: 4px;
-    a {
-      font-size: 1rem;
+  .list-link-flex {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    flex-flow: row nowrap;
+    li {
+      height: 5rem;
+      border-radius: 4px;
+      margin: 0 3px;
+      width: 16rem;
+      a {
+        font-size: 1rem;
+      }
     }
   }
+  .container {
+    display: flex;
+    flex-flow: column;
+    font-size: 20px;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+
   .column {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     &--1 {
       width: auto;
     }

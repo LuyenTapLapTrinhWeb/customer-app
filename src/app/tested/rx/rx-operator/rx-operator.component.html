@@ -1,0 +1,18 @@
+<section>
+    <article class="blog-article">
+        <div class="blog-article-graphic">
+            <div class="blog-article-graphic-text">
+                <h1>Using Operators</h1>
+                <p>CATEGORIES OPERATOR OBSERVATION</p>
+            </div>
+        </div>
+    </article>
+    <article class="flex__card--container">
+        <mat-card class="flex__card--card" *ngFor="let item of items" [@transitionY]='state'>
+            <img mat-card-image class="img-responsive" [src]="item.svg" [alt]="item.name">
+            <mat-card-actions class="flex__card--actions">
+                <button mat-button class="flex__card--button">{{item.name | uppercase }}</button>
+            </mat-card-actions>
+        </mat-card>
+    </article>
+</section>
