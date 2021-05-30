@@ -41,6 +41,7 @@ article {
 .img-responsive {
   height: 197px;
   object-fit: cover;
+  opacity: 0.5;
 }
 .flex__card {
   &--container {
@@ -55,9 +56,24 @@ article {
     margin: 5px;
     width: 48%;
   }
+  &--card:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+    .img-responsive {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .actions {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s, transform 0.3s ease-in-out;
+    }
+  }
   &--actions {
     background-color: hsla(0, 0, 0, 0.84);
     color: rgba(255, 255, 255, 0.84);
+    opacity: 0.5;
+    transform: translateY(-5px);
   }
   &--button {
     width: 100%;

@@ -10,7 +10,7 @@
     <article class="flex__card--container">
         <mat-card class="flex__card--card" *ngFor="let item of items" [@transitionY]='state'>
             <img mat-card-image class="img-responsive" [src]="item.svg" [alt]="item.name">
-            <mat-card-actions class="flex__card--actions">
+            <mat-card-actions class="flex__card--actions actions">
                 <button mat-button class="flex__card--button">{{item.name | uppercase }}</button>
             </mat-card-actions>
         </mat-card>

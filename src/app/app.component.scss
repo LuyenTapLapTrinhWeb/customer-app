@@ -39,6 +39,7 @@
   height: 100%;
 }
 .active {
-  background: black !important;
-  color: white !important;
+  background: -webkit-linear-gradient(#ffc745, #ffd87d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

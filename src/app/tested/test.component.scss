@@ -20,12 +20,22 @@
       align-items: center;
       width: 100%;
     }
-    .graphic-text {
+    .graphic-text:hover {
+      background: -webkit-linear-gradient(#ffc745, #ffd87d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .graphic-text:active {
       background: -webkit-linear-gradient(#ffc745, #ffd87d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
+}
+.active {
+  background: -webkit-linear-gradient(#ffc745, #ffd87d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .container {
   display: flex;
