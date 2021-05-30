@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { AfterContentInit, AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
+import { BehaviorSubject, of, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { transitionPage } from 'src/app/animations/reuse/transitionPage.animation';
 import { transitionY } from 'src/app/animations/reuse/transitionTable.animation';
 import { CATEGORIESOPERATORS, CategoriesOperators } from './categoriesOperators';
@@ -11,21 +11,36 @@ import { CATEGORIESOPERATORS, CategoriesOperators } from './categoriesOperators'
   styleUrls: ['./rx-operator.component.scss'],
   animations: [transitionY(), transitionPage()]
 })
-export class RxOperatorComponent implements OnInit {
+export class RxOperatorComponent implements OnInit, OnChanges {
   state: string;
   items: CategoriesOperators[];
   url: string;
+  BASEURL: string;
+  items$: CategoriesOperators[];
   constructor() { }
 
   ngOnInit(): void {
+    this.BASEURL = 'http://localhost:3000/';
+    this.url = this.BASEURL + 'images/rxjs/';
     this.state = 'inactive';
-    const BASE_URL = 'http://localhost:3000/';
-    this.url = BASE_URL + 'images/rxjs/';
-    const items$ = of(CATEGORIESOPERATORS).pipe(
+    of(CATEGORIESOPERATORS).pipe(
       tap(data => console.log(data)),
-      map(items => items.map((item: CategoriesOperators) => { item.svg = this.url + item.svg + '.png'; return item; }))
+      map(items => items.map((item: CategoriesOperators) => {
+        item.svgUrl = '';
+        item.svgUrl = this.url + item.svg + '.png'; return item;
+      })),
+      catchError(error => throwError(error.message))
+    ).subscribe(
+      (items: CategoriesOperators[]) => {
+        this.items = items;
+        this.state = 'active';
+      },
+      error => console.log(error)
     );
-    items$.subscribe(items => { this.items = items; this.state = 'active'; });
   }
+  ngOnChanges(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
 
+  }
 }
