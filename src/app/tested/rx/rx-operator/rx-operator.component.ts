@@ -11,12 +11,11 @@ import { CATEGORIESOPERATORS, CategoriesOperators } from './categoriesOperators'
   styleUrls: ['./rx-operator.component.scss'],
   animations: [transitionY(), transitionPage()]
 })
-export class RxOperatorComponent implements OnInit, OnChanges {
+export class RxOperatorComponent implements OnInit {
   state: string;
-  items: CategoriesOperators[];
   url: string;
   BASEURL: string;
-  items$: CategoriesOperators[];
+  items: CategoriesOperators[];
   constructor() { }
 
   ngOnInit(): void {
@@ -27,7 +26,8 @@ export class RxOperatorComponent implements OnInit, OnChanges {
       tap(data => console.log(data)),
       map(items => items.map((item: CategoriesOperators) => {
         item.svgUrl = '';
-        item.svgUrl = this.url + item.svg + '.png'; return item;
+        item.svgUrl = this.url + item.svg + '.png';
+        return item;
       })),
       catchError(error => throwError(error.message))
     ).subscribe(
@@ -35,12 +35,7 @@ export class RxOperatorComponent implements OnInit, OnChanges {
         this.items = items;
         this.state = 'active';
       },
-      error => console.log(error)
+      error => console.error(error)
     );
-  }
-  ngOnChanges(): void {
-    //Called after ngOnInit when the component's or directive's content has been initialized.
-    //Add 'implements AfterContentInit' to the class.
-
   }
 }
