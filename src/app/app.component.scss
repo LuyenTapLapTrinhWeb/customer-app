@@ -34,9 +34,10 @@
   padding: 0;
   background-image: url("../../public/images/avatar/cat-217679.jpg");
   object-fit: cover;
+  height: 100%;
 }
 .active {
   background: -webkit-linear-gradient(#ffc745, #ffd87d);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }

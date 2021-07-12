@@ -1,0 +1,126 @@
+<div class="app-aside">
+    <h1 class="app-aside-title">SNOWSTORM FHIR {{version}}</h1>
+    <h3 class="app-aside-introduction">
+        <a routerLink="/home" fragment="introduction" class="app-aside-introduction-subtitle">Introduction</a>
+    </h3>
+    <ul class="app-aside-category" id="myUL" #myUL>
+        <li class="app-aside-category-api caret-container">
+            <div class="app-aside-category-api-arrowfolder">
+                <mat-icon class="caret">arrow_right</mat-icon>
+                <!-- <mat-icon>arrow_drop_down</mat-icon> -->
+                <mat-icon>folder</mat-icon>
+                <!-- <mat-icon>folder_open</mat-icon> -->
+                <span class="app-aside-category-api-arrowfolder-title">
+                    <a routerLink="/home" fragment="codesystem">CodeSystem</a>
+                </span>
+            </div>
+            <ul class="app-aside-category-api-links nested">
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a routerLink="/home" fragment="getaconceptbasedonidentifier"
+                        class="app-aside-category-api-links-api-title noaction">Get a concept based on identifier</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a routerLink="/home" fragment="testforconceptsubsumption"
+                        class="app-aside-category-api-links-api-title noaction">Test for concept subsumption </a>
+                </li>
+            </ul>
+        </li>
+        <li class="app-aside-category-api caret-container">
+            <div class="app-aside-category-api-arrowfolder">
+                <mat-icon class="caret">arrow_right</mat-icon>
+                <!-- <mat-icon>arrow_drop_down</mat-icon> -->
+                <mat-icon>folder</mat-icon>
+                <!-- <mat-icon>folder_open</mat-icon> -->
+                <span class="app-aside-category-api-arrowfolder-title"><a href="valueset">ValueSet</a></span>
+            </div>
+            <ul class="app-aside-category-api-links nested">
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Validate code</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Search for concepts lexically</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Search for a term in Spanish</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">List all the descendants of a given concept</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Get all available refsets</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Run an ECL query</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">List all members of a given refset</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Search a valueset for a given term</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Expand an intensional refset with all Swedish and
+                        English
+                        descriptions</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="put">PUT</span></a>
+                    <a class="app-aside-category-api-links-api-title">Create a valueset</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="put">PUT</span></a>
+                    <a class="app-aside-category-api-links-api-title">Create an intensional valueset</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">List all valuesets on instance</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Expand an intensional valueset</a>
+                </li>
+            </ul>
+        </li>
+        <li class="app-aside-category-api caret-container">
+            <div class="app-aside-category-api-arrowfolder">
+                <mat-icon class="caret">arrow_right</mat-icon>
+                <!-- <mat-icon>arrow_drop_down</mat-icon> -->
+                <mat-icon>folder</mat-icon>
+                <!-- <mat-icon>folder_open</mat-icon> -->
+                <span class="app-aside-category-api-arrowfolder-title"><a href="conceptmap">ConceptMap</a></span>
+            </div>
+            <ul class="app-aside-category-api-links nested">
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Get ICD-10 map target for a given</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Get all map targets for a given con</a>
+                </li>
+                <li class="app-aside-category-api-links-api">
+                    <a class="app-aside-category-api-links-api-text"><span class="get">GET</span></a>
+                    <a class="app-aside-category-api-links-api-title">Find the "SAME AS" target for inac</a>
+                </li>
+            </ul>
+        </li>
+        <li class="app-aside-category-api caret-container">
+            <div class="app-aside-category-api-arrowfolder">
+                <a class="app-aside-category-api-arrowfolder-text"><span class="get">GET</span></a>
+                <a class="app-aside-category-api-arrowfolder-title" href="servercapabilitystatement">Server capability
+                    statement</a>
+            </div>
+        </li>
+    </ul>
+</div>
