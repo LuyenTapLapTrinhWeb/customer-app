@@ -1,12 +1,9 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, EventEmitter, Inject, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-// import { THE_THUOC_DVS } from 'src/app/entities/DanhMuc/THE_THUOC_DVS';
-// import { THUOC } from 'src/app/entities/DanhMuc/THUOC';
 import { ELEMENT_DATA, PeriodicElement } from './PeriodicElement';
 
 
@@ -62,16 +59,18 @@ export class ThuocTanDuocComponent implements OnInit, AfterViewInit {
       'font-family': 'Roboto',
       'font-style': 'normal',
       'font-weight': '300',
-      'font-size': '$btn-control-font-size',
+      'font-size': '1rem',
       'line-height': '21px',
       transform: 'translateY(0)',
       'box-shadow': '0px 0 0 black',
       transition: 'all 0.1s ease-in-out',
       'border-radius': '4px',
-      margin: '1px',
+      margin: '0 8px',
+      padding: 0
     };
     this.matMenuItemMatIcon = {
-      margin: 0
+      margin: 0,
+      color: '#316ffa'
     };
   }
   ngAfterViewInit(): void {

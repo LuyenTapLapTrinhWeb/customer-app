@@ -38,10 +38,11 @@
                 <mat-card>
                     <mat-card-title>
                         <div class="containers">
-                            <div class="search">
-                                <form class="example-form" [formGroup]="filterListForm">
-                                    <mat-form-field class="example-full-width" appearance="fill">
-                                        <mat-label>Tìm thuốc tân dược theo tên thuốc</mat-label>
+                            <div class="containers-table-filter">
+                                <form class="containers-table-filter-form" [formGroup]="filterListForm">
+                                    <mat-form-field class="containers-table-filter-form-field" appearance="fill">
+                                        <mat-label class="containers-table-filter-form-field-label">Tìm thuốc tân dược
+                                            theo tên thuốc</mat-label>
                                         <input matInput name="inputFilterList" placeholder="Ex. Paracetamol"
                                             [(ngModel)]="value" formControlName="inputFilterList"
                                             (keyup)="applyFilter($event.target.value)">
@@ -104,7 +105,7 @@
                                             <mat-icon>more_vert</mat-icon>
                                         </button>
                                         <mat-menu #menu="matMenu">
-                                            <a mat-menu-item [ngclass]="matMenuItem">
+                                            <a mat-menu-item [ngStyle]="matMenuItem">
                                                 <mat-icon [ngStyle]="matMenuItemMatIcon">edit</mat-icon>
                                                 <span class="text">Sửa bản ghi</span>
                                             </a>

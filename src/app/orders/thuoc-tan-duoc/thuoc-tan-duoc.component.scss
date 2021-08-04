@@ -55,7 +55,12 @@ $btn-report-font-size: 0.75rem;
           background: #0e8cc1;
           border-radius: 4px;
           margin-top: 8px;
-          position: unset;
+          position: initial;
+        }
+        @media only screen and (max-width: 425px) {
+          position: fixed;
+          z-index: 1000;
+          bottom: 0;
         }
         &-add-button {
           font-size: $btn-control-font-size !important;
@@ -116,6 +121,22 @@ $btn-report-font-size: 0.75rem;
         overflow: auto;
       }
 
+      &-filter {
+        width: 100%;
+        &-form {
+          min-width: 100%;
+          max-width: 100%;
+          width: 100%;
+          &-field {
+            width: 100%;
+            &-label {
+              @media only screen and (max-width: 425px) {
+                font-size: 0.8em !important;
+              }
+            }
+          }
+        }
+      }
       &-more-vert-button {
         display: flex;
         justify-content: center;
@@ -197,18 +218,11 @@ $btn-report-font-size: 0.75rem;
     align-items: center;
   }
 
-  .example-form {
-    min-width: 100%;
-    max-width: 100%;
-    width: 100%;
-  }
-  .example-full-width,
   .full-width,
   .search,
   .banner {
     width: 100%;
   }
-
   table {
     width: 100%;
   }
