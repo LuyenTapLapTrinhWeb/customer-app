@@ -1,0 +1,26 @@
+<mat-card class="containers-table">
+    <mat-card-title>
+        <section class="containers-table-filter">
+            <form class="containers-table-filter-form" [formGroup]="filterListForm">
+                <mat-form-field class="containers-table-filter-form-field" appearance="fill">
+                    <mat-label class="containers-table-filter-form-field-label">Tìm thuốc tân dược
+                        theo tên thuốc</mat-label>
+                    <input matInput name="inputFilterList" placeholder="Ex. Paracetamol" [(ngModel)]="value"
+                        formControlName="inputFilterList" (keyup)="applyFilter($event.target.value)">
+                    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" color="primary"
+                        (click)="value=''" class="no-outline clear-button">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </form>
+        </section>
+        <section class="containers-table-report-section">
+            <button mat-raised-button color="primary" class="containers-table-report-section-report-button"
+                (click)="ganTheThuoc()">
+                <mat-icon>report_problem</mat-icon> <span>Gắn thẻ đầu vào sai</span>
+            </button>
+            <mat-checkbox class="containers-table-report-section-margin">Hiển Thị thuốc được gắn thẻ</mat-checkbox>
+        </section>
+    </mat-card-title>
+    <app-screen-list-table [dataSource]="dataSource"></app-screen-list-table>
+</mat-card>

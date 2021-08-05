@@ -1,44 +1,29 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { ELEMENT_DATA, PeriodicElement } from '../PeriodicElement';
+import { PeriodicElement } from '../PeriodicElement';
 @Component({
-  selector: 'app-screen-list-item',
-  templateUrl: './screen-list-item.component.html',
-  styleUrls: ['./screen-list-item.component.scss']
+  selector: 'app-screen-list-table',
+  templateUrl: './screen-list-table.component.html',
+  styleUrls: ['./screen-list-table.component.scss']
 })
-export class ScreenListItemComponent implements OnInit, AfterViewInit {
-  value = 'Clear me';
-  filterListForm: FormGroup;
-  isScreenSmall425px!: boolean;
-  // tslint:disable-next-line:variable-name
+export class ScreenListTableComponent implements OnInit {
+
   matMenu: any;
   matMenuItem: any;
   matMenuItemMatIcon: any;
 
-  // tslint:disable-next-line:typedef
-  get inputFilterList() {
-    return this.filterListForm.get('inputFilterList')?.value;
-  }
-  // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-
+  @Input() dataSource: any;
   displayedColumns: string[] = ['name', 'position', 'weight', 'symbol', 'star'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
+
 
   // tslint:disable-next-line:no-output-rename
   @Output('outSelectedRow') outSelectedRow = new EventEmitter<PeriodicElement>();
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  constructor() {
 
-  constructor(private fb: FormBuilder) {
-    this.filterListForm = fb.group({
-      inputFilterList: ''
-    });
   }
 
   ngOnInit(): void {
@@ -73,16 +58,6 @@ export class ScreenListItemComponent implements OnInit, AfterViewInit {
     };
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-  applyFilter(filterBy: string): void {
-    this.dataSource.filter = filterBy.trim().toLowerCase();
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
   onSelectedRow(selectedRow: PeriodicElement): void {
     this.dataSource.data.forEach(rows => {
       if (selectedRow === rows) {
@@ -93,6 +68,5 @@ export class ScreenListItemComponent implements OnInit, AfterViewInit {
       }
     });
   }
-  ganTheThuoc(): void { }
-  suaBanGhi(): void { }
+
 }

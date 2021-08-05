@@ -1,0 +1,48 @@
+.mat-card-table {
+  max-height: 450px !important;
+  overflow: auto;
+  table {
+    width: 100%;
+  }
+  .mat-row.hovered {
+    background: #eee;
+  }
+
+  .mat-row.highlighted {
+    background: #e3e9fc;
+  }
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+    @media screen and (max-width: 425px) {
+      width: 100%;
+    }
+  }
+
+  th.mat-column-position,
+  td.mat-column-position {
+    padding-left: 8px;
+  }
+
+  .mat-table-sticky:first-child {
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .mat-table-sticky:last-child {
+    border-left: 1px solid #e0e0e0;
+  }
+  .filter-list-result {
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+  }
+  .clear-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c4c4c4;
+  }
+  .no-outline {
+    outline: 0;
+  }
+}
