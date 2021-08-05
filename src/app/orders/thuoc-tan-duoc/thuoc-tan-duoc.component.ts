@@ -1,6 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { PeriodicElement } from './PeriodicElement';
+import { Component } from '@angular/core';
 
 
 @Component({
