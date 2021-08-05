@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-add-button-bar',
-  templateUrl: './add-button-bar.component.html',
-  styleUrls: ['./add-button-bar.component.scss']
+  selector: 'app-screen-bar',
+  templateUrl: './screen-bar.component.html',
+  styleUrls: ['./screen-bar.component.scss']
 })
-export class AddButtonBarComponent implements OnInit {
+export class ScreenBarComponent implements OnInit {
 
   constructor() { }
 

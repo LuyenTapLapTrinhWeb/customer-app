@@ -7,17 +7,17 @@ import { MaterialModule } from '../shared/material/material.module';
 import { SharingModule } from '../shared/sharing.module';
 import { ThuocTanDuocComponent } from './thuoc-tan-duoc/thuoc-tan-duoc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddButtonBarComponent } from './thuoc-tan-duoc/add-button-bar-title/add-button-bar.component';
 import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/screen-list-table.component';
 import { ScreenListComponent } from './thuoc-tan-duoc/screen-list/screen-list.component';
+import { ScreenBarComponent } from './thuoc-tan-duoc/screen-bar/screen-bar.component';
 
 @NgModule({
   declarations: [
     OrdersComponent,
     ThuocTanDuocComponent,
-    AddButtonBarComponent,
     ScreenListTableComponent,
-    ScreenListComponent
+    ScreenListComponent,
+    ScreenBarComponent
   ],
   imports: [
     FormsModule,
