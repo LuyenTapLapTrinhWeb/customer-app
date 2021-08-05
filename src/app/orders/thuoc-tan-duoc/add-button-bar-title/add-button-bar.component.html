@@ -1,0 +1,27 @@
+<div class="containers-banner">
+    <h1 class="containers-banner-title">Danh mục thuốc tân dược</h1>
+    <div class="containers-banner-group-button">
+        <button mat-button color="primary" class="containers-banner-group-button-add-button"
+            [routerLink]="['/thuoc-tan-duoc', 0, 'guide']" routerLinkActive="router-link-active" (click)="huongDan()">
+            <span class="containers-banner-group-button-add-button-icon">
+                <mat-icon>help_outline</mat-icon>
+                <span class="text">Hướng dẫn</span>
+            </span>
+        </button>
+        <button mat-button color="primary" class="containers-banner-group-button-add-button"
+            [routerLink]="['/thuoc-tan-duoc', 0, 'refresh']" routerLinkActive="router-link-active"
+            (click)="capNhatDanhSach()">
+            <span class="containers-banner-group-button-add-button-icon">
+                <mat-icon>refresh</mat-icon>
+                <span class="text">Cập nhật danh sách</span>
+            </span>
+        </button>
+        <button mat-button color="primary" class="containers-banner-group-button-add-button"
+            [routerLink]="['/thuoc-tan-duoc', 0, 'edit']" routerLinkActive="router-link-active" (click)="themBanGhi()">
+            <span class="containers-banner-group-button-add-button-icon">
+                <mat-icon>add</mat-icon>
+                <span class="text">Thêm bản ghi mới</span>
+            </span>
+        </button>
+    </div>
+</div>

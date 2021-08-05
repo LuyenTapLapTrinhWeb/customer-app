@@ -1,0 +1,103 @@
+$btn-control-font-size: 1rem;
+$btn-report-font-size: 0.75rem;
+
+.containers-banner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  @media only screen and (max-width: 425px) {
+    flex-flow: column;
+    position: unset;
+  }
+  &-title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    background: #1690c4;
+    color: #fff;
+    margin: 0;
+    padding: 16px;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  &-group-button {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    @media only screen and (max-width: 768px) {
+      padding: 16px;
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      background: #0e8cc1;
+      border-radius: 4px;
+      margin-top: 8px;
+      position: initial;
+    }
+    @media only screen and (max-width: 425px) {
+      position: fixed;
+      z-index: 2;
+      bottom: 0;
+      height: 5em;
+      padding: 0;
+      margin: 0;
+    }
+    &-add-button {
+      font-size: $btn-control-font-size !important;
+      background: rgb(221 104 47 / 100%);
+      color: #fff;
+      width: 200px;
+      margin-right: 16px;
+      border-radius: 4px;
+      /* animation add-button */
+      transform: translateY(0);
+      box-shadow: 0px 0 0 black;
+      transition: all 0.1s ease-in-out;
+      @media only screen and (max-width: 768px) {
+        width: 29%;
+        height: 2em;
+        margin: 8px;
+      }
+      &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        .mat-icon {
+          margin-right: 8px;
+        }
+        @media screen and (max-width: 425px) {
+          .text {
+            display: none;
+          }
+          .mat-icon {
+            margin: 0;
+          }
+        }
+      }
+    }
+    &-add-button:hover {
+      /* animation add-button */
+      background: rgb(221 104 47 / 100%);
+      box-shadow: 0px 3px 3px 3px hsl(0, 1%, 27%, 50%);
+      transition: all 0.1s ease-in-out;
+    }
+    &-add-button:active {
+      /* animation add-button */
+      transform: translateY(1px);
+      box-shadow: 0 0 0 black;
+      transition: all 0.1s ease-in-out;
+    }
+    &-add-button:focus {
+      outline: 0;
+      box-shadow: 0px 3px 3px 3px hsl(0, 1%, 27%, 50%);
+    }
+  }
+}
