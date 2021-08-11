@@ -3,16 +3,7 @@
         <app-screen-bar class="containers"></app-screen-bar>
     </article>
     <article>
-        <app-screen-list class="containers"></app-screen-list>
-    </article>
-    <article>
-        <div class="containers">
-            <!-- <div class="spinner">
-                <ngx-spinner bdColor="rgba(0, 0, 0, 0.5)" size="medium" color="#fff" type="ball-spin"
-                    [fullScreen]="false">
-                    <p style="color: white;">Vui lòng chờ</p>
-                </ngx-spinner>
-            </div> -->
-        </div>
+        <app-screen-list class="containers" (suaBanGhiEventEmitterRootParent)="suaBanGhi($event)"
+            (xoaBanGhiEventEmitterRootParent)="xoaBanGhi($event)"></app-screen-list>
     </article>
 </section>

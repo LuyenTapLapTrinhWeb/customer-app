@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 
 
 @Component({
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./thuoc-tan-duoc.component.scss']
 })
 export class ThuocTanDuocComponent {
-
+  suaBanGhi(periodicElement: PeriodicElement): void {
+    console.log('root parent sua', periodicElement);
+  }
+  xoaBanGhi(periodicElement: PeriodicElement): void {
+    console.log('root parent xoa', periodicElement);
+  }
 }

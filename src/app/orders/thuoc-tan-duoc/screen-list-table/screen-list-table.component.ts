@@ -2,7 +2,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { matMenu, matMenuItem, matMenuItemMatIcon } from '../MenuProperties.css';
+import { matMenu, matMenuItem, matMenuItemMatIcon } from './edit-button.css';
 import { PeriodicElement } from '../PeriodicElement';
 @Component({
   selector: 'app-screen-list-table',
@@ -25,7 +25,8 @@ export class ScreenListTableComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:no-output-rename
   @Output('outSelectedRow') outSelectedRow = new EventEmitter<PeriodicElement>();
-
+  @Output() suaBanGhiEventEmitter = new EventEmitter<PeriodicElement>();
+  @Output() xoaBanGhiEventEmitter = new EventEmitter<PeriodicElement>();
   constructor() {
 
   }
@@ -50,5 +51,10 @@ export class ScreenListTableComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
+  suaBanGhi(periodicElement: PeriodicElement): void {
+    this.suaBanGhiEventEmitter.emit(periodicElement);
+  }
+  xoaBanGhi(periodicElement: PeriodicElement): void {
+    this.xoaBanGhiEventEmitter.emit(periodicElement);
+  }
 }

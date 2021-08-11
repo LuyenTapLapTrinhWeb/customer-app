@@ -22,5 +22,7 @@
             <mat-checkbox class="containers-table-report-section-margin">Hiển Thị thuốc được gắn thẻ</mat-checkbox>
         </section>
     </mat-card-title>
-    <app-screen-list-table [dataSource]="dataSource"></app-screen-list-table>
+    <app-screen-list-table [dataSource]="dataSource" (suaBanGhiEventEmitter)="suaBanGhi($event)"
+        (xoaBanGhiEventEmitter)="xoaBanGhi($event)">
+    </app-screen-list-table>
 </mat-card>

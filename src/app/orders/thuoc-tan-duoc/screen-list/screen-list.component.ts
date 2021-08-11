@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
@@ -13,6 +13,10 @@ export class ScreenListComponent {
   value = 'Clear me';
   filterListForm: FormGroup;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+
+  @Output() suaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
+  @Output() xoaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
   // tslint:disable-next-line:typedef
   get inputFilterList() {
     return this.filterListForm.get('inputFilterList')?.value;
@@ -29,5 +33,12 @@ export class ScreenListComponent {
     }
   }
   ganTheThuoc(): void { }
-  suaBanGhi(): void { }
+  suaBanGhi(selectedRow: PeriodicElement): void {
+    console.log('parrent sua', selectedRow);
+    this.suaBanGhiEventEmitterRootParent.emit(selectedRow);
+  }
+  xoaBanGhi(selectedRow: PeriodicElement): void {
+    console.log('parrent xoa', selectedRow);
+    this.xoaBanGhiEventEmitterRootParent.emit(selectedRow);
+  }
 }

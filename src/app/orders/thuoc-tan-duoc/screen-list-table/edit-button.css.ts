@@ -1,5 +1,12 @@
 const MATMENU = {
-    border: 'thin dashed #0E8CC1 !important'
+    'padding-top': '8px',
+    'padding-bottom': '8px',
+    display: 'flex',
+    'align-items': 'center',
+    margin: '8px',
+    'background-color': '#168FC4',
+    'border-radius': '25px 10px 25px 10px',
+
 };
 const MATMENUITEM = {
     display: 'flex',
@@ -8,8 +15,8 @@ const MATMENUITEM = {
     'align-items': 'center',
     'box-sizing': 'border-box',
     'min-width': '40px',
-    border: '1px solid #316ffa',
-    color: '#316ffa',
+    'min-height': '40px',
+    color: '#168FC4',
     'font-family': 'Roboto',
     'font-style': 'normal',
     'font-weight': '300',
@@ -18,13 +25,17 @@ const MATMENUITEM = {
     transform: 'translateY(0)',
     'box-shadow': '0px 0 0 black',
     transition: 'all 0.1s ease-in-out',
-    'border-radius': '4px',
-    margin: '0 8px',
-    padding: 0
+    background: '#DD682F',
+    outline: 0,
+    border: '1px solid #168FC4',
+    'border-radius': '50%',
+    'margin-right': '8px',
+    cursor: 'pointer',
 };
 const MATMENUITEMMATICON = {
     margin: 0,
-    color: '#316ffa'
+    color: '#fff',
+    'border-radius': '50%'
 };
 export {
     MATMENU as matMenu,

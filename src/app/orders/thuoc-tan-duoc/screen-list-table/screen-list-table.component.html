@@ -37,10 +37,16 @@
                         <mat-icon>more_vert</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <a mat-menu-item [ngStyle]="matMenuItem">
-                            <mat-icon [ngStyle]="matMenuItemMatIcon">edit</mat-icon>
-                            <span class="text">Sửa bản ghi</span>
-                        </a>
+                        <div mat-menu-item [ngStyle]="matMenu">
+                            <button [ngStyle]="matMenuItem" (click)="suaBanGhi(element)">
+                                <mat-icon [ngStyle]="matMenuItemMatIcon">edit</mat-icon>
+                                <!-- <span class="text">Sửa bản ghi</span> -->
+                            </button>
+                            <button [ngStyle]="matMenuItem" (click)="xoaBanGhi(element)">
+                                <mat-icon [ngStyle]="matMenuItemMatIcon">delete</mat-icon>
+                                <!-- <span class="text">Xóa bản ghi</span> -->
+                            </button>
+                        </div>
                     </mat-menu>
                 </td>
             </ng-container>
