@@ -8,8 +8,8 @@ import { SharingModule } from '../shared/sharing.module';
 import { ThuocTanDuocComponent } from './thuoc-tan-duoc/thuoc-tan-duoc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/screen-list-table.component';
-import { ScreenListComponent } from './thuoc-tan-duoc/screen-list/screen-list.component';
-import { ScreenBarComponent } from './thuoc-tan-duoc/screen-bar/screen-bar.component';
+import { ScreenListComponent } from './thuoc-tan-duoc/screen-list-search/screen-list.component';
+import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-add/screen-bar.component';
 
 @NgModule({
   declarations: [

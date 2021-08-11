@@ -36,4 +36,21 @@ $btn-report-font-size: 0.75rem;
       }
     }
   }
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 2em;
+    border: 1px solid #0e8cc1;
+    background-color: #fff;
+  }
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  .clear-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c4c4c4;
+  }
+  .no-outline {
+    outline: 0;
+  }
 }

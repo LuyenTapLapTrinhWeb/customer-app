@@ -64,6 +64,8 @@ $btn-report-font-size: 0.75rem;
   }
   table {
     width: 100%;
+    border: 1px solid rgb(196, 196, 196, 50%);
+    border-radius: 10px;
   }
   .mat-row.hovered {
     background: #eee;
@@ -96,14 +98,5 @@ $btn-report-font-size: 0.75rem;
     font-size: 14px;
     font-weight: 300;
     color: red;
-  }
-  .clear-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #c4c4c4;
-  }
-  .no-outline {
-    outline: 0;
   }
 }

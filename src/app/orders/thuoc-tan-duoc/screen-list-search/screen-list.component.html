@@ -14,13 +14,6 @@
                 </mat-form-field>
             </form>
         </section>
-        <section class="containers-table-report-section">
-            <button mat-raised-button color="primary" class="containers-table-report-section-report-button"
-                (click)="ganTheThuoc()">
-                <mat-icon>report_problem</mat-icon> <span>Gắn thẻ đầu vào sai</span>
-            </button>
-            <mat-checkbox class="containers-table-report-section-margin">Hiển Thị thuốc được gắn thẻ</mat-checkbox>
-        </section>
     </mat-card-title>
     <app-screen-list-table [dataSource]="dataSource" (suaBanGhiEventEmitter)="suaBanGhi($event)"
         (xoaBanGhiEventEmitter)="xoaBanGhi($event)">
