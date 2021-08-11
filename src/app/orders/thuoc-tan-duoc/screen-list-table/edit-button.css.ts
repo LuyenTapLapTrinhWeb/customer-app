@@ -1,12 +1,11 @@
 const MATMENU = {
-    'padding-top': '8px',
-    'padding-bottom': '8px',
+    padding: '0',
+    margin: '5px 4px',
     display: 'flex',
     'align-items': 'center',
-    margin: '8px',
+    'justify-content': 'space-around',
     'background-color': '#168FC4',
-    'border-radius': '25px 10px 25px 10px',
-
+    'border-radius': '10px',
 };
 const MATMENUITEM = {
     display: 'flex',
@@ -25,11 +24,10 @@ const MATMENUITEM = {
     transform: 'translateY(0)',
     'box-shadow': '0px 0 0 black',
     transition: 'all 0.1s ease-in-out',
-    background: '#DD682F',
+    background: '#FFB65E',
     outline: 0,
     border: '1px solid #168FC4',
     'border-radius': '50%',
-    'margin-right': '8px',
     cursor: 'pointer',
 };
 const MATMENUITEMMATICON = {

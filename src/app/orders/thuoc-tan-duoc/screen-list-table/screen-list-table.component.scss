@@ -99,4 +99,7 @@ $btn-report-font-size: 0.75rem;
     font-weight: 300;
     color: red;
   }
+  ::ng-deep .mat-menu-content {
+    background-color: #0e8cc1 !important;
+  }
 }
