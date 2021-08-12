@@ -1,5 +1,5 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { matMenu, matMenuItem, matMenuItemMatIcon } from './edit-button.css';
@@ -7,7 +7,7 @@ import { PeriodicElement } from '../PeriodicElement';
 @Component({
   selector: 'app-screen-list-table',
   templateUrl: './screen-list-table.component.html',
-  styleUrls: ['./screen-list-table.component.scss']
+  styleUrls: ['./screen-list-table.component.scss'],
 })
 export class ScreenListTableComponent implements OnInit, AfterViewInit {
 

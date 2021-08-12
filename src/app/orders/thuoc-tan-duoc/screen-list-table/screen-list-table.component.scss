@@ -61,12 +61,13 @@ $btn-color-morvert: #0e8cc1;
   table {
     width: 100%;
     border: 1px solid rgb(196, 196, 196, 50%);
-    border-radius: 10px;
   }
   .mat-row.hovered {
     background: #eee;
   }
-
+  ::ng-deep div.mat-sort-header-content {
+    color: $btn-color-morvert;
+  }
   .mat-row.highlighted {
     background: #e3e9fc;
   }
@@ -97,5 +98,10 @@ $btn-color-morvert: #0e8cc1;
   }
   ::ng-deep .mat-menu-content {
     background-color: $btn-color-morvert !important;
+  }
+}
+.paginator {
+  ::ng-deep .mat-paginator-container {
+    color: rgb(14 140 193 / 84%) !important;
   }
 }

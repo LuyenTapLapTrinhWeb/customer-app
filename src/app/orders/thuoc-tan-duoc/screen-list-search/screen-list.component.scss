@@ -29,6 +29,7 @@ $btn-report-font-size: 0.75rem;
       &-field {
         width: 100%;
         &-label {
+          color: rgb(14 140 193/84%);
           @media only screen and (max-width: 425px) {
             font-size: 0.8em !important;
           }
