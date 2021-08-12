@@ -35,11 +35,11 @@
                     <mat-menu #menu="matMenu">
                         <div mat-menu-item [ngStyle]="matMenu">
                             <button [ngStyle]="matMenuItem" (click)="suaBanGhi(element)">
-                                <mat-icon [ngStyle]="matMenuItemMatIcon">edit</mat-icon>
+                                <mat-icon [ngStyle]="matMenuItemMatIcon" svgIcon="edit-pencil"></mat-icon>
                                 <!-- <span class="text">Sửa bản ghi</span> -->
                             </button>
                             <button [ngStyle]="matMenuItem" (click)="xoaBanGhi(element)">
-                                <mat-icon [ngStyle]="matMenuItemMatIcon">delete</mat-icon>
+                                <mat-icon [ngStyle]="matMenuItemMatIcon" svgIcon="delete-recycle-bin"></mat-icon>
                                 <!-- <span class="text">Xóa bản ghi</span> -->
                             </button>
                         </div>

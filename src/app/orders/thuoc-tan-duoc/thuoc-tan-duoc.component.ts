@@ -19,6 +19,7 @@ export class ThuocTanDuocComponent {
   }
   constructor(private svgicon: SvgIconLiteralService) {
     // this.svgicon.addMatIconSvgCustomObservable('ADD_ICON');
-    this.svgicon.addMultiMatIconSvgCustomObservable(['ADD_ICON', 'REFRESH_ICON', 'QUESTION_MARK']);
+    this.svgicon.addMultiMatIconSvgCustomObservable(
+      ['ADD_ICON', 'REFRESH_ICON', 'QUESTION_MARK', 'delete-recycle-bin', 'edit-pencil']);
   }
 }

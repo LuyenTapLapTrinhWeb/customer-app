@@ -1,5 +1,6 @@
 $btn-control-font-size: 1rem;
 $btn-report-font-size: 0.75rem;
+$btn-color-morvert: #0e8cc1;
 .mat-card-table {
   max-height: 450px !important;
   overflow: auto;
@@ -14,14 +15,9 @@ $btn-report-font-size: 0.75rem;
     @media screen and (max-width: 425px) {
       width: auto;
     }
-    border: 1px solid #316ffa;
+    border: 1px solid $btn-color-morvert;
     /* typography */
-    color: #316ffa;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: $btn-control-font-size;
-    line-height: 21px;
+    color: $btn-color-morvert;
     /* animation add-button */
     transform: translateY(0);
     box-shadow: 0px 0 0 black;
@@ -45,7 +41,7 @@ $btn-report-font-size: 0.75rem;
     }
   }
   &-more-vert-button:hover {
-    background-color: #316ffa;
+    background-color: $btn-color-morvert;
     color: #fff;
     /* animation add-button */
     box-shadow: 0px 3px 3px 3px hsl(0, 1%, 27%, 50%);
@@ -59,7 +55,7 @@ $btn-report-font-size: 0.75rem;
   }
   &-more-vert-button:focus {
     outline: 0;
-    background-color: #316ffa;
+    background-color: $btn-color-morvert;
     color: #fff;
   }
   table {
@@ -100,6 +96,6 @@ $btn-report-font-size: 0.75rem;
     color: red;
   }
   ::ng-deep .mat-menu-content {
-    background-color: #0e8cc1 !important;
+    background-color: $btn-color-morvert !important;
   }
 }

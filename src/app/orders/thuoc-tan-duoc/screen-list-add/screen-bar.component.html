@@ -5,7 +5,7 @@
             [routerLink]="['/thuoc-tan-duoc', 0, 'refresh']" routerLinkActive="router-link-active"
             (click)="capNhatDanhSach()">
             <span class="containers-banner-group-button-add-button-icon">
-                <mat-icon>refresh</mat-icon>
+                <mat-icon svgIcon="REFRESH_ICON"></mat-icon>
                 <!-- <span class="text">Cập nhật danh sách</span> -->
             </span>
         </button>
@@ -19,7 +19,8 @@
         <button mat-button color="primary" class="containers-banner-group-button-add-button"
             [routerLink]="['/thuoc-tan-duoc', 0, 'guide']" routerLinkActive="router-link-active" (click)="huongDan()">
             <span class="containers-banner-group-button-add-button-icon">
-                <mat-icon>help_outline</mat-icon>
+                <!-- <mat-icon>help_outline</mat-icon> -->
+                <mat-icon svgIcon="QUESTION_MARK"></mat-icon>
                 <!-- <span class="text">Hướng dẫn</span> -->
             </span>
         </button>
