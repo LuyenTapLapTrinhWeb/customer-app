@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { tap } from 'rxjs/operators';
+import { ISvgIconLiteral } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.interface';
+import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 
 
@@ -13,5 +16,9 @@ export class ThuocTanDuocComponent {
   }
   xoaBanGhi(periodicElement: PeriodicElement): void {
     console.log('root parent xoa', periodicElement);
+  }
+  constructor(private svgicon: SvgIconLiteralService) {
+    // this.svgicon.addMatIconSvgCustomObservable('ADD_ICON');
+    this.svgicon.addMultiMatIconSvgCustomObservable(['ADD_ICON', 'REFRESH_ICON', 'QUESTION_MARK']);
   }
 }
