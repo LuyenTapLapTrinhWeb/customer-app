@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Codetogether1Component } from './tested/codetogether1/codetogether1.component';
-import { OpenclosedComponent } from './tested/openclosed/openclosed.component';
-import { TodosComponent } from './tested/todos/todos.component';
 
 const routes: Routes = [
   { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },

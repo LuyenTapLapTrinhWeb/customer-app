@@ -12,6 +12,7 @@ import { OpenclosedComponent } from './tested/openclosed/openclosed.component';
 import { Codetogether1Component } from './tested/codetogether1/codetogether1.component';
 import { TestModule } from './tested/test.module';
 import { TestapiModule } from './testapi/testapi.module';
+import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { TestapiModule } from './testapi/testapi.module';
     TestModule,
     TestapiModule
   ],
-  providers: [{ provide: 'BaseUrl', useValue: BaseUrl }],
+  providers: [WINDOW_PROVIDERS, { provide: 'BaseUrl', useValue: BaseUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

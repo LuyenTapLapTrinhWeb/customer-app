@@ -17,7 +17,7 @@ import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-add/screen-bar.
     ThuocTanDuocComponent,
     ScreenListTableComponent,
     ScreenListComponent,
-    ScreenBarComponent
+    ScreenBarComponent,
   ],
   imports: [
     FormsModule,
