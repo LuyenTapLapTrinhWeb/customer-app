@@ -30,7 +30,10 @@ import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
     TestModule,
     TestapiModule
   ],
-  providers: [WINDOW_PROVIDERS, { provide: 'BaseUrl', useValue: BaseUrl }],
+  providers: [
+    WINDOW_PROVIDERS,
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
+    { provide: 'BaseUrl', useValue: BaseUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
