@@ -18,6 +18,11 @@ $btn-color-morvert: #0e8cc1;
     border: 1px solid $btn-color-morvert;
     /* typography */
     color: $btn-color-morvert;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: $btn-control-font-size;
+    line-height: 21px;
     /* animation add-button */
     transform: translateY(0);
     box-shadow: 0px 0 0 black;
@@ -65,8 +70,12 @@ $btn-color-morvert: #0e8cc1;
   .mat-row.hovered {
     background: #eee;
   }
+  ::ng-deep th.mat-sort-header {
+    top: -1px !important;
+  }
   ::ng-deep div.mat-sort-header-content {
     color: $btn-color-morvert;
+    white-space: nowrap;
   }
   .mat-row.highlighted {
     background: #e3e9fc;
@@ -83,13 +92,16 @@ $btn-color-morvert: #0e8cc1;
   td.mat-column-position {
     padding-left: 8px;
   }
-
+  .mat-header-row {
+    background: #f5f5f5;
+  }
   .mat-table-sticky:first-child {
     border-right: 1px solid #e0e0e0;
   }
 
   .mat-table-sticky:last-child {
     border-left: 1px solid #e0e0e0;
+    top: -1px !important;
   }
   .filter-list-result {
     font-size: 14px;

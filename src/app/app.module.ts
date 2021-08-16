@@ -13,6 +13,8 @@ import { Codetogether1Component } from './tested/codetogether1/codetogether1.com
 import { TestModule } from './tested/test.module';
 import { TestapiModule } from './testapi/testapi.module';
 import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
     TestModule,
     TestapiModule
   ],
-  providers: [WINDOW_PROVIDERS, { provide: 'BaseUrl', useValue: BaseUrl }],
+  providers: [WINDOW_PROVIDERS, { provide: MatPaginatorIntl, useValue: CustomPaginator() }, { provide: 'BaseUrl', useValue: BaseUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
