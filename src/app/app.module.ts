@@ -32,7 +32,10 @@ import { CustomPaginator } from './services/CustomPaginatorConfiguration';
     TestModule,
     TestapiModule
   ],
-  providers: [WINDOW_PROVIDERS, { provide: MatPaginatorIntl, useValue: CustomPaginator() }, { provide: 'BaseUrl', useValue: BaseUrl }],
+  providers: [
+    WINDOW_PROVIDERS,
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
+    { provide: 'BaseUrl', useValue: BaseUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
