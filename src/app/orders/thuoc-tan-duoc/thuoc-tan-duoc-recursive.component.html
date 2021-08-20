@@ -1,0 +1,44 @@
+<nav class="wrapper-nav" appSticky [appSticky]="appSticky" id="navbar-sticky-id">
+    <div class="wrapper-nav-header">
+        <mat-icon class="logo-cuc" svgIcon="logo-cuc"></mat-icon>
+        <h1 class="wrapper-nav-header-title">CỤC CÔNG NGHỆ THÔNG TIN - BỘ Y TẾ</h1>
+    </div>
+    <div class="wrapper-nav-menu">
+        <ul class="wrapper-nav-menu-list">
+            <li class="wrapper-nav-menu-list-item dropdown" *ngFor="let menu of dropdownMenuList">
+                <div class="wrapper-nav-menu-list-item-enter" id="{{menu.matIconId}}" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"
+                    (mouseenter)="dropdownMenuEnter(menu.matIconId, menu.svgIconEnter)"
+                    (mouseleave)="dropdownMenuLeave(menu.matIconId, menu.svgIcon )">
+                    <mat-icon class="wrapper-nav-menu-list-item-enter-icon"
+                        svgIcon="{{isExpanded ? menu.svgIconEnter: menu.svgIcon}}"></mat-icon>
+                    <a class="wrapper-nav-menu-list-item-enter-link">{{menu.name}}</a>
+                    <mat-icon svgIcon="{{menu.children ? 'arrow-folder-right' : ''}}" class="arrow-folder-right">
+                    </mat-icon>
+                </div>
+                <ul class="dropdown-menu" *ngIf="menu.children"
+                    (mouseenter)="dropdownMenuEnter(menu.matIconId, menu.svgIconEnter)"
+                    (mouseleave)="dropdownMenuLeave(menu.matIconId, menu.svgIcon )">
+                    <li [ngClass]="{'dropdown-submenu':menu.children?true:false}" *ngFor="let submenu of menu.children">
+                        <a class="dropdown-item"
+                            (click)="convertTabString(submenu.mouseClickId, submenu.mouseClickName)">{{submenu.name}}
+                            <mat-icon svgIcon="{{submenu.children ? 'arrow-folder-right' : ''}}"
+                                class="arrow-folder-right">
+                            </mat-icon>
+                        </a>
+                        <ul class="dropdown-menu" *ngIf="submenu.children">
+                            <li *ngFor="let dropdownmenu of submenu.children">
+                                <a class="dropdown-item"
+                                    (click)="convertTabString(dropdownmenu.mouseClickId, dropdownmenu.mouseClickName)">{{dropdownmenu.name}}</a>
+                                <mat-icon *ngIf="dropdownmenu.children"
+                                    svgIcon="{{dropdownmenu.children ? 'arrow-folder-right' : ''}}"
+                                    class="arrow-folder-right">
+                                </mat-icon>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -72,6 +72,7 @@ $btn-color-morvert: #0e8cc1;
   }
   ::ng-deep th.mat-sort-header {
     top: -1px !important;
+    z-index: 1 !important;
   }
   ::ng-deep div.mat-sort-header-content {
     color: $btn-color-morvert;
@@ -97,6 +98,7 @@ $btn-color-morvert: #0e8cc1;
   }
   .mat-table-sticky:first-child {
     border-right: 1px solid #e0e0e0;
+    z-index: 1;
   }
 
   .mat-table-sticky:last-child {

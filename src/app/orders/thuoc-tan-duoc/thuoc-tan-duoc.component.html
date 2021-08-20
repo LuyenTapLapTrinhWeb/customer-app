@@ -1,5 +1,45 @@
 <section class="danh-muc-container">
     <article>
+        <h1>Angular 2 Recursive List</h1>
+        <div class="wrapper-nav-menu">
+            <ul class="wrapper-nav-menu-list dropdown">
+                <ng-template #recursiveList let-list>
+                    <li class="wrapper-nav-menu-list-item" *ngFor="let menu of list">
+                        <div class="wrapper-nav-menu-list-item-enter" id="{{menu.matIconId}}" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            (mouseenter)="dropdownMenuEnter(menu.matIconId, menu.svgIconEnter)"
+                            (mouseleave)="dropdownMenuLeave(menu.matIconId, menu.svgIcon )">
+                            <mat-icon *ngIf="menu.children.length > 0" class="wrapper-nav-menu-list-item-enter-icon"
+                                svgIcon="{{isExpanded ? menu.svgIconEnter: menu.svgIcon}}"></mat-icon>
+                            <a class="wrapper-nav-menu-list-item-enter-link">{{menu.name}}</a>
+                            <mat-icon *ngIf="menu.children.length > 0" svgIcon="arrow-folder-right"
+                                class="arrow-folder-right">
+                            </mat-icon>
+                        </div>
+                        <ul class="dropdown_menu" *ngIf="menu.children.length > 0"
+                            (mouseenter)="dropdownMenuEnter(menu.matIconId, menu.svgIconEnter)"
+                            (mouseleave)="dropdownMenuLeave(menu.matIconId, menu.svgIcon )">
+                            <li *ngFor="let submenu of menu.children">
+                                <a class="dropdown-item"
+                                    (click)="convertTabString(submenu.mouseClickId, submenu.mouseClickName)">{{submenu.name}}
+                                    <mat-icon *ngIf="submenu.children.length > 0" svgIcon="arrow-folder-right"
+                                        class="arrow-folder-right">
+                                    </mat-icon>
+                                </a>
+                                <ul class="submenu" *ngIf="submenu.children.length > 0">
+                                    <ng-container
+                                        *ngTemplateOutlet="recursiveList; context:{ $implicit: submenu.children }">
+                                    </ng-container>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
+                <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: list }"></ng-container>
+            </ul>
+        </div>
+    </article>
+    <article>
         <app-screen-bar class="containers"></app-screen-bar>
     </article>
     <article>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ISvgIconLiteral } from './svgIconLiteral.interface';
-import { MATICONSVG } from './maticonsvg.data';
+import { MATICONSVG } from './svgIconLiteral.data';
 import { from, Observable, of } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 
