@@ -11,6 +11,19 @@ $circle-2: #e1b143;
   width: 100%;
   height: 100%;
   padding: 50px;
+  .router-links {
+    display: flex;
+    flex-flow: row;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #274241;
+    border-radius: 1rem;
+    background: #274241;
+    .router-link {
+      margin: 16px;
+    }
+  }
 }
 .circle {
   height: 600px;

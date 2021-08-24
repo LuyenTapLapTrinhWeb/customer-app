@@ -22,10 +22,14 @@
                 </div>
             </div>
         </div>
-    </article>
-    <article>
         <div class="container">
-            <a [routerLink]="['/orders/thuoc-tan-duoc']" routerLinkActive="router-link-active">Thuốc tân dược</a>
+            <div class="router-links">
+                <a mat-raised-button color="primary" class="router-link" [routerLink]="['/orders/thuoc-tan-duoc']"
+                    routerLinkActive="router-link-active">Thuốc tân dược</a>
+                <a mat-raised-button color="primary" class="router-link" [routerLink]="['/orders/nhan-vien']"
+                    routerLinkActive="router-link-active">Nhân
+                    viên</a>
+            </div>
         </div>
     </article>
     <router-outlet></router-outlet>

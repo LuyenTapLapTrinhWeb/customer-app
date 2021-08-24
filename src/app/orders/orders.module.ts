@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/screen-list-table.component';
 import { ScreenListComponent } from './thuoc-tan-duoc/screen-list-search/screen-list.component';
 import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-add/screen-bar.component';
+import { EmployeeComponent } from './person/employee/employee.component';
+import { ScreenListSearchComboboxComponent } from './thuoc-tan-duoc/screen-list-search-selection/screen-list-search-selection.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-add/screen-bar.
     ScreenListTableComponent,
     ScreenListComponent,
     ScreenBarComponent,
+    EmployeeComponent,
+    ScreenListSearchComboboxComponent,
   ],
   imports: [
     FormsModule,

@@ -6,6 +6,8 @@ import { OffsetService } from 'src/app/services/stickyElement/offset.service';
 import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { ELEMENT_DATA } from '../PeriodicElement';
+import { SELECTIONOPTIONLIST } from '../screen-list-search-selection/selection-list.data';
+import { SelectionOptionList } from '../screen-list-search-selection/selection-option.interface';
 
 @Component({
   selector: 'app-screen-list',
@@ -17,7 +19,7 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   filterListForm: FormGroup;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   nav!: StickyElement;
-
+  selectionOptionList!: SelectionOptionList;
   @Input() isScrolled$: Subject<string>;
 
   @Output() suaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
@@ -33,6 +35,7 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     this.isScrolled$.subscribe(val => console.log('Child: ', val));
+    this.selectionOptionList = SELECTIONOPTIONLIST;
   }
   ngAfterViewInit(): void {
     setTimeout(() => {

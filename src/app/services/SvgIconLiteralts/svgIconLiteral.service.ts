@@ -49,14 +49,14 @@ export class SvgIconLiteralService implements ISvgIconLiteral {
             .pipe(tap(matIconSrc => console.log(matIconSrc)))
             .subscribe(matIconSrc => {
                 this.addMatIconSvgCustom(matIconSrc);
-                console.log('success add matIconCustomName', matIconSrc.matIconCustomName);
+                // console.log('success add matIconCustomName', matIconSrc.matIconCustomName);
             }, error => console.log(error));
     }
     addMultiMatIconSvgCustomObservable(matIconMultipleCustomName: string[]): void {
         this.getMatIconSVGByGroupName(matIconMultipleCustomName).subscribe(matIconSrc => {
             this.addMultiMatIconSvgCustom(matIconSrc);
             matIconSrc.map(data => {
-                console.log('success add matIconCustomName', data.matIconCustomName);
+                // console.log('success add matIconCustomName', data.matIconCustomName);
             });
         }, error => console.log(error));
     }

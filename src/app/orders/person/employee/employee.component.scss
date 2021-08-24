@@ -1,0 +1,21 @@
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  .title {
+    color: black;
+    margin: 0;
+  }
+  .introduce {
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid white;
+    background: rgb(255, 255, 255, 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+}
