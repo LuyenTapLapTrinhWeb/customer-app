@@ -1,24 +1,30 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { OffsetService } from 'src/app/services/stickyElement/offset.service';
 import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { TREE_DATA } from './nav.list-tree.component';
+import { MOUSECLICKMODE, SCREEN_LIST_BUTTON } from './screen-list-service/screen-list-button.data';
+import { ScreenListBar } from './screen-list-service/screen-list-bar.interface';
 
 
 @Component({
   selector: 'app-thuoc-tan-duoc',
   templateUrl: './thuoc-tan-duoc.component.html',
-  styleUrls: ['./thuoc-tan-duoc.component.scss', '../../services/stickyElement/sticky.scss', './thuoc-tan-duoc-recursive.component.scss']
+  styleUrls: ['./thuoc-tan-duoc.component.scss', '../../services/stickyElement/sticky.scss', './thuoc-tan-duoc-recursive.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ThuocTanDuocComponent implements AfterViewInit {
+export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
   nav: StickyElement;
   isScrolled$: Subject<string> = new Subject<string>();
   list = TREE_DATA;
-
+  screenListBar!: ScreenListBar;
   isExpanded = false;
 
+  themBanGhi(event: Event): void {
+    console.log('root parent them');
+  }
   suaBanGhi(periodicElement: PeriodicElement): void {
     console.log('root parent sua', periodicElement);
   }
@@ -39,11 +45,14 @@ export class ThuocTanDuocComponent implements AfterViewInit {
         'arrow-folder-right', 'logo-cuc'
       ]);
   }
+  ngOnInit(): void {
+    this.screenListBar = {
+      title: 'Danh mục thuốc tân dược',
+      buttons: SCREEN_LIST_BUTTON
+    };
+  }
   ngAfterViewInit(): void {
-    // setTimeout(() => {
-    //   this.nav = this.offsetService.onActionSticky();
-    //   console.log(this.nav);
-    // }, 2000);
+
   }
   getOffset(offset: number): void {
     // console.log(offset);
@@ -106,6 +115,9 @@ export class ThuocTanDuocComponent implements AfterViewInit {
     throw new Error('Method not implemented.');
   }
   onHoSoThamKhamBenhClick(): void {
+    throw new Error('Method not implemented.');
+  }
+  getDataLoadingFirstTime(event: Event): void {
     throw new Error('Method not implemented.');
   }
 }

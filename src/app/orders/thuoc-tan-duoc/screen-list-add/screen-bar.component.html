@@ -1,28 +1,14 @@
-<div class="containers-banner">
-    <h1 class="containers-banner-title">Danh mục thuốc tân dược</h1>
+<div class="containers-banner" *ngIf="screenListBar">
+    <h1 class="containers-banner-title">{{screenListBar.title || 'vui lòng insert tiêu đề'}}</h1>
     <div class="containers-banner-group-button">
         <button mat-button color="primary" class="containers-banner-group-button-add-button"
-            [routerLink]="['/thuoc-tan-duoc', 0, 'refresh']" routerLinkActive="router-link-active"
-            (click)="capNhatDanhSach()">
+            *ngFor="let button of screenListBar.buttons" (click)="onClickEventEmitter(button)">
             <span class="containers-banner-group-button-add-button-icon">
-                <mat-icon svgIcon="REFRESH_ICON"></mat-icon>
-                <!-- <span class="text">Cập nhật danh sách</span> -->
-            </span>
-        </button>
-        <button mat-button color="primary" class="containers-banner-group-button-add-button"
-            [routerLink]="['/thuoc-tan-duoc', 0, 'edit']" routerLinkActive="router-link-active" (click)="themBanGhi()">
-            <span class="containers-banner-group-button-add-button-icon">
-                <mat-icon svgIcon="ADD_ICON"></mat-icon>
-                <!-- <span class="text">Thêm bản ghi mới</span> -->
-            </span>
-        </button>
-        <button mat-button color="primary" class="containers-banner-group-button-add-button"
-            [routerLink]="['/thuoc-tan-duoc', 0, 'guide']" routerLinkActive="router-link-active" (click)="huongDan()">
-            <span class="containers-banner-group-button-add-button-icon">
-                <!-- <mat-icon>help_outline</mat-icon> -->
-                <mat-icon svgIcon="QUESTION_MARK"></mat-icon>
-                <!-- <span class="text">Hướng dẫn</span> -->
+                <mat-icon svgIcon="{{button.svgIcon}}"></mat-icon>
             </span>
         </button>
     </div>
+</div>
+<div *ngIf="!screenListBar">
+    Chưa có screenListBar...
 </div>

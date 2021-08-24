@@ -9,6 +9,7 @@ $btn-report-font-size: 0.75rem;
   padding: 0;
   position: relative;
   width: 100%;
+  margin-bottom: 8px;
   @media only screen and (max-width: 425px) {
     flex-flow: column;
     position: unset;
@@ -22,7 +23,8 @@ $btn-report-font-size: 0.75rem;
     margin: 0;
     padding: 16px;
     width: 100%;
-    border-radius: 0 10px 25px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
   }
 
   &-group-button {
@@ -31,6 +33,9 @@ $btn-report-font-size: 0.75rem;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    margin: auto;
+    height: 100%;
+    top: -8px;
     @media only screen and (max-width: 768px) {
       padding: 16px;
       width: 100%;
@@ -44,6 +49,7 @@ $btn-report-font-size: 0.75rem;
     @media only screen and (max-width: 425px) {
       position: fixed;
       z-index: 2;
+      top: auto;
       bottom: 0;
       height: 5em;
       padding: 0;
@@ -68,9 +74,9 @@ $btn-report-font-size: 0.75rem;
       }
       &-icon {
         display: flex;
-        align-items: center;
         justify-content: center;
         height: 100%;
+        align-items: center;
         .mat-icon {
           margin-right: 0;
         }

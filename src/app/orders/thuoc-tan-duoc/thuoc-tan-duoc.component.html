@@ -40,7 +40,9 @@
         </div>
     </article>
     <article>
-        <app-screen-bar class="containers"></app-screen-bar>
+        <app-screen-bar class="containers" (onReloadingEventEmitter)="getDataLoadingFirstTime($event)"
+            (onAddingEventEmitter)="themBanGhi($event)" [screenListBar]="screenListBar">
+        </app-screen-bar>
     </article>
     <article>
         <app-screen-list class="containers" (suaBanGhiEventEmitterRootParent)="suaBanGhi($event)"
