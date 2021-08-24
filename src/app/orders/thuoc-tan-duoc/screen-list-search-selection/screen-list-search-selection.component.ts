@@ -5,7 +5,7 @@ import { SelectionOptionList } from './selection-option.interface';
 @Component({
   selector: 'app-screen-list-search-selection',
   templateUrl: './screen-list-search-selection.component.html',
-  styleUrls: ['./screen-list-search-selection.component.scss'],
+  styleUrls: ['./screen-list-search-selection.component.scss', '../screen-list-service/screen-list.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

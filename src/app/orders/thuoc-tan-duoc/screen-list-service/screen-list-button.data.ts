@@ -1,6 +1,9 @@
-import { MouseClickMode } from "./screen-list-button.interface";
+import { MouseClickMode } from './screen-list-button.interface';
 
-export const MOUSECLICKMODE: MouseClickMode = { ADDING: 'adding', RELOADING: 'reloading', QUESTIONING: 'questioning', EDITING: 'editing' };
+export const MOUSECLICKMODE: MouseClickMode = {
+    ADDING: 'adding', RELOADING: 'reloading', QUESTIONING: 'questioning', EDITING: 'editing',
+    EVENT: new MouseEvent('click')
+};
 
 
 export const SCREEN_LIST_BUTTON = [
@@ -17,7 +20,7 @@ export const SCREEN_LIST_BUTTON = [
         active: true
     },
     {
-        svgIcon: 'QUESTIONING',
+        svgIcon: 'QUESTION_MARK',
         mouseClickMode: MOUSECLICKMODE.ADDING,
         mouseClickEvent: new MouseEvent('click'),
         active: false

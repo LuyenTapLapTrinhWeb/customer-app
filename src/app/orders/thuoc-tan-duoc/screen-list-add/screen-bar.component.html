@@ -1,14 +1,13 @@
 <div class="containers-banner" *ngIf="screenListBar">
     <h1 class="containers-banner-title">{{screenListBar.title || 'vui lòng insert tiêu đề'}}</h1>
     <div class="containers-banner-group-button">
-        <button mat-button color="primary" class="containers-banner-group-button-add-button"
-            *ngFor="let button of screenListBar.buttons" (click)="onClickEventEmitter(button)">
-            <span class="containers-banner-group-button-add-button-icon">
-                <mat-icon svgIcon="{{button.svgIcon}}"></mat-icon>
-            </span>
-        </button>
+        <app-screen-list-button *ngFor="let button of screenListBar.buttons" [screenListButton]='button'
+            (click)="onClickEventEmitter(button)">
+        </app-screen-list-button>
     </div>
 </div>
+<app-screen-list-button [screenListButton]='addbutton' (buttonEventEmitter)="onClickEventEmitter($event)">
+</app-screen-list-button>
 <div *ngIf="!screenListBar">
     Chưa có screenListBar...
 </div>

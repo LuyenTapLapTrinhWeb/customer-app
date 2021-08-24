@@ -1,0 +1,9 @@
+<button mat-button color="primary" class="add-button" *ngIf="screenListButton" (click)="emit($event)">
+    <span class="containers-banner-group-button-add-button-icon">
+        <mat-icon svgIcon="{{screenListButton.svgIcon}}"></mat-icon>
+    </span>
+</button>
+<div class="none-template-property" *ngIf="!screenListButton">
+    <p>Chưa có [screenListButton]="screenListButton" bên ngoài template "app-screen-list-button"</p>
+    <pre>Cách sử dụng: <code class="none-template-property-code">{{codeExample}}</code></pre>
+</div>
