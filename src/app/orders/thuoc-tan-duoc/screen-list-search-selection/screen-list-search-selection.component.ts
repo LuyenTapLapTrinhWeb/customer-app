@@ -13,6 +13,7 @@ export class ScreenListSearchComboboxComponent implements AfterViewInit {
   selectionTitle: string;
   selectionList: SelectionList[];
   selectionError: string;
+  codeExample = '<app-screen-list-search-selection [selectionOptionList]="selectionOptionList"></app-screen-list-search-selection>';
   @Input() selectionOptionList: SelectionOptionList;
   @Output() selectOptionByChangeEventEmitter = new EventEmitter<any>();
   constructor() { }
