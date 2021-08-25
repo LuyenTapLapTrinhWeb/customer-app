@@ -17,9 +17,11 @@ export class ScreenListButtonComponent implements OnInit {
   @Output() buttonEventEmitter = new EventEmitter<MouseEvent>();
   codeExample!: string;
   codeExampleFile!: string;
+  codeExampleFile2!: string;
   codeFileName!: string;
   codeObjectName!: string;
   codeTagName!: string;
+  panelOpenState = false;
 
   constructor() { }
 
@@ -42,9 +44,9 @@ export class ScreenListButtonComponent implements OnInit {
         svgIcon: 'ADD_ICON',
         active: true
       };
-      // hoặc sử dụng thiết lập sẵn, có thể thêm thiết lập sẵn tương tự:
-      this.screenListButton = ADDING | RELOADING | QUESTIONING;
     }`;
+    this.codeExampleFile2 = `
+      this.screenListButton = ADDING | RELOADING | QUESTIONING;`;
     this.codeFileName = 'screen-bar.component.ts';
     this.codeTagName = 'app-screen-list-button';
   }

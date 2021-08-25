@@ -4,25 +4,32 @@
   background-color: #fff !important;
   padding: 1em;
   margin-bottom: 16px;
-  width: 100%;
+  &-usage {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 1em;
+    margin-bottom: 8px;
+  }
   &-file {
     &-name {
-      background: #1e1e1e;
+      background: #0e8cc1;
       font-family: Roboto;
       font-style: normal;
       font-weight: normal;
-      font-size: 12px;
+      font-size: 1em;
       line-height: 14px;
-      /* identical to box height */
-
-      color: #ffaa4a;
+      color: #ffffff;
       width: 277px;
       height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 1em;
+      border-radius: 1em 1em 0 0;
     }
+  }
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-body {
+    padding: 0;
   }
 }
 .none-template-property-code {
@@ -30,8 +37,19 @@
   padding: 0.25rem;
   border-radius: 0.25em;
   color: rgb(0 0 0/84%);
+  margin-bottom: 8px;
+  .codee {
+    text-align: center;
+    font-size: 1em;
+    @media screen and (max-width: 425px) {
+      font-size: 0.75em;
+    }
+  }
   @media screen and (max-width: 1024px) {
     width: 100%;
     overflow: auto;
   }
+}
+.color-red {
+  color: red;
 }

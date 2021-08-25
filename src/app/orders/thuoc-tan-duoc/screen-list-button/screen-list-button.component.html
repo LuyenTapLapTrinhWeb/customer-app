@@ -5,17 +5,37 @@
         </span>
     </button>
 </div>
-<div class="none-template-property" *ngIf="!screenListButton">
-    <p>Chưa có [{{codeObjectName}}]="{{codeObjectName}}" bên ngoài template "{{codeTagName}}"</p>
+<mat-expansion-panel class="none-template-property" *ngIf="!screenListButton" (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <code>{{codeObjectName}}</code>
+        </mat-panel-title>
+        <mat-panel-description>
+            <p class="color-red">Chưa có <code>[{{codeObjectName}}]="{{codeObjectName}}"</code> bên ngoài template
+                <code><{{codeTagName}}></code>
+            </p>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
     <div class="none-template-property-usage">
         Cách sử dụng:
-        <pre><code class="none-template-property-code">{{codeExample}}</code></pre>
+        <div class="none-template-property-code">
+            <code class="codee">{{codeExample}}</code>
+        </div>
     </div>
     <div class="none-template-property-file">
-        <p>Bên trong file {{codeFileName}} cài đặt dữ liệu screenListButton trong onInit và sự kiện tương ứng.</p>
+        <p>Bên trong file <code>{{codeFileName}}</code> cài đặt dữ liệu <code>screenListButton</code> trong onInit và sự
+            kiện tương ứng.</p>
         <div class="none-template-property-file-name">
             {{codeFileName}}
         </div>
-        <pre><code class="none-template-property-file-area">{{codeExampleFile}}</code></pre>
+        <div class="none-template-property-code">
+            <p>Thiết lập đầy đủ</p>
+            <code class="codee">{{codeExampleFile}}</code>
+            <div class="none-template-property-code">
+                <p>hoặc sử dụng thiết lập sẵn và có thể thêm thiết lập mới tương tự.</p>
+                <code class="codee">{{codeExampleFile2}}</code>
+            </div>
+        </div>
     </div>
-</div>
+</mat-expansion-panel>
