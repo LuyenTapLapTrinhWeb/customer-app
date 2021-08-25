@@ -9,11 +9,12 @@
     (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
         <mat-panel-title>
-            <code>{{codeObjectName}}</code>
+            <code class="codee">{{codeObjectName}}</code>
         </mat-panel-title>
         <mat-panel-description>
-            <p class="color-red">Chưa có <code>[{{codeObjectName}}]="{{codeObjectName}}"</code> bên ngoài template
-                <code><{{codeTagName}}></code>
+            <p class="color-red">Chưa có <code class="codee">[{{codeObjectName}}]="{{codeObjectName}}"</code> bên ngoài
+                template
+                <code class="codee"><{{codeTagName}}></code>
             </p>
         </mat-panel-description>
     </mat-expansion-panel-header>
@@ -26,18 +27,27 @@
         <div class="none-template-property-file">
             <u>Cách cài đặt dữ liệu:</u>
             <p>Ví dụ như bên trong file <code>{{codeFileName}}</code> thì cài đặt dữ liệu <code>screenListButton</code>
-                trong onInit và sự kiện <code>EventEmitter</code> tương ứng.</p>
-            <div class="none-template-property-file-name">
-                {{codeFileName}}
-            </div>
-            <div class="none-template-property-code">
-                <p>Thiết lập đầy đủ</p>
-                <code class="codee">{{codeExampleFile}}</code>
-                <div class="none-template-property-code">
-                    <p>hoặc sử dụng thiết lập sẵn và có thể thêm thiết lập mới tương tự.</p>
-                    <code class="codee">{{codeExampleFile2}}</code>
-                </div>
-            </div>
+                trong onInit và hàm sự kiện <code>EventEmitter</code> tương ứng.</p>
+            <ul class="none-template-property-file-list">
+                <li>
+                    <u href="">Bước cài <code>{{codeObjectName}}</code></u>
+                </li>
+                <li>
+                    <div class="none-template-property-file-name">
+                        {{codeFileName}}
+                    </div>
+                    <div class="none-template-property-code">
+                        <code class="codee">{{codeExampleFile}}</code>
+                        <div class="none-template-property-code">
+                            <p>Viết tắt</p>
+                            <code class="codee">{{codeExampleFile2}}</code>
+                        </div>
+                    </div>
+                </li>
+                <li><u href="">Bước cài <code>{{codeObjectNameEventEmitter}}</code></u></li>
+                <li>Ví dụ: <code>(buttonEventEmitter)="addingHSSK($event)"</code></li>
+                <li>Ví dụ: <code>(buttonEventEmitter)="addThuocTanDuoc($event)"</code></li>
+            </ul>
         </div>
     </div>
 </mat-expansion-panel>

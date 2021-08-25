@@ -20,6 +20,7 @@ export class ScreenListButtonComponent implements OnInit {
   codeExampleFile2!: string;
   codeFileName!: string;
   codeObjectName!: string;
+  codeObjectNameEventEmitter!: string;
   codeTagName!: string;
   panelOpenState = false;
 
@@ -36,6 +37,7 @@ export class ScreenListButtonComponent implements OnInit {
   }
   huongdan(): void {
     this.codeObjectName = 'screenListButton';
+    this.codeObjectNameEventEmitter = '(buttonEventEmitter)="onClickEventEmitter($event)"';
     this.codeExample = `<app-screen-list-button [screenListButton]='screenListButton' (buttonEventEmitter)="onClickEventEmitter($event)"></app-screen-list-button>`;
     this.codeExampleFile = `ngOnInit(): void {
       this.screenListButton = {
@@ -45,8 +47,7 @@ export class ScreenListButtonComponent implements OnInit {
         active: true
       };
     }`;
-    this.codeExampleFile2 = `
-      this.screenListButton = ADDING | RELOADING | QUESTIONING;`;
+    this.codeExampleFile2 = `ngOnInit(): void { this.screenListButton = ADDING | RELOADING | QUESTIONING; }`;
     this.codeFileName = 'screen-bar.component.ts';
     this.codeTagName = 'app-screen-list-button';
   }
