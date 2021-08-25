@@ -33,6 +33,7 @@ $btn-report-font-size: 0.75rem;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    top: calc(100vh / 64);
     @media only screen and (max-width: 768px) {
       padding: 16px;
       width: 100%;
