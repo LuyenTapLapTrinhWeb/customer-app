@@ -3,6 +3,7 @@ export interface ScreenListGuideButton {
   codeObjectName?: string;
   codeObjectNameEventEmitter?: string;
   codeExample?: string;
+  codeExample1?: string;
   codeExampleFile?: string;
   codeExampleFile2?: string;
   codeFileName?: string;
@@ -38,8 +39,22 @@ export const SCREENLISTGUIDESELECTION: ScreenListGuideSelection = {
   codeExample: '<app-screen-list-selection [selectionOptionList]="selectionOptionList"></app-screen-list-selection>',
 
 };
+export interface ScreenListGuideToggle extends ScreenListGuideButton {
+  codeObjectName: string;
+  codeTagName: string;
+  codeExample: string;
+}
+export const SCREENLISTGUIDETOGGLE: ScreenListGuideToggle = {
+  codeObjectName: 'toggleName',
+  codeTagName: 'app-screen-list-toggle',
+  codeExample: `<app-screen-list-toggle [toggleName]="toggleName" (toggleEventEmitter)="toggle($event)">
+  </app-screen-list-toggle>`,
+  codeExample1: `<app-screen-list-toggle [toggleName]="'Tỉnh-Phường-Xã'" (toggleEventEmitter)="toggle($event)">
+  </app-screen-list-toggle>`,
+};
 
 export interface ScreenListGuide {
   button?: ScreenListGuideButton;
   selection?: ScreenListGuideSelection;
+  toggle?: ScreenListGuideToggle;
 }

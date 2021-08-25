@@ -11,8 +11,8 @@ import { SelectionOptionList } from '../screen-list-selection/selection-option.i
 
 @Component({
   selector: 'app-screen-list',
-  templateUrl: './screen-list.component.html',
-  styleUrls: ['./screen-list.component.scss']
+  templateUrl: './screen-list-input.component.html',
+  styleUrls: ['./screen-list-input.component.scss']
 })
 export class ScreenListComponent implements OnInit, AfterViewInit {
   value = 'Clear me';
@@ -61,5 +61,15 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   xoaBanGhi(selectedRow: PeriodicElement): void {
     console.log('parrent xoa', selectedRow);
     this.xoaBanGhiEventEmitterRootParent.emit(selectedRow);
+  }
+  toggle(checked: boolean): void {
+    console.log('Tinh Phuong xã ',checked);
+    if (checked) {
+      console.log('ON');
+      // this.checkedValue = 'ON';
+    } else {
+      console.log('OFF');
+      // this.checkedValue = 'OFF';
+    }
   }
 }

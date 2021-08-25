@@ -1,1 +1,9 @@
-<p>screen-list-toggle works!</p>
+<div class="screen-list-toggle" *ngIf="toggleName">
+    <label for="toggleName" class="screen-list-toggle-label">{{toggleName}}</label>
+    <mat-slide-toggle class="screen-list-toggle-button" [checked]="checked" (change)="toggle($event)">
+        {{checkedValue}}
+    </mat-slide-toggle>
+</div>
+<div *ngIf="!toggleName">
+    <app-screen-list-guide [screenListGuideToggle]="screenListGuideToggle"></app-screen-list-guide>
+</div>

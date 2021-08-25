@@ -1,6 +1,6 @@
 <div class="selection">
     <mat-form-field appearance="fill" *ngIf="selectionOptionList">
-        <mat-label>{{selectionTitle | uppercase}}</mat-label>
+        <mat-label>{{selectionTitle}}</mat-label>
         <mat-select [(value)]="selectionError" name="selectOptionBy"
             (selectionChange)="selectionOptionBy($event.value)">
             <mat-option>Chưa chọn</mat-option>

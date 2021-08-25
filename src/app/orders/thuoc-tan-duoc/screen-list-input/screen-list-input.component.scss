@@ -2,6 +2,10 @@ $btn-control-font-size: 1rem;
 $btn-report-font-size: 0.75rem;
 .containers-table {
   width: 100%;
+  &-component {
+    display: flex;
+    flex-flow: row;
+  }
   &-report-section {
     margin: 12px 0;
     display: flex;

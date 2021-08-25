@@ -1,5 +1,11 @@
 <mat-card class="containers-table">
-    <app-screen-list-selection [selectionOptionList]="selectionOptionList"></app-screen-list-selection>
+    <div class="containers-table-component">
+        <app-screen-list-selection [selectionOptionList]="selectionOptionList"></app-screen-list-selection>
+        <app-screen-list-toggle [toggleName]="'Tỉnh-Phường-Xã'" (toggleEventEmitter)="toggle($event)">
+        </app-screen-list-toggle>
+        <app-screen-list-toggle [toggleName]="'Thông tin bảo hiểm'" (toggleEventEmitter)="toggle($event)">
+        </app-screen-list-toggle>
+    </div>
     <mat-card-title>
         <section class="containers-table-filter">
             <form class="containers-table-filter-form" [formGroup]="filterListForm" id="screen-list-search">

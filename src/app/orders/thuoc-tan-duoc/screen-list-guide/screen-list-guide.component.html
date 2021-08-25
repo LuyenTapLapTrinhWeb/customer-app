@@ -52,10 +52,19 @@
     <div class="none-template-property" *ngIf="screenlistguide.selection as selection">
         <p class="color-red">Chưa có <code
                 class="codee">[{{selection.codeObjectName}}]="{{selection.codeObjectName}}"</code>
-            bên ngoài
-            template
-            <code class="codee"> {{selection.codeTagName}} </code>
+            bên ngoài template <code class="codee"> {{selection.codeTagName}} </code>
         </p>
+    </div>
+    <div class="none-template-property" *ngIf="screenlistguide.toggle as toggle">
+        <p class="color-red">Chưa có <code class="codee">[{{toggle.codeObjectName}}]="{{toggle.codeObjectName}}"</code>
+            bên ngoài template <code class="codee"> {{toggle.codeTagName}} </code>
+        </p>
+        <div class="none-template-property-usage">
+            {{toggle.codeExample}}
+        </div>
+        <div class="none-template-property-usage">
+            {{toggle.codeExample1}}
+        </div>
     </div>
 </div>
 <!-- </div> -->
