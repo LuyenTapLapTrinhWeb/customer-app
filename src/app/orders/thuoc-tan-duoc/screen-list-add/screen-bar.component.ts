@@ -20,7 +20,6 @@ export class ScreenBarComponent implements OnInit {
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onQuestioningEventEmitter = new EventEmitter<MouseEvent>();
 
-  screenListButton!: ScreenListButton;
   constructor(
   ) { }
 
