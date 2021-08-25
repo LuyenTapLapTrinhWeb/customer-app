@@ -1,4 +1,4 @@
-<div class="search-combobox">
+<div class="selection">
     <mat-form-field appearance="fill" *ngIf="selectionOptionList">
         <mat-label>{{selectionTitle | uppercase}}</mat-label>
         <mat-select [(value)]="selectionError" name="selectOptionBy"
@@ -8,7 +8,7 @@
                 {{selectOption.viewValue}}
             </mat-option>
         </mat-select>
-        <span class="search-combobox-required-message" *ngIf="!selectionError">
+        <span class="selection-required-message" *ngIf="!selectionError">
             Vui lòng chọn 1 điều kiện
         </span>
     </mat-form-field>

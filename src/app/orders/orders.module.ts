@@ -9,7 +9,7 @@ import { ThuocTanDuocComponent } from './thuoc-tan-duoc/thuoc-tan-duoc.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/screen-list-table.component';
 import { ScreenListComponent } from './thuoc-tan-duoc/screen-list-search/screen-list.component';
-import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-add/screen-bar.component';
+import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-bar/screen-bar.component';
 import { EmployeeComponent } from './person/employee/employee.component';
 import { ScreenListSearchSelectionComponent } from './thuoc-tan-duoc/screen-list-selection/screen-list-selection.component';
 import { ScreenListButtonComponent } from './thuoc-tan-duoc/screen-list-button/screen-list-button.component';
