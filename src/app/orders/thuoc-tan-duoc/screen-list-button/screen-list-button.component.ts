@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
-import { MOUSECLICKMODE } from './screen-list-button.data';
+import { ADDING, MOUSECLICKMODE } from './screen-list-button.data';
 import { ScreenListButton } from './screen-list-button.interface';
 
 @Component({
@@ -11,41 +11,42 @@ import { ScreenListButton } from './screen-list-button.interface';
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class ScreenListButtonComponent implements OnInit, AfterViewInit {
+export class ScreenListButtonComponent implements OnInit {
   svgIcon!: string;
   @Input() screenListButton!: ScreenListButton;
   @Output() buttonEventEmitter = new EventEmitter<MouseEvent>();
   codeExample!: string;
   codeExampleFile!: string;
-  constructor(
-    private svgIconService: SvgIconLiteralService
-  ) {
-    this.svgIconService.addMultiMatIconSvgCustomObservable(['ADD_ICON']);
-  }
-  ngAfterViewInit(): void {
+  codeFileName!: string;
+  codeObjectName!: string;
+  codeTagName!: string;
+
+  constructor() { }
+
+  ngOnInit(): void {
     if (!this.screenListButton) {
-      this.screenListButton = {
-        mouseClickMode: MOUSECLICKMODE.ADDING,
-        mouseClickEvent: MOUSECLICKMODE.EVENT,
-        svgIcon: 'ADD_ICON',
-        active: true
-      };
+      this.huongdan();
+      return;
     } else {
       console.log('this.screenListButton', this.screenListButton);
       this.svgIcon = this.screenListButton.svgIcon;
     }
   }
-
-  ngOnInit(): void {
+  huongdan(): void {
+    this.codeObjectName = 'screenListButton';
     this.codeExample = `<app-screen-list-button [screenListButton]='screenListButton' (buttonEventEmitter)="onClickEventEmitter($event)"></app-screen-list-button>`;
     this.codeExampleFile = `ngOnInit(): void {
       this.screenListButton = {
         mouseClickMode: MOUSECLICKMODE.ADDING,
-        mouseClickEvent: MOUSECLICKMODE.EVENT,
+        mouseClickEvent: MOUSECLICKEVENT.EVENT,
         svgIcon: 'ADD_ICON',
         active: true
       };
+      // hoặc sử dụng thiết lập sẵn, có thể thêm thiết lập sẵn tương tự:
+      this.screenListButton = ADDING | RELOADING | QUESTIONING;
     }`;
+    this.codeFileName = 'screen-bar.component.ts';
+    this.codeTagName = 'app-screen-list-button';
   }
   emit(event: MouseEvent): void {
     this.buttonEventEmitter.emit(event);

@@ -6,19 +6,16 @@
     </button>
 </div>
 <div class="none-template-property" *ngIf="!screenListButton">
-    <p>Chưa có [screenListButton]="screenListButton" bên ngoài template "app-screen-list-button"</p>
+    <p>Chưa có [{{codeObjectName}}]="{{codeObjectName}}" bên ngoài template "{{codeTagName}}"</p>
     <div class="none-template-property-usage">
         Cách sử dụng:
-        <pre>
-            <code class="none-template-property-code">{{codeExample}}</code>
-        </pre>
+        <pre><code class="none-template-property-code">{{codeExample}}</code></pre>
     </div>
     <div class="none-template-property-file">
-        <div class="none-template-property-file-containt">screen-bar.component.ts</div>
-        <pre>
-            <code class="none-template-property-file-area">
-                <div>{{codeExampleFile}}</div>
-            </code>
-        </pre>
+        <p>Bên trong file {{codeFileName}} cài đặt dữ liệu screenListButton trong onInit và sự kiện tương ứng.</p>
+        <div class="none-template-property-file-name">
+            {{codeFileName}}
+        </div>
+        <pre><code class="none-template-property-file-area">{{codeExampleFile}}</code></pre>
     </div>
 </div>

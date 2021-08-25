@@ -4,11 +4,25 @@
   background-color: #fff !important;
   padding: 1em;
   margin-bottom: 16px;
-  &-code {
-    border: solid thin #c4c4c4;
-    padding: 0.25rem;
-    border-radius: 0.25em;
-    color: rgb(0 0 0/84%);
+  width: 100%;
+  &-file {
+    &-name {
+      background: #1e1e1e;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      /* identical to box height */
+
+      color: #ffaa4a;
+      width: 277px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1em;
+    }
   }
 }
 .none-template-property-code {
@@ -16,4 +30,8 @@
   padding: 0.25rem;
   border-radius: 0.25em;
   color: rgb(0 0 0/84%);
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    overflow: auto;
+  }
 }
