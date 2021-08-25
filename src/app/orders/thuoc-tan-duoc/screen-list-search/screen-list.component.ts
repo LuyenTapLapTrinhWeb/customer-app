@@ -6,8 +6,8 @@ import { OffsetService } from 'src/app/services/stickyElement/offset.service';
 import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { ELEMENT_DATA } from '../PeriodicElement';
-import { SELECTIONOPTIONLIST } from '../screen-list-search-selection/selection-list.data';
-import { SelectionOptionList } from '../screen-list-search-selection/selection-option.interface';
+import { SELECTIONOPTIONLIST } from '../screen-list-selection/selection-list.data';
+import { SelectionOptionList } from '../screen-list-selection/selection-option.interface';
 
 @Component({
   selector: 'app-screen-list',

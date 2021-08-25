@@ -12,8 +12,6 @@
             Vui lòng chọn 1 điều kiện
         </span>
     </mat-form-field>
-    <div class="none-template-property" *ngIf="!selectionOptionList">
-        <p>Chưa có [selectionOptionList]="selectionOptionList" bên ngoài template "app-screen-list-search-selection"</p>
-        <pre>Cách sử dụng: <code class="none-template-property-code">{{codeExample}}</code></pre>
-    </div>
+    <app-screen-list-guide [screenListGuideSelection]="screenListGuideSelection" *ngIf="!selectionOptionList">
+    </app-screen-list-guide>
 </div>

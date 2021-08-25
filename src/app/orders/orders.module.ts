@@ -11,9 +11,10 @@ import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/scr
 import { ScreenListComponent } from './thuoc-tan-duoc/screen-list-search/screen-list.component';
 import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-add/screen-bar.component';
 import { EmployeeComponent } from './person/employee/employee.component';
-import { ScreenListSearchComboboxComponent } from './thuoc-tan-duoc/screen-list-search-selection/screen-list-search-selection.component';
+import { ScreenListSearchSelectionComponent } from './thuoc-tan-duoc/screen-list-selection/screen-list-selection.component';
 import { ScreenListButtonComponent } from './thuoc-tan-duoc/screen-list-button/screen-list-button.component';
 import { ScreenListToggleComponent } from './thuoc-tan-duoc/screen-list-toggle/screen-list-toggle.component';
+import { ScreenListGuideComponent } from './thuoc-tan-duoc/screen-list-guide/screen-list-guide.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,10 @@ import { ScreenListToggleComponent } from './thuoc-tan-duoc/screen-list-toggle/s
     ScreenListComponent,
     ScreenBarComponent,
     EmployeeComponent,
-    ScreenListSearchComboboxComponent,
+    ScreenListSearchSelectionComponent,
     ScreenListButtonComponent,
     ScreenListToggleComponent,
+    ScreenListGuideComponent,
   ],
   imports: [
     FormsModule,
