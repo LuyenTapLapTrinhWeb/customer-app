@@ -2,7 +2,7 @@
   margin-bottom: 16px;
   .mat-form-field-wrapper {
     padding: 0;
-    margin: 0 8px;
+    margin: 4px;
   }
   .mat-form-field-flex {
     border-radius: 10px !important;
@@ -22,10 +22,12 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
     display: flex;
     align-items: center;
     color: rgba(255, 0, 0, 0.84);
+    margin: 4px;
+    padding: 0 24px;
   }
 }

@@ -8,10 +8,8 @@
                 {{selectOption.viewValue}}
             </mat-option>
         </mat-select>
-        <span class="selection-required-message" *ngIf="!selectionError">
-            Vui lòng chọn 1 điều kiện
-        </span>
     </mat-form-field>
+    <span class="selection-required-message" *ngIf="!selectionError">Vui lòng chọn 1 điều kiện</span>
     <app-screen-list-guide [screenListGuideSelection]="screenListGuideSelection" *ngIf="!selectionOptionList">
     </app-screen-list-guide>
 </div>

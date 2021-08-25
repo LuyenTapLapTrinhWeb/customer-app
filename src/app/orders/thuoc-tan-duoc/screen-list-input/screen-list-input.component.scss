@@ -4,7 +4,8 @@ $btn-report-font-size: 0.75rem;
   width: 100%;
   &-component {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
+    margin: 4px;
   }
   &-report-section {
     margin: 12px 0;

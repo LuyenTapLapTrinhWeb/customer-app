@@ -63,7 +63,17 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
     this.xoaBanGhiEventEmitterRootParent.emit(selectedRow);
   }
   toggle(checked: boolean): void {
-    console.log('Tinh Phuong xã ',checked);
+    console.log('Tinh Phuong xã ', checked);
+    if (checked) {
+      console.log('ON');
+      // this.checkedValue = 'ON';
+    } else {
+      console.log('OFF');
+      // this.checkedValue = 'OFF';
+    }
+  }
+  toggleBaoHiem(checked: boolean): void {
+    console.log('ThongTinbaoHiem', checked);
     if (checked) {
       console.log('ON');
       // this.checkedValue = 'ON';
