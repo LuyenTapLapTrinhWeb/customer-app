@@ -5,8 +5,8 @@ import { StickyElement } from 'src/app/services/stickyElement/stickyElement.serv
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { TREE_DATA } from './nav.list-tree.component';
-import { MOUSECLICKMODE, SCREEN_LIST_BUTTON } from './screen-list-service/screen-list-button.data';
-import { ScreenListBar } from './screen-list-service/screen-list-bar.interface';
+import { MOUSECLICKMODE, SCREEN_LIST_BUTTON } from './screen-list-button/screen-list-button.data';
+import { ScreenListBar } from './screen-list-add/screen-list-bar.interface';
 
 
 @Component({

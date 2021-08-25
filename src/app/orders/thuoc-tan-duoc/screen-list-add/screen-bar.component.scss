@@ -33,9 +33,6 @@ $btn-report-font-size: 0.75rem;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin: auto;
-    height: 100%;
-    top: -8px;
     @media only screen and (max-width: 768px) {
       padding: 16px;
       width: 100%;
@@ -49,7 +46,6 @@ $btn-report-font-size: 0.75rem;
     @media only screen and (max-width: 425px) {
       position: fixed;
       z-index: 2;
-      top: auto;
       bottom: 0;
       height: 5em;
       padding: 0;

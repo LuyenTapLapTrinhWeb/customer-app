@@ -1,7 +1,8 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { ScreenListButton } from '../screen-list-service/screen-list-button.interface';
-import { ScreenListBar } from '../screen-list-service/screen-list-bar.interface';
-import { MOUSECLICKMODE } from '../screen-list-service/screen-list-button.data';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { ScreenListBar } from './screen-list-bar.interface';
+import { MOUSECLICKMODE } from '../screen-list-button/screen-list-button.data';
+import { ScreenListButton } from '../screen-list-button/screen-list-button.interface';
+import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 
 @Component({
   selector: 'app-screen-bar',
@@ -10,7 +11,7 @@ import { MOUSECLICKMODE } from '../screen-list-service/screen-list-button.data';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ScreenBarComponent implements AfterViewInit {
+export class ScreenBarComponent implements OnInit {
   @Input() screenListBar!: ScreenListBar;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onReloadingEventEmitter = new EventEmitter<MouseEvent>();
@@ -18,16 +19,13 @@ export class ScreenBarComponent implements AfterViewInit {
   @Output() onAddingEventEmitter = new EventEmitter<MouseEvent>();
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onQuestioningEventEmitter = new EventEmitter<MouseEvent>();
-  addbutton!: ScreenListButton;
 
-  constructor() { }
-  ngAfterViewInit(): void {
-    this.addbutton = {
-      mouseClickMode: MOUSECLICKMODE.ADDING,
-      mouseClickEvent: MOUSECLICKMODE.EVENT,
-      svgIcon: 'ADDING_ICON',
-      active: true
-    };
+  screenListButton!: ScreenListButton;
+  constructor(
+  ) { }
+
+  ngOnInit(): void {
+
   }
 
   onClickEventEmitter(button: ScreenListButton): void {

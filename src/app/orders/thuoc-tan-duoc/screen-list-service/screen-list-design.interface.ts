@@ -1,4 +1,4 @@
-import { ScreenListBar } from './screen-list-bar.interface';
+import { ScreenListBar } from '../screen-list-add/screen-list-bar.interface';
 
 export interface IScreenListDesign {
     screenListBar: ScreenListBar;

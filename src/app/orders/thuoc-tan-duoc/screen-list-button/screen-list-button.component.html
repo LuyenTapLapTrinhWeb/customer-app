@@ -1,9 +1,24 @@
-<button mat-button color="primary" class="add-button" *ngIf="screenListButton" (click)="emit($event)">
-    <span class="containers-banner-group-button-add-button-icon">
-        <mat-icon svgIcon="{{screenListButton.svgIcon}}"></mat-icon>
-    </span>
-</button>
+<div *ngIf="screenListButton">
+    <button mat-button color="primary" class="add-button" (click)="emit($event)">
+        <span class="add-button-icon">
+            <mat-icon svgIcon="{{screenListButton.svgIcon}}"></mat-icon>
+        </span>
+    </button>
+</div>
 <div class="none-template-property" *ngIf="!screenListButton">
     <p>Chưa có [screenListButton]="screenListButton" bên ngoài template "app-screen-list-button"</p>
-    <pre>Cách sử dụng: <code class="none-template-property-code">{{codeExample}}</code></pre>
+    <div class="none-template-property-usage">
+        Cách sử dụng:
+        <pre>
+            <code class="none-template-property-code">{{codeExample}}</code>
+        </pre>
+    </div>
+    <div class="none-template-property-file">
+        <div class="none-template-property-file-containt">screen-bar.component.ts</div>
+        <pre>
+            <code class="none-template-property-file-area">
+                <div>{{codeExampleFile}}</div>
+            </code>
+        </pre>
+    </div>
 </div>
