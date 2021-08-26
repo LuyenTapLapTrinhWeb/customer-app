@@ -1,5 +1,5 @@
 <div *ngIf="screenListButton">
-    <button mat-button color="primary" class="add-button" (click)="emit($event)">
+    <button mat-button color="primary" class="add-button" (click)="emit($event)" *ngIf="screenListButton.active">
         <span class="add-button-icon">
             <mat-icon svgIcon="{{screenListButton.svgIcon}}"></mat-icon>
         </span>
