@@ -25,23 +25,7 @@ $btn-report-font-size: 0.75rem;
       align-items: center;
     }
   }
-  &-filter {
-    width: 100%;
-    &-form {
-      min-width: 100%;
-      max-width: 100%;
-      width: 100%;
-      &-field {
-        width: 100%;
-        &-label {
-          color: rgb(14 140 193/84%);
-          @media only screen and (max-width: 425px) {
-            font-size: 0.8em !important;
-          }
-        }
-      }
-    }
-  }
+
   ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
     border-radius: 2em;
     border: 1px solid #0e8cc1;

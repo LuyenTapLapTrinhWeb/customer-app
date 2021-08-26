@@ -1,0 +1,12 @@
+<form class="containers-table-filter-form" [formGroup]="filterListForm" id="screen-list-search">
+    <mat-form-field class="containers-table-filter-form-field" appearance="fill">
+        <mat-label class="containers-table-filter-form-field-label">Tìm thuốc tân dược
+            theo tên thuốc</mat-label>
+        <input matInput class="containers-table-filter-form-field-input" name="inputFilterList" placeholder="Ex. Paracetamol" [(ngModel)]="value"
+            formControlName="inputFilterList" (keyup)="applyFilter($event.target.value)">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" color="primary" (click)="value=''"
+            class="no-outline clear-button">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</form>

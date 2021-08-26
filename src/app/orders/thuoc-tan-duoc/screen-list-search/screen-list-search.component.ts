@@ -10,9 +10,9 @@ import { SELECTIONOPTIONLIST } from '../screen-list-selection/selection-list.dat
 import { SelectionOptionList } from '../screen-list-selection/selection-option.interface';
 
 @Component({
-  selector: 'app-screen-list',
-  templateUrl: './screen-list-input.component.html',
-  styleUrls: ['./screen-list-input.component.scss']
+  selector: 'app-screen-list-search',
+  templateUrl: './screen-list-search.component.html',
+  styleUrls: ['./screen-list-search.component.scss']
 })
 export class ScreenListComponent implements OnInit, AfterViewInit {
   value = 'Clear me';
