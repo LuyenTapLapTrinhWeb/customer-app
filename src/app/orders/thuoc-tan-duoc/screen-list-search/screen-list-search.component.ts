@@ -6,9 +6,6 @@ import { OffsetService } from 'src/app/services/stickyElement/offset.service';
 import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { ELEMENT_DATA } from '../PeriodicElement';
-import { INPUTSEARCHHSSK, ScreenListInputSearch } from '../screen-list-input-search/screen-list-input.interface';
-import { SELECTIONOPTIONLIST } from '../screen-list-selection/selection-list.data';
-import { SelectionOptionList } from '../screen-list-selection/selection-option.interface';
 
 @Component({
   selector: 'app-screen-list-search',
@@ -20,8 +17,6 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   filterListForm: FormGroup;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   nav!: StickyElement;
-  selectionOptionList!: SelectionOptionList;
-  screenListInputSearch!: ScreenListInputSearch;
   @Input() isScrolled$: Subject<string>;
 
   @Output() suaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
@@ -37,8 +32,6 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     this.isScrolled$.subscribe(val => console.log('Child: ', val));
-    this.selectionOptionList = SELECTIONOPTIONLIST;
-    this.screenListInputSearch = INPUTSEARCHHSSK;
   }
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -50,13 +43,12 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
     console.log(offset);
     this.nav.onElementStickiesOffset(offset);
   }
-  applyFilter(filterBy: string): void {
+  onClickBtnSearch(filterBy: string): void {
     this.dataSource.filter = filterBy.trim().toLowerCase();
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
-  ganTheThuoc(): void { }
   suaBanGhi(selectedRow: PeriodicElement): void {
     console.log('parrent sua', selectedRow);
     this.suaBanGhiEventEmitterRootParent.emit(selectedRow);
@@ -64,25 +56,5 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   xoaBanGhi(selectedRow: PeriodicElement): void {
     console.log('parrent xoa', selectedRow);
     this.xoaBanGhiEventEmitterRootParent.emit(selectedRow);
-  }
-  toggle(checked: boolean): void {
-    console.log('Tinh Phuong xã ', checked);
-    if (checked) {
-      console.log('ON');
-      // this.checkedValue = 'ON';
-    } else {
-      console.log('OFF');
-      // this.checkedValue = 'OFF';
-    }
-  }
-  toggleBaoHiem(checked: boolean): void {
-    console.log('ThongTinbaoHiem', checked);
-    if (checked) {
-      console.log('ON');
-      // this.checkedValue = 'ON';
-    } else {
-      console.log('OFF');
-      // this.checkedValue = 'OFF';
-    }
   }
 }

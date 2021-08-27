@@ -45,6 +45,28 @@
         </app-screen-bar>
     </article>
     <article>
+        <mat-card>
+            <mat-card-content class="containers">
+                <div class="containers-tu-khoa">
+                    <app-screen-list-selection [selectionOptionList]="selectionOptionList"
+                        (selectionOptionByEventEmitter)="selectionOptionBy($event)">
+                    </app-screen-list-selection>
+                    <app-screen-list-input-search class="custom-input-search"
+                        [screenListInputSearch]="screenListInputSearch"
+                        (screenListInputSearchEventEmitter)="onClickBtnSearch($event)"></app-screen-list-input-search>
+                </div>
+                <div class="containers-danh-sach-khu-vuc">
+                    <app-screen-list-toggle [toggleName]="'Danh sách khu vực'"
+                        (toggleEventEmitter)="onToggleTinhThanh($event)">
+                    </app-screen-list-toggle>
+                    <app-screen-list-toggle [toggleName]="'Thông tin bảo hiểm'"
+                        (toggleEventEmitter)="toggleBaoHiem($event)">
+                    </app-screen-list-toggle>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </article>
+    <article>
         <app-screen-list-search class="containers" (suaBanGhiEventEmitterRootParent)="suaBanGhi($event)"
             (xoaBanGhiEventEmitterRootParent)="xoaBanGhi($event)" [isScrolled$]="isScrolled$"></app-screen-list-search>
     </article>

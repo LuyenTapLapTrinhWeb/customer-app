@@ -1,12 +1,15 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { OffsetService } from 'src/app/services/stickyElement/offset.service';
 import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { TREE_DATA } from './nav.list-tree.component';
-import { MOUSECLICKMODE, SCREEN_LIST_BUTTON } from './screen-list-button/screen-list-button.data';
+import { SCREEN_LIST_BUTTON } from './screen-list-button/screen-list-button.data';
 import { ScreenListBar } from './screen-list-bar/screen-list-bar.interface';
+import { INPUTSEARCHHSSK, ScreenListInputSearch } from './screen-list-input-search/screen-list-input.interface';
+import { SelectionOptionList } from './screen-list-selection/selection-option.interface';
+import { SELECTIONOPTIONLIST } from './screen-list-selection/selection-list.data';
 
 
 @Component({
@@ -21,6 +24,8 @@ export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
   list = TREE_DATA;
   screenListBar!: ScreenListBar;
   isExpanded = false;
+  selectionOptionList!: SelectionOptionList;
+  screenListInputSearch!: ScreenListInputSearch;
 
   themBanGhi(event: Event): void {
     console.log('root parent them');
@@ -50,6 +55,8 @@ export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
       title: 'Danh mục thuốc tân dược',
       buttons: SCREEN_LIST_BUTTON
     };
+    this.selectionOptionList = SELECTIONOPTIONLIST;
+    this.screenListInputSearch = INPUTSEARCHHSSK;
   }
   ngAfterViewInit(): void {
 
@@ -120,4 +127,27 @@ export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
   getDataLoadingFirstTime(event: Event): void {
     throw new Error('Method not implemented.');
   }
+  onToggleTinhThanh(checked: boolean): void {
+    console.log('Tinh Phuong xã ', checked);
+    if (checked) {
+      console.log('ON');
+      // this.checkedValue = 'ON';
+    } else {
+      console.log('OFF');
+      // this.checkedValue = 'OFF';
+    }
+  }
+  selectionOptionBy(checked: boolean): void { }
+  onClickBtnSearch(checked: boolean): void { }
+  toggleBaoHiem(checked: boolean): void {
+    console.log('ThongTinbaoHiem', checked);
+    if (checked) {
+      console.log('ON');
+      // this.checkedValue = 'ON';
+    } else {
+      console.log('OFF');
+      // this.checkedValue = 'OFF';
+    }
+  }
+
 }
