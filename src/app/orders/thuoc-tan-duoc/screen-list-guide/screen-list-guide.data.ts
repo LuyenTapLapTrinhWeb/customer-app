@@ -27,7 +27,7 @@ export const SCREENLISTGUIDESELECTION: ScreenListGuideSelection = {
   codeExample: `<app-screen-list-selection [selectionOptionList]="selectionOptionList" (selectionOptionByEventEmitter)="selectionOptionBy($event)">`,
   codeExampleFile: `ngOnInit(): void {
     this.selectionOptionList = {
-      title: 'Tìm theo',
+      title: 'Tìm theo từ khóa',
       list: [
         { value: '1', viewValue: 'Mã HSSK' },
         { value: '2', viewValue: 'CMND' },

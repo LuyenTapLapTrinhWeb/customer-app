@@ -1,14 +1,16 @@
 <mat-card class="containers-table">
     <div class="containers-table-component">
         <app-screen-list-selection [selectionOptionList]="selectionOptionList"></app-screen-list-selection>
+        <app-screen-list-input-search [screenListInputSearch]="screenListInputSearch"
+            (screenListInputSearchEventEmitter)="applyFilter($event)"> </app-screen-list-input-search>
         <app-screen-list-toggle [toggleName]="'Tỉnh-Phường-Xã'" (toggleEventEmitter)="toggle($event)">
         </app-screen-list-toggle>
         <app-screen-list-toggle [toggleName]="'Thông tin bảo hiểm'" (toggleEventEmitter)="toggleBaoHiem($event)">
         </app-screen-list-toggle>
     </div>
     <mat-card-title>
-        <app-screen-list-input-search [screenListInputSearch]="screenListInputSearch"
-            (screenListInputSearchEventEmitter)="applyFilter($event)"> </app-screen-list-input-search>
+        <!-- <app-screen-list-input-search [screenListInputSearch]="screenListInputSearch"
+            (screenListInputSearchEventEmitter)="applyFilter($event)"> </app-screen-list-input-search> -->
     </mat-card-title>
     <app-screen-list-table [dataSource]="dataSource" (suaBanGhiEventEmitter)="suaBanGhi($event)"
         (xoaBanGhiEventEmitter)="xoaBanGhi($event)">

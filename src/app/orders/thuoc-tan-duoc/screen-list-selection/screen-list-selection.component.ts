@@ -30,7 +30,7 @@ export class ScreenListSearchSelectionComponent implements OnInit {
       { value: '2', viewValue: 'Pizza' },
       { value: '3', viewValue: 'Tacos' }
     ];
-    this.selectionTitle = this.selectionOptionList.title ? this.selectionOptionList.title : 'vui lòng nhập tiêu đề';
+    this.selectionTitle = this.selectionOptionList.title ? this.selectionOptionList.title : 'Vui lòng nhập tiêu đề';
     this.selectionError = this.selectionOptionList.selectionError ? this.selectionOptionList.selectionError : '1';
   }
   selectionOptionBy(selectOptionBy: any): void {

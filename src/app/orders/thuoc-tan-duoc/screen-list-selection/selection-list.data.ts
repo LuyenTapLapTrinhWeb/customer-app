@@ -1,7 +1,7 @@
 import { SelectionOptionList } from './selection-option.interface';
 
 export const SELECTIONOPTIONLIST: SelectionOptionList = {
-    title: 'Tìm theo',
+    title: 'Tìm theo từ khóa',
     list: [
         { value: '1', viewValue: 'Mã HSSK' },
         { value: '2', viewValue: 'CMND' },
