@@ -22,9 +22,14 @@ $btn-report-font-size: 0.75rem;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     .mat-icon {
       margin-right: 0;
+      @media screen and (max-width: 768px) {
+        top: -3px;
+        position: absolute;
+        right: 38%;
+      }
     }
     @media screen and (max-width: 425px) {
       .text {

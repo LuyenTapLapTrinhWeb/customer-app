@@ -10,5 +10,5 @@ export interface ScreenListInputSearch extends ScreenListInput {
 
 export const INPUTSEARCHHSSK: ScreenListInputSearch = {
     title: 'Tìm theo từ khóa',
-    placeholder: 'CMND, CCCD, TÊN HOẶC MÃ HSSK',
+    placeholder: 'MÃ HSSK, CMND-CCCD, TÊN',
 };
