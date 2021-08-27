@@ -4,6 +4,7 @@ export interface MouseClickMode {
     RELOADING: string;
     QUESTIONING: string;
     EDITING: string;
+    DELETING: string;
     EVENT?: MouseEvent;
 }
 export interface ScreenListButton {

@@ -18,6 +18,10 @@ export class ScreenBarComponent implements OnInit {
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onAddingEventEmitter = new EventEmitter<MouseEvent>();
   // tslint:disable-next-line:no-output-on-prefix
+  @Output() onEditingEventEmitter = new EventEmitter<MouseEvent>();
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onDeletingEventEmitter = new EventEmitter<MouseEvent>();
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onQuestioningEventEmitter = new EventEmitter<MouseEvent>();
 
   constructor(
@@ -37,6 +41,12 @@ export class ScreenBarComponent implements OnInit {
         break;
       case 'adding':
         this.onClickEEE(button.mouseClickEvent, this.onAddingEventEmitter);
+        break;
+      case 'editing':
+        this.onClickEEE(button.mouseClickEvent, this.onEditingEventEmitter);
+        break;
+      case 'deleting':
+        this.onClickEEE(button.mouseClickEvent, this.onDeletingEventEmitter);
         break;
       default:
         break;

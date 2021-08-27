@@ -2,6 +2,9 @@ $btn-control-font-size: 1rem;
 $btn-report-font-size: 0.75rem;
 .containers-table {
   width: 100%;
+  // .mat-card {
+  //   width: 100%;
+  // }
   &-component {
     display: flex;
     flex-flow: row wrap;
@@ -24,25 +27,5 @@ $btn-report-font-size: 0.75rem;
       display: flex;
       align-items: center;
     }
-  }
-
-  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    border-radius: 2em;
-    border: 1px solid #0e8cc1;
-    background-color: #fff;
-    padding: 0 1em;
-    height: 60px;
-  }
-  ::ng-deep .mat-form-field-underline {
-    display: none;
-  }
-  .clear-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #c4c4c4;
-  }
-  .no-outline {
-    outline: 0;
   }
 }

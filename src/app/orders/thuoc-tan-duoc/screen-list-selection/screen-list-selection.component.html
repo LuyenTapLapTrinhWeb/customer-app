@@ -1,5 +1,5 @@
-<div class="selection">
-    <mat-form-field appearance="fill" *ngIf="selectionOptionList">
+<div class="selection" *ngIf="selectionOptionList">
+    <mat-form-field appearance="fill">
         <mat-label>{{selectionTitle}}</mat-label>
         <mat-select [(value)]="selectionError" name="selectOptionBy"
             (selectionChange)="selectionOptionBy($event.value)">
@@ -10,6 +10,8 @@
         </mat-select>
     </mat-form-field>
     <span class="selection-required-message" *ngIf="!selectionError">Vui lòng chọn 1 điều kiện</span>
-    <app-screen-list-guide [screenListGuideSelection]="screenListGuideSelection" *ngIf="!selectionOptionList">
+</div>
+<div *ngIf="!selectionOptionList">
+    <app-screen-list-guide [screenListGuideSelection]="screenListGuideSelection">
     </app-screen-list-guide>
 </div>

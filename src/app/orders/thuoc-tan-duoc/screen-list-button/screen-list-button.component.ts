@@ -1,7 +1,6 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
-import { ScreenListGuideButton, SCREENLISTGUIDEBUTTON } from '../screen-list-guide/screen-list-guide.interface';
-import { ADDING, MOUSECLICKMODE } from './screen-list-button.data';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { ScreenListGuideButton } from '../screen-list-guide/screen-list-guide.interface';
+import { SCREENLISTGUIDEBUTTON } from '../screen-list-guide/screen-list-guide.data';
 import { ScreenListButton } from './screen-list-button.interface';
 
 @Component({
@@ -16,7 +15,7 @@ export class ScreenListButtonComponent implements OnInit {
   svgIcon!: string;
   @Input() screenListButton!: ScreenListButton;
   @Output() buttonEventEmitter = new EventEmitter<MouseEvent>();
-  screenListGuideButton: ScreenListGuideButton;
+  screenListGuideButton!: ScreenListGuideButton;
   constructor() { }
 
   ngOnInit(): void {

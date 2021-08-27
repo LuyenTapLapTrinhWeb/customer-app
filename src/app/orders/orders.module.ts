@@ -11,11 +11,11 @@ import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/scr
 import { ScreenListComponent } from './thuoc-tan-duoc/screen-list-search/screen-list-search.component';
 import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-bar/screen-bar.component';
 import { EmployeeComponent } from './person/employee/employee.component';
-import { ScreenListSearchSelectionComponent } from './thuoc-tan-duoc/screen-list-selection/screen-list-selection.component';
 import { ScreenListButtonComponent } from './thuoc-tan-duoc/screen-list-button/screen-list-button.component';
-import { ScreenListToggleComponent } from './thuoc-tan-duoc/screen-list-toggle/screen-list-toggle.component';
+import { ScreenListInputSearchComponent } from './thuoc-tan-duoc/screen-list-input-search/screen-list-input-search.component';
 import { ScreenListGuideComponent } from './thuoc-tan-duoc/screen-list-guide/screen-list-guide.component';
-import { ScreenListInputComponent } from './thuoc-tan-duoc/screen-list-input-serach/screen-list-input-search.component';
+import { ScreenListToggleComponent } from './thuoc-tan-duoc/screen-list-toggle/screen-list-toggle.component';
+import { ScreenListSearchSelectionComponent } from './thuoc-tan-duoc/screen-list-selection/screen-list-selection.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ScreenListInputComponent } from './thuoc-tan-duoc/screen-list-input-ser
     ScreenListButtonComponent,
     ScreenListToggleComponent,
     ScreenListGuideComponent,
-    ScreenListInputComponent,
+    ScreenListInputSearchComponent,
   ],
   imports: [
     FormsModule,

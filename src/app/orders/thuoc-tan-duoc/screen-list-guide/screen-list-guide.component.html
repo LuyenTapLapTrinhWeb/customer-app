@@ -23,7 +23,7 @@
             <div class="none-template-property-file">
                 <u>Cách cài đặt dữ liệu:</u>
                 <p>Ví dụ như bên trong file <code>{{button.codeFileName}}</code> thì cài đặt dữ liệu
-                    <code>screenListButton</code>
+                    <code>{{button.codeObjectName}}</code>
                     trong onInit và hàm sự kiện <code>EventEmitter</code> tương ứng.
                 </p>
                 <ul class="none-template-property-file-list">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><u href="">Bước cài <code>{{button.codeObjectNameEventEmitter}}</code></u></li>
+                    <li><u href="">Bước cài <code>{{button.codeObjectEventName}}</code></u></li>
                     <li>Ví dụ: <code>(buttonEventEmitter)="addingHSSK($event)"</code></li>
                     <li>Ví dụ: <code>(buttonEventEmitter)="addThuocTanDuoc($event)"</code></li>
                 </ul>
@@ -54,6 +54,39 @@
                 class="codee">[{{selection.codeObjectName}}]="{{selection.codeObjectName}}"</code>
             bên ngoài template <code class="codee"> {{selection.codeTagName}} </code>
         </p>
+        <div class="none-template-property-usage">
+            <p>{{'Ví dụ cách gọi và cách cài đặt dữ liệu:'|uppercase}}</p>
+            <u>Cách gọi:</u>
+            <div class="none-template-property-code">
+                <code class="codee">{{selection.codeExample}}</code>
+            </div>
+            <div class="none-template-property-file">
+                <u>Cách cài đặt dữ liệu:</u>
+                <p>Ví dụ như bên trong file <code>{{selection.codeFileName}}</code> thì cài đặt dữ liệu
+                    <code>{{selection.codeObjectName}}</code>
+                    trong onInit và hàm sự kiện <code>EventEmitter</code> tương ứng.
+                </p>
+                <ul class="none-template-property-file-list">
+                    <li>
+                        <u href="">Bước cài <code>{{selection.codeObjectName}}</code></u>
+                    </li>
+                    <li>
+                        <div class="none-template-property-file-name">
+                            {{selection.codeFileName}}
+                        </div>
+                        <div class="none-template-property-code">
+                            <code class="codee">{{selection.codeExampleFile}}</code>
+                            <div class="none-template-property-code">
+                                <p>Viết tắt</p>
+                                <code class="codee">{{selection.codeExampleFile2}}</code>
+                            </div>
+                        </div>
+                    </li>
+                    <li><u href="">Bước cài: </u><code>{{selection.codeObjectEventName}}</code></li>
+                    <li>Ví dụ: <code>{{selection.codeObjectEvent}}"</code></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="none-template-property" *ngIf="screenlistguide.toggle as toggle">
         <p class="color-red">Chưa có <code class="codee">[{{toggle.codeObjectName}}]="{{toggle.codeObjectName}}"</code>
@@ -64,6 +97,18 @@
         </div>
         <div class="none-template-property-usage">
             {{toggle.codeExample1}}
+        </div>
+    </div>
+    <div class="none-template-property" *ngIf="screenlistguide.inputSearch as inputSearch">
+        <p class="color-red">Chưa có <code
+                class="codee">[{{inputSearch.codeObjectName}}]="{{inputSearch.codeObjectName}}"</code>
+            bên ngoài template <code class="codee"> {{inputSearch.codeTagName}} </code>
+        </p>
+        <div class="none-template-property-usage">
+            {{inputSearch.codeExample}}
+        </div>
+        <div class="none-template-property-usage">
+            {{inputSearch.codeExample1}}
         </div>
     </div>
 </div>

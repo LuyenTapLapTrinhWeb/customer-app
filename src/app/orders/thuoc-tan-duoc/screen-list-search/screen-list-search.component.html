@@ -7,10 +7,8 @@
         </app-screen-list-toggle>
     </div>
     <mat-card-title>
-        <section class="containers-table-filter">
-            <app-screen-list-input-search (applyFilterEventEmitter)="applyFilter($event)">
-            </app-screen-list-input-search>
-        </section>
+        <app-screen-list-input-search [screenListInputSearch]="screenListInputSearch"
+            (screenListInputSearchEventEmitter)="applyFilter($event)"> </app-screen-list-input-search>
     </mat-card-title>
     <app-screen-list-table [dataSource]="dataSource" (suaBanGhiEventEmitter)="suaBanGhi($event)"
         (xoaBanGhiEventEmitter)="xoaBanGhi($event)">

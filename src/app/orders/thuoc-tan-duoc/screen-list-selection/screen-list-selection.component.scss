@@ -1,8 +1,11 @@
 .selection {
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
   .mat-form-field-wrapper {
     padding: 0;
     margin: 4px;
+    .mat-form-field-underline {
+      width: 0;
+    }
   }
   .mat-form-field-flex {
     border-radius: 10px !important;
