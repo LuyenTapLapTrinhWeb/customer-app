@@ -26,11 +26,12 @@ export class ScreenListSearchSelectionComponent implements OnInit {
       return;
     }
     this.selectionList = this.selectionOptionList.list ? this.selectionOptionList.list : [
-      { value: 'steak-0', viewValue: 'Steak' },
-      { value: 'pizza-1', viewValue: 'Pizza' },
-      { value: 'tacos-2', viewValue: 'Tacos' }
+      { value: '1', viewValue: 'Steak' },
+      { value: '2', viewValue: 'Pizza' },
+      { value: '3', viewValue: 'Tacos' }
     ];
     this.selectionTitle = this.selectionOptionList.title ? this.selectionOptionList.title : 'vui lòng nhập tiêu đề';
+    this.selectionError = this.selectionOptionList.selectionError ? this.selectionOptionList.selectionError : '1';
   }
   selectionOptionBy(selectOptionBy: any): void {
     this.selectionOptionByEventEmitter.emit(selectOptionBy);
