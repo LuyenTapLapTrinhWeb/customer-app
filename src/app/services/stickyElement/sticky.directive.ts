@@ -1,25 +1,36 @@
 import { DOCUMENT } from '@angular/common';
-import { Directive, EventEmitter, HostListener, Inject, Output } from '@angular/core';
-import { OffsetService } from './offset.service';
-import { StickyElement } from './stickyElement.service';
+import { Directive, HostListener, Inject, Input } from '@angular/core';
+import { Sticky } from './sticky.interface';
+import { StickyService } from './sticky.service';
 import { WINDOW } from './window.service';
 
 @Directive({
   selector: '[appSticky]'
 })
 export class StickyDirective {
-  @Output() offset = new EventEmitter<number>();
-  nav!: StickyElement;
+  @Input() appSticky!: Sticky;
 
   constructor(
-    private stickyActionService: OffsetService,
+    private stickyService: StickyService,
     @Inject(DOCUMENT) private document?: Document,
     @Inject(WINDOW) private window?: Window,
   ) { }
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    this.stickyActionService.offset = this.window.pageYOffset || this.document.documentElement.scrollTop
-      || this.document.body.scrollTop || 0;
-    this.offset.emit(this.stickyActionService.offset);
+    if (this.appSticky) {
+      this.setStickiesElement();
+    }
+  }
+  setStickiesElement(): void {
+    const offsetCurrentWindow = this.window?.pageYOffset || this.document?.documentElement.scrollTop
+      || this.document?.body.scrollTop || 0;
+    const sticky = {
+      offsetCurrentWindow: offsetCurrentWindow || 0,
+      stickyElementOffset: this.appSticky.stickyElementOffset,
+      stickyElementHTML: this.appSticky.stickyElementHTML,
+      stickyClassName: this.appSticky.stickyClassName,
+      stickyId: this.appSticky.stickyId
+    };
+    this.stickyService.onElementSticky(sticky);
   }
 }

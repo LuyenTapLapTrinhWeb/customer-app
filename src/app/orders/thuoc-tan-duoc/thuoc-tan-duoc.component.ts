@@ -1,8 +1,4 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2 } from '@angular/core';
-import { Subject } from 'rxjs';
-import { OffsetService } from 'src/app/services/stickyElement/offset.service';
-import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
-import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { TREE_DATA } from './nav.list-tree.component';
 import { SCREEN_LIST_BUTTON } from './screen-list-button/screen-list-button.data';
@@ -10,6 +6,7 @@ import { ScreenListBar } from './screen-list-bar/screen-list-bar.interface';
 import { INPUTSEARCHHSSK, ScreenListInputSearch } from './screen-list-input-search/screen-list-input.interface';
 import { SelectionOptionList } from './screen-list-selection/selection-option.interface';
 import { SELECTIONOPTIONLIST } from './screen-list-selection/selection-list.data';
+import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 
 
 @Component({
@@ -19,8 +16,6 @@ import { SELECTIONOPTIONLIST } from './screen-list-selection/selection-list.data
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
-  nav: StickyElement;
-  isScrolled$: Subject<string> = new Subject<string>();
   list = TREE_DATA;
   screenListBar!: ScreenListBar;
   isExpanded = false;
@@ -38,9 +33,9 @@ export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
   }
   constructor(
     private svgicon: SvgIconLiteralService,
-    private offsetService: OffsetService,
     private cd: ChangeDetectorRef,
-    private render: Renderer2
+    private render: Renderer2,
+    
   ) {
     // this.svgicon.addMatIconSvgCustomObservable('ADD_ICON');
     this.svgicon.addMultiMatIconSvgCustomObservable(

@@ -1,3 +1,4 @@
+import { STICKYELEMENTDESIGN } from '../stickyElement/sticky-huong-dan-su-dung/Bản thiết kế sticky element';
 import { HETHONGENTER } from './svg-icon-ts/hethongenter';
 import { LOGOCUC } from './svg-icon-ts/logoCUC';
 import { ISvgIconLiteral } from './svgIconLiteral.interface';
@@ -134,5 +135,9 @@ export const MATICONSVG: ISvgIconLiteral[] = [
     {
         matIconCustomName: 'he-thong-enter',
         svgCustomVector: HETHONGENTER
+    },
+    {
+        matIconCustomName: 'sticky-element-design',
+        svgCustomVector: STICKYELEMENTDESIGN
     },
 ];

@@ -22,3 +22,9 @@
   position: fixed !important;
   top: 0;
 }
+.navbar-sticky {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  width: 100%;
+}

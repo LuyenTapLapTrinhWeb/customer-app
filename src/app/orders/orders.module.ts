@@ -31,7 +31,7 @@ import { StickyHuongDanSudungComponent } from '../services/stickyElement/sticky-
     ScreenListToggleComponent,
     ScreenListGuideComponent,
     ScreenListInputSearchComponent,
-    StickyHuongDanSudungComponent,
+    StickyHuongDanSudungComponent
   ],
   imports: [
     FormsModule,

@@ -4,15 +4,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { matMenu, matMenuItem, matMenuItemMatIcon } from './edit-button.css';
 import { PeriodicElement } from '../PeriodicElement';
-import { OffsetService } from 'src/app/services/stickyElement/offset.service';
-import { StickyElement } from 'src/app/services/stickyElement/stickyElement.service';
 @Component({
   selector: 'app-screen-list-table',
   templateUrl: './screen-list-table.component.html',
   styleUrls: ['./screen-list-table.component.scss'],
 })
 export class ScreenListTableComponent implements OnInit, AfterViewInit {
-  nav: StickyElement;
   matMenu: any;
   matMenuItem: any;
   matMenuItemMatIcon: any;
