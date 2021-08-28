@@ -15,12 +15,14 @@ import { TestapiModule } from './testapi/testapi.module';
 import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './services/CustomPaginatorConfiguration';
+import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpenclosedComponent,
     Codetogether1Component,
+    StickyHuongDanSudungComponent
   ],
   imports: [
     BrowserModule,
