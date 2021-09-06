@@ -66,6 +66,7 @@ $btn-color-morvert: #0e8cc1;
   table {
     width: 100%;
     border: 1px solid rgb(196, 196, 196, 50%);
+    border-collapse: separate; /* Don't collapse */
   }
   .mat-row.hovered {
     background: #eee;
