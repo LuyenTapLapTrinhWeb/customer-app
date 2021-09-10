@@ -2,4 +2,5 @@
     <app-screen-list-table [dataSource]="dataSource" (suaBanGhiEventEmitter)="suaBanGhi($event)"
         (xoaBanGhiEventEmitter)="xoaBanGhi($event)">
     </app-screen-list-table>
+    <app-table-reuseable [cols]="cols" [data]="USERS_DATA" (onAction)="onActionHandler($event)"></app-table-reuseable>
 </mat-card>

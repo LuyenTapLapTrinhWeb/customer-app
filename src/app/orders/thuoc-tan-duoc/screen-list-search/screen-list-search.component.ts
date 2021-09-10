@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { ELEMENT_DATA } from '../PeriodicElement';
+import { Cols, TableReuseableData, UserData } from './table-reuseable.data';
 
 @Component({
   selector: 'app-screen-list-search',
@@ -14,7 +15,9 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
   value = 'Clear me';
   filterListForm: FormGroup;
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
+  tableReuse = new TableReuseableData();
+  cols: Cols[];
+  USERS_DATA: UserData[];
   @Output() suaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
   @Output() xoaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
   // tslint:disable-next-line:typedef
@@ -27,6 +30,11 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
     });
   }
   ngOnInit(): void {
+    this.cols = this.tableReuse.cols;
+    this.USERS_DATA = this.tableReuse.USERS_DATA;
+  }
+  onActionHandler(event: Event): void {
+    this.tableReuse.onActionHandler(event);
   }
   ngAfterViewInit(): void {
 

@@ -3,10 +3,10 @@ import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.componen
 import { TREE_DATA } from './nav.list-tree.component';
 import { SCREEN_LIST_BUTTON } from './screen-list-button/screen-list-button.data';
 import { ScreenListBar } from './screen-list-bar/screen-list-bar.interface';
-import { INPUTSEARCHHSSK, ScreenListInputSearch } from './screen-list-input-search/screen-list-input.interface';
 import { SelectionOptionList } from './screen-list-selection/selection-option.interface';
 import { SELECTIONOPTIONLIST } from './screen-list-selection/selection-list.data';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
+import { ScreenListInputSearch, INPUTSEARCHHSSK } from './screen-list-input-search/screen-list-input.interface';
 
 
 @Component({
@@ -35,7 +35,6 @@ export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
     private svgicon: SvgIconLiteralService,
     private cd: ChangeDetectorRef,
     private render: Renderer2,
-    
   ) {
     // this.svgicon.addMatIconSvgCustomObservable('ADD_ICON');
     this.svgicon.addMultiMatIconSvgCustomObservable(
@@ -144,5 +143,4 @@ export class ThuocTanDuocComponent implements AfterViewInit, OnInit {
       // this.checkedValue = 'OFF';
     }
   }
-
 }
