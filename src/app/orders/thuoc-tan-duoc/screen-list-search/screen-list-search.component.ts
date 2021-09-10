@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
 import { ELEMENT_DATA } from '../PeriodicElement';
-import { Cols, TableReuseableData, UserData } from './table-reuseable.data';
+import { Cols, TableReuseableData, UserData } from '../screen-list-table-reuse/table-reuseable.data';
 
 @Component({
   selector: 'app-screen-list-search',
