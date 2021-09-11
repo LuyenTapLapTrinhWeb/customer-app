@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
-import { Actions, ActionsElement } from '../screen-list-table-reuseable/table-reuseable-columns.interface';
+import { Actions, ActionsElement } from './screen-list-table-reuseable/table-reuseable-columns.interface';
 import { matMenu, matMenuItem, matMenuItemMatIcon } from './edit-button.css';
 @Component({
   selector: 'app-screen-list-table',

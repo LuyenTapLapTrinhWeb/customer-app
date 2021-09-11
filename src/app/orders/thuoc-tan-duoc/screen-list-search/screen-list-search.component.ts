@@ -2,9 +2,9 @@ import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
-import { Actions, ActionsElement, TableReuseableColumns } from '../screen-list-table-reuseable/table-reuseable-columns.interface';
+import { Actions, ActionsElement, TableReuseableColumns } from '../screen-list-table/screen-list-table-reuseable/table-reuseable-columns.interface';
 import { PeriodicElementData } from '../screen-list-table/PeriodicElement.data';
-import { TableReuseableConfig } from '../screen-list-table-reuseable/table-reuseable.config';
+import { TableReuseableConfig } from '../screen-list-table/screen-list-table-reuseable/table-reuseable.config';
 
 @Component({
   selector: 'app-screen-list-search',
