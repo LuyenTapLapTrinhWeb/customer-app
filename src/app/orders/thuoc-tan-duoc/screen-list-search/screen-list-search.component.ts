@@ -1,10 +1,10 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Subject } from 'rxjs';
 import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
-import { ELEMENT_DATA } from '../PeriodicElement';
-import { Cols, TableReuseableData, UserData } from '../screen-list-table-reuse/table-reuseable.data';
+import { Actions, ActionsElement, TableReuseableColumns } from '../screen-list-table-reuseable/table-reuseable-columns.interface';
+import { PeriodicElementData } from '../screen-list-table/PeriodicElement.data';
+import { TableReuseableConfig } from '../screen-list-table-reuseable/table-reuseable.config';
 
 @Component({
   selector: 'app-screen-list-search',
@@ -14,10 +14,9 @@ import { Cols, TableReuseableData, UserData } from '../screen-list-table-reuse/t
 export class ScreenListComponent implements OnInit, AfterViewInit {
   value = 'Clear me';
   filterListForm: FormGroup;
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  tableReuse = new TableReuseableData();
-  cols: Cols[];
-  USERS_DATA: UserData[];
+  cols: TableReuseableColumns[];
+  tableReuse: TableReuseableConfig;
+  dataSource: MatTableDataSource<PeriodicElement>;
   @Output() suaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
   @Output() xoaBanGhiEventEmitterRootParent = new EventEmitter<PeriodicElement>();
   // tslint:disable-next-line:typedef
@@ -30,10 +29,25 @@ export class ScreenListComponent implements OnInit, AfterViewInit {
     });
   }
   ngOnInit(): void {
-    this.cols = this.tableReuse.cols;
-    this.USERS_DATA = this.tableReuse.USERS_DATA;
+    this.cols = [
+      { key: 'position', display: '#', config: { isSticky: true } },
+      { key: 'name', display: 'Name' },
+      { key: 'weight', display: 'Weight' },
+      { key: 'symbol', display: 'Symbol' },
+      {
+        key: 'star', display: '', config: {
+          isStickyEnd: true, isAction: true,
+          actions: [
+            { svgIcon: 'edit-pencil', matTooltip: 'Sửa bản ghi' },
+            { svgIcon: 'delete-recycle-bin', matTooltip: 'Xóa bản ghi' },
+          ]
+        }
+      },
+    ];
+    this.tableReuse = new TableReuseableConfig(this.cols, PeriodicElementData);
+    this.dataSource = new MatTableDataSource(this.tableReuse.ELEMENT_DATA);
   }
-  onActionHandler(event: Event): void {
+  onActionHandler(event: ActionsElement): void {
     this.tableReuse.onActionHandler(event);
   }
   ngAfterViewInit(): void {

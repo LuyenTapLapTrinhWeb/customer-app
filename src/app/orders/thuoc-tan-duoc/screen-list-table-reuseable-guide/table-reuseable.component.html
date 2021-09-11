@@ -11,6 +11,10 @@
             <ng-template #hasConfig>
                 <!-- if this attribute is a boolean, we will show values from config
     object depending on his state -->
+                <ng-container *ngIf="col.config.isSticky" sticky>
+                    {{ element[col.key] }}
+                </ng-container>
+
                 <ng-container *ngIf="col.config.isBoolean">
                     {{ showBooleanValue(element, col) }}
                 </ng-container>
@@ -20,7 +24,7 @@
                     {{ element[col.key] | date: col.config.format }}
                 </ng-container>
                 <!-- if this column is action, we will loop through each action and show it as a mat-button -->
-                <ng-container *ngIf="col.config.isAction">
+                <ng-container *ngIf="col.config.isAction" stickyEnd>
                     <button *ngFor="let action of col.config.actions" (click)="emitter.emit(action)" mat-button>{{
                         action }}</button>
                 </ng-container>

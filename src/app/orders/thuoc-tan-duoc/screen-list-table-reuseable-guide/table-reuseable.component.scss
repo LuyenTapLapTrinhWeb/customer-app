@@ -4,9 +4,6 @@ $btn-color-morvert: #0e8cc1;
 .mat-card-table {
   max-height: 450px !important;
   overflow: auto;
-  &-tooltip-button {
-    font-size: larger;
-  }
   &-more-vert-button {
     display: flex;
     justify-content: center;

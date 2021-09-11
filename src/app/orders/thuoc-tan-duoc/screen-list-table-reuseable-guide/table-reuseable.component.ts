@@ -1,4 +1,7 @@
+import { SelectionModel } from '@angular/cdk/collections';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { UserData } from './table-reuseable.data';
 
 @Component({
   selector: 'app-table-reuseable',
@@ -6,12 +9,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./table-reuseable.component.scss']
 })
 export class TableReuseableComponent implements OnInit {
+  selection = new SelectionModel<UserData>(true, []);
+
+  // tslint:disable-next-line:no-output-rename
+  @Output('outSelectedRow') outSelectedRow = new EventEmitter<UserData>();
+
   // tslint:disable-next-line:no-output-rename
   @Output('onAction') emitter = new EventEmitter();
   // tslint:disable-next-line:no-input-rename
-  @Input('data') dataSource = [];
+  @Input('data') dataSource: MatTableDataSource<UserData>;
   // tslint:disable-next-line:no-input-rename
   @Input('cols') tableCols = [];
+
   // We will need this getter to exctract keys from tableCols
   // tslint:disable-next-line:typedef
   get keys() { return this.tableCols.map(({ key }) => key); }
@@ -23,6 +32,18 @@ export class TableReuseableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (!this.dataSource) {
+      return;
+    }
   }
-
+  onSelectedRow(selectedRow: UserData): void {
+    this.dataSource.data.forEach(rows => {
+      if (selectedRow === rows) {
+        this.selection.clear();
+        this.selection.toggle(selectedRow);
+      } else {
+        this.outSelectedRow.emit(selectedRow);
+      }
+    });
+  }
 }

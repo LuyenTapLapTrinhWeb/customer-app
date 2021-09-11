@@ -16,7 +16,7 @@ import { ScreenListInputSearchComponent } from './thuoc-tan-duoc/screen-list-inp
 import { ScreenListGuideComponent } from './thuoc-tan-duoc/screen-list-guide/screen-list-guide.component';
 import { ScreenListToggleComponent } from './thuoc-tan-duoc/screen-list-toggle/screen-list-toggle.component';
 import { ScreenListSearchSelectionComponent } from './thuoc-tan-duoc/screen-list-selection/screen-list-selection.component';
-import { TableReuseableComponent } from './thuoc-tan-duoc/screen-list-table-reuse/table-reuseable.component';
+import { TableReuseableComponent } from './thuoc-tan-duoc/screen-list-table-reuseable-guide/table-reuseable.component';
 // import { StickyHuongDanSudungComponent } from '../services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 
 @NgModule({

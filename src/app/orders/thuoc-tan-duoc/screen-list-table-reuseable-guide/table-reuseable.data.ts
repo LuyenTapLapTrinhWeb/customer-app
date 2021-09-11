@@ -1,5 +1,3 @@
-import { OnInit } from "@angular/core";
-
 export interface UserData {
     _id?: number;
     username?: string;
@@ -11,6 +9,7 @@ export interface Cols {
     key: string;
     display: string;
     config?: {
+        isSticky?: boolean, isStickyEnd?: boolean,
         isDate?: boolean, format?: string,
         isBoolean?: boolean, values?: { true: string, false: string },
         isAction?: boolean, actions?: string[]
@@ -27,7 +26,7 @@ export class TableReuseableData implements TableReuseable {
     constructor() {
         this.cols = [
             { key: '_id', display: 'User Id' },
-            { key: 'username', display: 'Username' },
+            { key: 'username', display: 'Username', config: { isSticky: true } },
             { key: 'email', display: 'Email' },
             // following objects will contain a specific config parameters
             // based on this params we will change the display of each column
