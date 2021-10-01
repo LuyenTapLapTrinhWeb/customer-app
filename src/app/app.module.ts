@@ -34,7 +34,6 @@ import { ScreenListModule } from './design/screen-list-module/screen-list.module
     SharingModule,
     TestModule,
     TestapiModule,
-    ScreenListModule
   ],
   providers: [
     WINDOW_PROVIDERS,

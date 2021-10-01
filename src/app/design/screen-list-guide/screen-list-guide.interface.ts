@@ -1,4 +1,3 @@
-import { MatTableDataSource } from "@angular/material/table";
 
 export interface ScreenListGuideButton {
   codeObjectName?: string;

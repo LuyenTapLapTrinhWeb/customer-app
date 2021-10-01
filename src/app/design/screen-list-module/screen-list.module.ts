@@ -7,6 +7,7 @@ import { ScreenListSearchSelectionComponent } from '../screen-list-selection/scr
 import { ScreenListTableComponent } from '../screen-list-table/screen-list-table.component';
 import { ScreenListTableGuideComponent } from '../screen-list-table-guide/screen-list-table.component';
 import { ScreenListInputSearchComponent } from '../screen-list-input-search/screen-list-input-search.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 
 
@@ -21,6 +22,7 @@ import { ScreenListInputSearchComponent } from '../screen-list-input-search/scre
     ScreenListTableGuideComponent,
     ScreenListInputSearchComponent
   ],
-  imports: []
+  imports: [MaterialModule],
+  exports: []
 })
 export class ScreenListModule { }
