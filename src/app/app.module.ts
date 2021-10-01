@@ -16,6 +16,7 @@ import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
+import { ScreenListModule } from './design/screen-list-module/screen-list.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-h
     AppRoutingModule,
     SharingModule,
     TestModule,
-    TestapiModule
+    TestapiModule,
+    ScreenListModule
   ],
   providers: [
     WINDOW_PROVIDERS,

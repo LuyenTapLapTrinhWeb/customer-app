@@ -1,0 +1,16 @@
+<div class="screen-list-input-search" *ngIf="screenListInputSearch">
+    <mat-form-field class="form-field" appearance="fill">
+        <mat-label class="form-field-label">{{fieldInputName}}</mat-label>
+        <input matInput class="form-field-input" (keyup)="noiDungTimKiem$.next($event.target.value);"
+            (keyup.enter)="timKiem()" placeholder="{{fieldInputPlaceholder}}" #input [(ngModel)]="noiDungTimKiem">
+        <button *ngIf="noiDungTimKiem" matSuffix mat-icon-button aria-label="Clear" color="primary"
+            (click)="noiDungTimKiem=''" class="form-field-button">
+            <mat-icon>close</mat-icon>
+        </button>
+        <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+</div>
+<div *ngIf="!screenListInputSearch">
+    <app-screen-list-guide [screenListGuideInputSearch]="screenListGuideInputSearch">
+    </app-screen-list-guide>
+</div>
