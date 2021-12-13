@@ -5,7 +5,9 @@ import { CrudOperations } from './crud-operations.interface';
 export abstract class CrudService<T, ID> implements CrudOperations<T, ID> {
 
     constructor(
+        // tslint:disable-next-line:variable-name
         protected _http: HttpClient,
+        // tslint:disable-next-line:variable-name
         protected _base: string
     ) { }
 
@@ -14,15 +16,15 @@ export abstract class CrudService<T, ID> implements CrudOperations<T, ID> {
     }
 
     update(id: ID, t: T): Observable<T> {
-        return this._http.put<T>(this._base + "/" + id, t, {});
+        return this._http.put<T>(this._base + '/' + id, t, {});
     }
 
     findOne(id: ID): Observable<T> {
-        return this._http.get<T>(this._base + "/" + id);
+        return this._http.get<T>(this._base + '/' + id);
     }
 
     findAll(): Observable<T[]> {
-        return this._http.get<T[]>(this._base)
+        return this._http.get<T[]>(this._base);
     }
 
     delete(id: ID): Observable<T> {

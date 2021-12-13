@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 })
 export class BookmarkService extends CrudService<Bookmark, number> {
 
+    // tslint:disable-next-line:variable-name
     constructor(protected _http: HttpClient) {
         super(_http, `${environment.api.baseUrl}/bookmarks`);
     }
