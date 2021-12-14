@@ -16,7 +16,39 @@
             </mat-card>
         </div>
     </article>
-    <article>
-        <router-outlet></router-outlet>
+</section>
+<section class="code-tutorial">
+    <h1 class="code-tutorial-title">Video hướng dẫn sự khác nhau giữa route và route children</h1>
+    <p class="code-tutorial-description">Vì route cùng cấp dẫn đến chuyển route url segment, nếu là route children thì
+        sẽ hiển thị bằng <b>router-outlet</b></p>
+    <div class="code-tutorial-container">
+        <ul #list class="code-tutorial-container-list">
+            <li routerLinkActive="active" class="code-tutorial-container-list-item" (click)="getTabs(0,$event)">Coding
+            </li>
+            <li class="code-tutorial-container-list-item" (click)="getTabs(1,$event)">Video</li>
+            <li class="code-tutorial-container-list-item" (click)="getTabs(2,$event)">dfdf</li>
+        </ul>
+    </div>
+    <article #coding class="code-tutorial-container tab">
+        <h1 class="code-tutorial-container-title">Coding</h1>
+        <div class="code-tuturial-container-filename">{{code.filename}}</div>
+        <div class="code-tutorial-container-code">
+            <pre><code>{{code.code}}</code></pre>
+            <pre><code>{{code.code1}}</code></pre>
+        </div>
+    </article>
+    <article #video class="code-tutorial-container tab">
+        <h1 class="code-tutorial-container-title">Video</h1>
+        <p>Nhìn kỹ route sẽ không đi tiếp do checking match url ngược lại sẽ chuyển route.</p>
+        <div class="code-tutorial-container-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wUeYoD6LACc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </article>
+    <article #video class="code-tutorial-container tab">
+        <h1 class="code-tutorial-container-title">dfdf</h1>
+        <p>next tab</p>
     </article>
 </section>
