@@ -11,6 +11,7 @@ import { SharingModule } from '../shared/sharing.module';
 import { DetailLichthisvComponent } from './aq/detail-lichthisv/detail-lichthisv.component';
 import { SearchMsssvComponent } from './aq/search-msssv/search-msssv.component';
 import { CardAnimationComponent } from './custom-component/card-animation/card-animation.component';
+import { SutrixSolutionsComponent } from './sutrixsolutions/sutrixsolutions.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CardAnimationComponent } from './custom-component/card-animation/card-a
     DetailLichthisvComponent,
     SearchMsssvComponent,
     CardAnimationComponent,
+    SutrixSolutionsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,25 @@
+<div class="SutrixSolutions">
+    <h1>SutrixSolutions</h1>
+    <p>Make a javascript function from this string value "I am Frontend Developer" to the exact result string value of
+        "I ma dnetnoFrepoleveD" result: I madnetnoF repoleveD</p>
+    <p>One is done add some condition that removing a word that aceept original word or reserve word removeWord
+        ="Frontend" result : I marepoleveD removeWord= "dnetnorF" </p>
+    <p>result: I ma repoleveD reveWord= " dnetnorF" result: I ma repoleveD</p>
+    <p>If the word does not match removeWord = "FE" result: I ma dnetnrF repoleveD</p>
+    <h2>Summary:</h2>
+    <p> console.log(resersePerWord("I am Frontend Developer", "Frontend"))</p>
+    <p> console.log(resersePerWord("I am Frontend Developer", "dnetnorF"))</p>
+    <p> console.log(resersePerWord("I am Frontend Developer", "FE"))</p>
+    <h2>Results:</h2>
+    <p> I ma repoleveD</p>
+    <p> I ma repoleveD</p>
+    <p> I ma dnetnorF repoleveD</p>
+    <h1>Bài làm</h1>
+    <input type="text" [(ngModel)]="keyboardString">
+    <button (click)="resersePerWord()">Đảo ngược ký tự</button>
+
+    <h1>result: {{result}}</h1>
+    <button (click)="resersePerWord2()">Đảo ngược ký tự, giữ nguyên vị trí</button>
+
+    <h1>result: {{result2}}</h1>
+</div>
