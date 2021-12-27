@@ -2,3 +2,92 @@
   background: #fff;
   text-align: center;
 }
+.content {
+  padding-bottom: 4rem;
+  .cardlist {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .cardcontainer {
+      max-width: 280px;
+      min-width: 100px;
+      padding: 10px;
+      width: 50%;
+      @media only screen and (min-width: 54.063em) {
+        width: 25%;
+      }
+      position: relative;
+      z-index: 1;
+      .card {
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid rgba(185, 150, 88, 0.2);
+        background-color: rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition: all 0.8s ease;
+        z-index: 2;
+        padding: 50% 10px 100%;
+        .hover {
+          height: 100%;
+          left: 50%;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          transition: 0.3s opacity;
+          width: 140%;
+          div {
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+        }
+        .hover:hover {
+          opacity: 1;
+          div {
+            &.glowebase {
+              background-image: url("./HIS/bglight-base.png");
+            }
+            &.glow {
+              &.glow1:hover {
+                animation: 3s fade infinite;
+                background-image: url("./HIS/bglight-rays1.png");
+              }
+              &.glow2 {
+                animation: -1.5s 3s fade infinite;
+                background-image: url("./HIS/bglight-rays2.png");
+              }
+            }
+            &.dust {
+              &.dust1 {
+                animation: -0.666s 2s fade infinite;
+                background-image: url("./HIS/bglight-dust1.png");
+              }
+              &.dust2 {
+                animation: -1.333s 2s fade infinite;
+                background-image: url("./HIS/bglight-dust2.png");
+              }
+              &.dust3 {
+                animation: 2s fade infinite;
+                background-image: url("./HIS/bglight-dust3.png");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
