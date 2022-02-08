@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'tested', loadChildren: () => import('./tested/test.module').then(m => m.TestModule) },
   { path: 'testapi', loadChildren: () => import('./testapi/testapi.module').then(m => m.TestapiModule) },
+  { path: 'duyhoc', loadChildren: () => import('./duy-hoc/duy-hoc.module').then(m => m.DuyHocModule) },
   { path: '', loadChildren: () => import('./tested/test.module').then(m => m.TestModule) },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

@@ -17,6 +17,7 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 import { ScreenListModule } from './design/screen-list-module/screen-list.module';
+import { DuyHocModule } from './duy-hoc/duy-hoc.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ScreenListModule } from './design/screen-list-module/screen-list.module
     SharingModule,
     TestModule,
     TestapiModule,
+    DuyHocModule
   ],
   providers: [
     WINDOW_PROVIDERS,
