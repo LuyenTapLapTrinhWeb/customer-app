@@ -1,6 +1,6 @@
-<div class="screen-list-toggle" *ngIf="toggleName && !IsHide">
+<div class="screen-list-toggle" *ngIf="toggleName">
     <label for="toggleName" class="screen-list-toggle-label">{{toggleName}}</label>
-    <mat-slide-toggle class="screen-list-toggle-button" [checked]="checked" (change)="toggle($event)" >
+    <mat-slide-toggle class="screen-list-toggle-button" [checked]="checked" (change)="toggle($event)">
         {{checkedValue}}
     </mat-slide-toggle>
 </div>

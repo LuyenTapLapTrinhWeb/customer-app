@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {
   ScreenListGuide, ScreenListGuideButton, ScreenListGuideInputSearch,
-  ScreenListGuideSelection, ScreenListGuideTable, ScreenListGuideToggle
+  ScreenListGuideSelection, ScreenListGuideToggle
 } from './screen-list-guide.interface';
 
 @Component({
@@ -14,7 +14,6 @@ export class ScreenListGuideComponent implements OnInit {
   @Input() screenListGuideSelection!: ScreenListGuideSelection;
   @Input() screenListGuideToggle!: ScreenListGuideToggle;
   @Input() screenListGuideInputSearch!: ScreenListGuideInputSearch;
-  @Input() screenListGuideTable!: ScreenListGuideTable;
   screenlistguide!: ScreenListGuide;
   constructor() { }
 
@@ -25,7 +24,6 @@ export class ScreenListGuideComponent implements OnInit {
         selection: this.screenListGuideSelection,
         toggle: this.screenListGuideToggle,
         inputSearch: this.screenListGuideInputSearch,
-        table: this.screenListGuideTable,
       };
     }
   }

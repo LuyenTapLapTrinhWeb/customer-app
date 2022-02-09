@@ -7,33 +7,15 @@ import { MaterialModule } from '../shared/material/material.module';
 import { SharingModule } from '../shared/sharing.module';
 import { ThuocTanDuocComponent } from './thuoc-tan-duoc/thuoc-tan-duoc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ScreenListTableComponent } from './thuoc-tan-duoc/screen-list-table/screen-list-table.component';
-import { ScreenListComponent } from './thuoc-tan-duoc/screen-list-search/screen-list-search.component';
-import { ScreenBarComponent } from './thuoc-tan-duoc/screen-list-bar/screen-bar.component';
 import { EmployeeComponent } from './person/employee/employee.component';
-import { ScreenListButtonComponent } from './thuoc-tan-duoc/screen-list-button/screen-list-button.component';
-import { ScreenListInputSearchComponent } from './thuoc-tan-duoc/screen-list-input-search/screen-list-input-search.component';
-import { ScreenListGuideComponent } from './thuoc-tan-duoc/screen-list-guide/screen-list-guide.component';
-import { ScreenListToggleComponent } from './thuoc-tan-duoc/screen-list-toggle/screen-list-toggle.component';
-import { ScreenListSearchSelectionComponent } from './thuoc-tan-duoc/screen-list-selection/screen-list-selection.component';
-import { TableReuseableComponent } from './thuoc-tan-duoc/screen-list-table-reuseable-guide/table-reuseable.component';
+import { DesignModule } from '../design/design.module';
 // import { StickyHuongDanSudungComponent } from '../services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 
 @NgModule({
   declarations: [
     OrdersComponent,
     ThuocTanDuocComponent,
-    ScreenListTableComponent,
-    ScreenListComponent,
-    ScreenBarComponent,
     EmployeeComponent,
-    ScreenListSearchSelectionComponent,
-    ScreenListButtonComponent,
-    ScreenListToggleComponent,
-    ScreenListGuideComponent,
-    ScreenListInputSearchComponent,
-    TableReuseableComponent,
-    // StickyHuongDanSudungComponent
   ],
   imports: [
     FormsModule,
@@ -42,6 +24,7 @@ import { TableReuseableComponent } from './thuoc-tan-duoc/screen-list-table-reus
     OrdersRoutingModule,
     MaterialModule,
     SharingModule,
-  ]
+    DesignModule
+  ],
 })
 export class OrdersModule { }

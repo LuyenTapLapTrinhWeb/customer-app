@@ -1,27 +1,24 @@
 $color-toggle-name: #0e8cc1;
 $color-button-toggle: #ffae57;
-$font-size-selection-label: 18px;
-$height-of-component: 48px;
 .screen-list-toggle {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
   width: 230px;
-  height: $height-of-component;
+  height: 60px;
   padding: 8px;
   margin: 4px;
   border: 1px solid #ffaa4a;
   border-radius: 10px;
   @media screen and (max-width: 425px) {
     width: calc(100vw - 64px);
-    height: 48px;
   }
   &-label {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: $font-size-selection-label;
+    font-size: 16px;
     line-height: 14px;
     color: $color-toggle-name;
     margin: 0;
@@ -73,7 +70,6 @@ $height-of-component: 48px;
       padding: 3px !important;
     }
     .mat-slide-toggle-label {
-      
       margin: 0;
     }
   }

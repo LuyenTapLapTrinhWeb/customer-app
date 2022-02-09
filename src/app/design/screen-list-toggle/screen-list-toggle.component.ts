@@ -12,23 +12,21 @@ export class ScreenListToggleComponent implements OnInit {
   checked = false;
   @Output() toggleEventEmitter = new EventEmitter<boolean>();
   @Input() toggleName!: string;
-  @Input() IsHide = false;
   checkedValue!: string;
   screenListGuideToggle!: ScreenListGuideToggle;
-  toggleLabel = { vie: { on: 'mở', off: 'tắt' }, eng: { on: 'on', off: 'off' } };
   toggle(event: MatSlideToggleChange): void {
     if (event.checked) {
       this.toggleEventEmitter.emit(event.checked);
-      this.checkedValue = this.toggleLabel.vie.on.toUpperCase();
+      this.checkedValue = 'ON';
     } else {
       this.toggleEventEmitter.emit(event.checked);
-      this.checkedValue = this.toggleLabel.vie.off.toUpperCase();
+      this.checkedValue = 'OFF';
     }
   }
   constructor() { }
 
   ngOnInit(): void {
-    this.checkedValue = this.toggleLabel.vie.off.toUpperCase();
+    this.checkedValue = 'OFF';
     if (!this.toggleName) {
       // this.toggleName = 'Vui lòng nhập tên tiêu đề';
       this.screenListGuideToggle = SCREENLISTGUIDETOGGLE;

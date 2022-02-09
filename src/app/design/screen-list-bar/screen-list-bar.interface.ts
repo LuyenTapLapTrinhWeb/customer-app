@@ -4,7 +4,4 @@ import { ScreenListButton } from '../screen-list-button/screen-list-button.inter
 export interface ScreenListBar {
     title: string;
     buttons: ScreenListButton[];
-    tooltiptext?: string;
-    isPanelOpenState?: boolean;
-    isPanelExpansion?: boolean;
 }

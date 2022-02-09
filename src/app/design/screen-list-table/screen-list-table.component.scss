@@ -1,29 +1,11 @@
 $btn-control-font-size: 1rem;
 $btn-report-font-size: 0.75rem;
 $btn-color-morvert: #0e8cc1;
-$border-table-color: #e0e0e0;
-$height-width-morvert-button: 24px;
 .mat-card-table {
-  max-height: 550px !important;
+  max-height: 450px !important;
   overflow: auto;
-  border-bottom: 2px solid $border-table-color;
-  margin-bottom: 0;
-
-  @media screen and (max-width: 2560px) {
-    max-height: 80vh !important;
-  }
-
-  @media screen and (max-width: 1336px) {
-    max-height: 70vh !important;
-  }
-  @media screen and (max-width: 1024px) {
-    max-height: 550px !important;
-  }
-  .menu-column {
-    border-left: 1px solid $border-table-color;
-  }
   &-tooltip-button {
-    background: #58656a;
+    font-size: larger;
   }
   &-more-vert-button {
     display: flex;
@@ -31,8 +13,7 @@ $height-width-morvert-button: 24px;
     align-items: center;
     /* style edit button */
     box-sizing: border-box;
-    height: $height-width-morvert-button;
-    width: $height-width-morvert-button;
+    min-width: 40px;
     // border-radius: 4px;
     @media screen and (max-width: 425px) {
       width: auto;
@@ -84,5 +65,61 @@ $height-width-morvert-button: 24px;
     outline: 0;
     background-color: $btn-color-morvert;
     color: #fff;
+  }
+  table {
+    width: 100%;
+    border: 1px solid rgb(196, 196, 196, 50%);
+    border-collapse: separate; /* Don't collapse */
+  }
+  .mat-row.hovered {
+    background: #eee;
+  }
+  ::ng-deep th.mat-sort-header {
+    top: -1px !important;
+    z-index: 1 !important;
+  }
+  ::ng-deep div.mat-sort-header-content {
+    color: $btn-color-morvert;
+    white-space: nowrap;
+  }
+  .mat-row.highlighted {
+    background: #e3e9fc;
+  }
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+    @media screen and (max-width: 425px) {
+      width: 100%;
+    }
+  }
+
+  th.mat-column-position,
+  td.mat-column-position {
+    padding-left: 8px;
+  }
+  .mat-header-row {
+    background: #f5f5f5;
+  }
+  .mat-table-sticky:first-child {
+    border-right: 1px solid #e0e0e0;
+    z-index: 1;
+  }
+
+  .mat-table-sticky:last-child {
+    border-left: 1px solid #e0e0e0;
+    top: -1px !important;
+  }
+  .filter-list-result {
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+  }
+  ::ng-deep .mat-menu-content {
+    background-color: $btn-color-morvert !important;
+  }
+}
+.paginator {
+  ::ng-deep .mat-paginator-container {
+    color: rgb(14 140 193 / 84%) !important;
   }
 }

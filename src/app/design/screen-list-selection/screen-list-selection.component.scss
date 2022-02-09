@@ -1,9 +1,7 @@
-$height-of-component: 48px;
-$font-size-selection-label: 18px;
 .selection {
   .mat-form-field {
     @media screen and (max-width: 425px) {
-      width: 100%;
+      width: 87vw;
     }
   }
   .mat-form-field-wrapper {
@@ -17,41 +15,15 @@ $font-size-selection-label: 18px;
     border-radius: 10px !important;
     border: 1px solid #0e8cc1 !important;
     background-color: #fff !important;
-    padding: 8px 16px !important;
-    height: $height-of-component !important;
+    padding: 8px 24px !important;
+    height: 60px !important;
     min-width: 230px !important;
-    align-items: center;
-    @media screen and (max-width: 425px) {
-      height: 48px !important;
-    }
-    .selection-mat-label {
+    // min-width: 296px !important;
+    .mat-form-field-label {
       color: #0e8cc1;
-      font-size: $font-size-selection-label;
-      margin-bottom: 0;
     }
     .mat-select-arrow {
       color: #0e8cc1;
-    }
-    .mat-form-field-infix {
-      padding: 0 !important;
-      display: flex;
-      flex-flow: row;
-      justify-content: space-between;
-      align-items: center;
-      border-top-width: 0;
-      .mat-select {
-        display: unset !important;
-        width: 60%;
-        .mat-select-trigger {
-          display: flex;
-          flex-flow: row;
-          align-items: center;
-          .mat-select-value {
-            max-width: 100%;
-            width: 80% !important;
-          }
-        }
-      }
     }
   }
   &-required-message {
@@ -66,7 +38,4 @@ $font-size-selection-label: 18px;
     margin: 4px;
     padding: 0 24px;
   }
-}
-.mat-select-panel {
-  min-width: 100% !important;
 }

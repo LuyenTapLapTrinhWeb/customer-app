@@ -23,7 +23,7 @@ export class ScreenListButtonComponent implements OnInit {
       this.screenListGuideButton = SCREENLISTGUIDEBUTTON;
       return;
     } else {
-      // console.log('this.screenListButton', this.screenListButton);
+      console.log('this.screenListButton', this.screenListButton);
       this.svgIcon = this.screenListButton.svgIcon;
     }
   }

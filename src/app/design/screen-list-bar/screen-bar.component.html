@@ -1,9 +1,5 @@
 <div class="containers-banner" *ngIf="screenListBar">
-    <h2 class="containers-banner-title">
-        {{screenListBar.title || 'vui lòng insert tiêu đề'}}</h2>
-    <mat-icon class="containers-banner--arrow-expansion-panel" matTooltip="{{screenListBar.tooltiptext}}"
-        (click)="openPanelOpenState(panelOpenState)" *ngIf="screenListBar.isPanelExpansion === true">
-        {{panelOpenState ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</mat-icon>
+    <h1 class="containers-banner-title">{{screenListBar.title || 'vui lòng insert tiêu đề'}}</h1>
     <div class="containers-banner-group-button">
         <app-screen-list-button *ngFor="let button of screenListBar.buttons" [screenListButton]='button'
             (click)="onClickEventEmitter(button)">

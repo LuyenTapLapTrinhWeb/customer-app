@@ -1,13 +1,14 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2 } from '@angular/core';
-import { PeriodicElement } from 'src/app/testapi/aq/lichthisv/lichthisv.component';
-import { TREE_DATA } from './nav.list-tree.component';
-import { SCREEN_LIST_BUTTON } from './screen-list-button/screen-list-button.data';
-import { ScreenListBar } from './screen-list-bar/screen-list-bar.interface';
-import { SelectionOptionList } from './screen-list-selection/selection-option.interface';
-import { SELECTIONOPTIONLIST } from './screen-list-selection/selection-list.data';
+import { Component, ChangeDetectionStrategy, AfterViewInit, OnInit, ChangeDetectorRef, Renderer2 } from '@angular/core';
+import { ScreenListBar } from 'src/app/design/screen-list-bar/screen-list-bar.interface';
+import { SCREEN_LIST_BUTTON } from 'src/app/design/screen-list-button/screen-list-button.data';
+import { ScreenListInputSearch, INPUTSEARCHHSSK } from 'src/app/design/screen-list-input-search/screen-list-input.interface';
+import { SELECTIONOPTIONLIST } from 'src/app/design/screen-list-selection/selection-list.data';
+import { SelectionOptionList } from 'src/app/design/screen-list-selection/selection-option.interface';
+import { PeriodicElement } from 'src/app/design/screen-list-table/PeriodicElement.interface';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
-import { ScreenListInputSearch, INPUTSEARCHHSSK } from './screen-list-input-search/screen-list-input.interface';
+import { TREE_DATA } from './nav.list-tree.component';
 
+ 
 
 @Component({
   selector: 'app-thuoc-tan-duoc',

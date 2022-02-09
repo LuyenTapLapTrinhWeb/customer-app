@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { ScreenListBar } from './screen-list-bar.interface';
+import { MOUSECLICKMODE } from '../screen-list-button/screen-list-button.data';
 import { ScreenListButton } from '../screen-list-button/screen-list-button.interface';
+import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 
 @Component({
   selector: 'app-screen-bar',
@@ -9,8 +11,7 @@ import { ScreenListButton } from '../screen-list-button/screen-list-button.inter
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ScreenListBarComponent implements OnInit {
-  panelOpenState!: boolean;
+export class ScreenBarComponent implements OnInit {
   @Input() screenListBar!: ScreenListBar;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onReloadingEventEmitter = new EventEmitter<MouseEvent>();
@@ -22,20 +23,14 @@ export class ScreenListBarComponent implements OnInit {
   @Output() onDeletingEventEmitter = new EventEmitter<MouseEvent>();
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onQuestioningEventEmitter = new EventEmitter<MouseEvent>();
-  // tslint:disable-next-line:no-output-on-prefix
-  @Output() onExportExcelEventEmitter = new EventEmitter<MouseEvent>();
-  // tslint:disable-next-line:no-output-on-prefix
-  @Output() onPanelOpenStateEventEmitter = new EventEmitter<boolean>();
 
-  constructor(private cd: ChangeDetectorRef) { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
-    this.panelOpenState = this.screenListBar.isPanelOpenState || false;
+
   }
-  openPanelOpenState(panelOpenState: boolean): void {
-    this.panelOpenState = !panelOpenState;
-    this.cd.detectChanges();
-  }
+
   onClickEventEmitter(button: ScreenListButton): void {
     switch (button.mouseClickMode) {
       case 'questioning':
@@ -52,9 +47,6 @@ export class ScreenListBarComponent implements OnInit {
         break;
       case 'deleting':
         this.onClickEEE(button.mouseClickEvent, this.onDeletingEventEmitter);
-        break;
-      case 'exportexcel':
-        this.onClickEEE(button.mouseClickEvent, this.onExportExcelEventEmitter);
         break;
       default:
         break;

@@ -19,7 +19,6 @@ export class ScreenListInputSearchComponent implements OnInit {
   @Input() filterListForm!: FormGroup;
 
   @Output() screenListInputSearchEventEmitter = new EventEmitter<string>();
-  fieldInputID!: number;
   fieldInputName!: string;
   fieldInputPlaceholder!: string;
   formControlName!: string;
@@ -46,7 +45,6 @@ export class ScreenListInputSearchComponent implements OnInit {
         console.log('clear!');
       }
     });
-    this.fieldInputID = this.screenListInputSearch.id ? this.screenListInputSearch.id : 1;
     this.fieldInputName = this.screenListInputSearch.title ? this.screenListInputSearch.title : '';
     this.fieldInputPlaceholder = this.screenListInputSearch.placeholder ? this.screenListInputSearch.placeholder : 'Vui lòng nhập tiêu đề';
   }
