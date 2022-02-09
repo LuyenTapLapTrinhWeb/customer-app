@@ -18,13 +18,13 @@ import { DesignModule } from '../design/design.module';
     EmployeeComponent,
   ],
   imports: [
+    DesignModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     OrdersRoutingModule,
     MaterialModule,
     SharingModule,
-    DesignModule
   ],
 })
 export class OrdersModule { }
