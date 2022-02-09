@@ -11,6 +11,7 @@ import { ActionsElement, ActionsEvent } from './screen-list-table-config.interfa
 import { AlertService } from 'src/app/services/HeThong/alert.service';
 import { ResizeDetection } from '../screen-list-resize-dectection/screen-list-resize-dectection.interface';
 import { ScreenListGuideTable } from '../screen-list-guide/screen-list-guide.interface';
+import { SCREENLISTGUIDETABLE } from '../screen-list-guide/screen-list-guide.data';
 @Component({
   selector: 'app-screen-list-table',
   templateUrl: './screen-list-table.component.html',
@@ -87,10 +88,10 @@ export class ScreenListTableComponent implements OnInit, AfterViewInit, OnChange
     }
   }
   ngOnInit(): void {
-    // if (!(this.newDataSource && this.tableCols)) {
-    //   this.screenListGuideTable = SCREENLISTGUIDETABLE;
-    //   return;
-    // }
+    if (!(this.newDataSource && this.tableCols)) {
+      this.screenListGuideTable = SCREENLISTGUIDETABLE;
+      return;
+    }
     this.refresh();
   }
   refresh(): void {
