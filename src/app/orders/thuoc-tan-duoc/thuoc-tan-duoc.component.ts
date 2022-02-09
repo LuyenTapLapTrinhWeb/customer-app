@@ -4,11 +4,11 @@ import { SCREEN_LIST_BUTTON } from 'src/app/design/screen-list-button/screen-lis
 import { ScreenListInputSearch, INPUTSEARCHHSSK } from 'src/app/design/screen-list-input-search/screen-list-input.interface';
 import { SELECTIONOPTIONLIST } from 'src/app/design/screen-list-selection/selection-list.data';
 import { SelectionOptionList } from 'src/app/design/screen-list-selection/selection-option.interface';
-import { PeriodicElement } from 'src/app/design/screen-list-table/PeriodicElement.interface';
+import { PeriodicElement } from 'src/app/design/screen-list-table-guide/PeriodicElement.interface';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
 import { TREE_DATA } from './nav.list-tree.component';
 
- 
+
 
 @Component({
   selector: 'app-thuoc-tan-duoc',

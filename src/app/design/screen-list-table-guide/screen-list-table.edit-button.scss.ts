@@ -7,14 +7,16 @@ const MATMENU = {
     'background-color': '#168FC4',
     'border-radius': '10px',
 };
+const minHeight = 40;
+const minWidth = 40;
 const MATMENUITEM = {
     display: 'flex',
     'flex-flow': 'column',
     'justify-content': 'center',
     'align-items': 'center',
     'box-sizing': 'border-box',
-    'min-width': '40px',
-    'min-height': '40px',
+    'min-width': `${minHeight}px`,
+    'min-height': `${minWidth}px`,
     color: '#168FC4',
     'font-family': 'Roboto',
     'font-style': 'normal',

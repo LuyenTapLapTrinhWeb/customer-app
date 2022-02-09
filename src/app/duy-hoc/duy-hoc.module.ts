@@ -9,6 +9,7 @@ import { DuyHoc2Component } from './duy-hoc/duy-hoc2/duy-hoc2.component';
 import { DuyHoc3Component } from './duy-hoc/duy-hoc3/duy-hoc3.component';
 import { DuyHocEditComponent } from './duy-hoc/duy-hoc-edit/duy-hoc-edit.component';
 import { OrdersModule } from '../orders/orders.module';
+import { DesignModule } from '../design/design.module';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { OrdersModule } from '../orders/orders.module';
     ]),
     MaterialModule,
     SharingModule,
-    OrdersModule
+    DesignModule
   ],
 })
 export class DuyHocModule { }

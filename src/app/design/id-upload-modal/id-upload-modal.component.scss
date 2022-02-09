@@ -1,0 +1,64 @@
+::ng-deep {
+  .mat-list-base {
+    display: flex !important;
+    flex-flow: row;
+  }
+  .instruction {
+    display: flex;
+    flex-flow: column;
+    &-title {
+      font-family: "Manulife JH Sans";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 42px;
+    }
+    &-mat-list {
+      display: flex;
+      flex-flow: row;
+      mat-card.mat-card.intruction-mat-card {
+        margin-right: 14px;
+        margin-left: 0;
+        padding: 0 16px 0 0;
+        border: none;
+        box-shadow: none;
+        mat-card-actions.mat-card-actions {
+          padding-left: 8px;
+        }
+        img.cmnd {
+          object-fit: cover;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .card-content {
+          &.should {
+            border-top: 3px #00a758 solid;
+          }
+          &.dont-should {
+            border-top: 3px #ec6453 solid;
+          }
+        }
+        .card-title {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          /* or 125% */
+          color: #282b3e;
+          margin-top: 16px;
+        }
+        .card-subtitle {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 26px;
+          /* or 162% */
+          /* Dark Navy (#282B3E) */
+          color: #282b3e;
+        }
+      }
+    }
+  }
+  .close-button {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
