@@ -1,26 +1,47 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
+.autocomplete-filter {
   width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-.example-option-img {
-  vertical-align: middle;
-  margin-right: 8px;
-}
-
-[dir="rtl"] .example-option-img {
-  margin-right: 0;
-  margin-left: 8px;
-}
-table {
-  tr {
-    td {
-      border: 1px solid black;
+  &-input {
+    width: 100%;
+  }
+  &-table {
+    width: 100%;
+    &-container {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      &-tr {
+        &-option {
+          .label {
+            width: 100px;
+            margin: 4px;
+            .img-responsive {
+              width: 100%;
+              padding: 4px;
+            }
+          }
+          .label-filter-row {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            .th {
+              width: 100%;
+            }
+          }
+          ::ng-deep .mat-option-text {
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+      .thead {
+        height: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+      }
     }
   }
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
-import { TableReuseableData } from '../screen-list-table-reuseable-guide/table-reuseable.data';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatSelectChange } from '@angular/material/select';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { State, STATES } from './state';
 
 @Component({
@@ -11,28 +10,49 @@ import { State, STATES } from './state';
   styleUrls: ['./combobox-autocomplete-table.component.scss']
 })
 export class ComboboxAutocompleteTableComponent implements OnInit {
+  /* infinite scroll */
+  title = 'Angular Material Select Infinite Scroll';
+  total = 100;
+  data = Array.from({ length: this.total }).map((_, i) => `Option ${i}`);
+  limit = 10;
+  offset = 0;
+  options = new BehaviorSubject<string[]>([]);
+  options$: Observable<string[]>;
+
+  /* default all data */
   states: State[] = STATES;
-  stateCtrl = new FormControl();
-  filteredStates: Observable<State[]>;
-  cols: TableReuseableData[];
-  dataSource: any;
-  constructor() {
-    this.filteredStates = this.stateCtrl.valueChanges.pipe(
-      startWith(''),
-      map(state => (state ? this._filterStates(state) : this.states.slice())),
-    );
-    this.dataSource.filter = this.filteredStates;
+  /* new control */
+  stateCtrl = new FormControl(this.states);
+  /* new form */
+  myForm: FormGroup;
+  public filteredList5 = this.states.slice();
+  /* default one data */
+  selectedData: State = {
+    id: 1, flag: 'us',
+    name: 'my', population: '2m4'
+  };
+
+  constructor(private builder: FormBuilder) {
+    this.myForm = this.builder.group({
+      frequency: this.stateCtrl
+    });
   }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
-  private _filterStates(value: string): State[] {
-    const filterValue = value.toLowerCase();
-
-    return this.states.filter(state => state.name.toLowerCase().includes(filterValue));
+  selectedValue(event: MatSelectChange): void {
+    console.log(event.source, event.value);
+    /* change data */
+    this.selectedData = { id: event.value.id, flag: event.value.flag, name: event.value.name, population: event.value.population };
+    console.log(this.selectedData);
   }
-  onActionHandler(action: Event): void {
-
+  compareFn(c1: State, c2: State): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  }
+  getNextBatch(): void {
+    const result = this.data.slice(this.offset, this.offset + this.limit);
+    this.options.next(result);
+    this.offset += this.limit;
   }
 }

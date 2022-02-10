@@ -13,10 +13,6 @@ import { TableReuseableComponent } from './screen-list-table-reuseable-guide/tab
 import { ScreenListTableComponent } from './screen-list-table/screen-list-table.component';
 import { ScreenListToggleComponent } from './screen-list-toggle/screen-list-toggle.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     ScreenListTableComponent,

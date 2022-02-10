@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
     "foundation-sites": "^6.6.3",
+    "mat-select-filter": "^2.4.0",
+    "ng-mat-select-infinite-scroll": "^3.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
