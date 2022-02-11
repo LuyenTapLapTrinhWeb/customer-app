@@ -2,6 +2,17 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { BehaviorSubject, Observable, scan, Subscription } from 'rxjs';
 
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
+interface Car {
+  value: string;
+  viewValue: string;
+}
+
+
 @Component({
   selector: 'app-duy-hoc',
   templateUrl: './duy-hoc.component.html',
@@ -26,7 +37,8 @@ export class DuyHocComponent implements OnInit, OnDestroy {
 
   selectedValue: string;
   selectedCar: string;
-
+  form: FormGroup;
+  profileForm: FormGroup;
   foods: Food[] = [
     { value: 'steak-0', viewValue: 'Steak' },
     { value: 'pizza-1', viewValue: 'Pizza' },
@@ -38,11 +50,18 @@ export class DuyHocComponent implements OnInit, OnDestroy {
     { value: 'saab', viewValue: 'Saab' },
     { value: 'mercedes', viewValue: 'Mercedes' },
   ];
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-  });
+  foodControl = new FormControl(this.foods[2].value);
+  carControl = new FormControl(this.cars[1].value);
+
   constructor() {
+    this.form = new FormGroup({
+      food: this.foodControl,
+      car: this.carControl
+    });
+    this.profileForm = new FormGroup({
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+    });
     this.options$ = this.options.asObservable().pipe(
       scan((acc, curr) => {
         return [...acc, ...curr];
@@ -65,14 +84,3 @@ export class DuyHocComponent implements OnInit, OnDestroy {
     }
   }
 }
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
-interface Car {
-  value: string;
-  viewValue: string;
-}
-

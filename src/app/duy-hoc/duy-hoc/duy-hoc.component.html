@@ -1,22 +1,16 @@
 <section>
     <article class="autocomplete-article">
         <h1>Combobox autocomplete table</h1>
-        <app-combobox-autocomplete-table></app-combobox-autocomplete-table>
+        <!-- <app-combobox-autocomplete-table></app-combobox-autocomplete-table> -->
     </article>
     <article class="autocomplete-article">
         <h1>Combobox infinite scroll</h1>
-        <!-- <mat-form-field appearance="outline">
-            <mat-label>Select</mat-label>
-            <mat-select (infiniteScroll)="getNextBatch()" [complete]="offset === data.length" msInfiniteScroll>
-                <mat-option *ngFor="let option of options$ | async" [value]="option">{{option}}</mat-option>
-            </mat-select>
-        </mat-form-field> -->
-
-        <form>
+        <form [formGroup]="form">
             <h4>mat-select</h4>
             <mat-form-field appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-label>Favorite Food</mat-label>
+                <mat-select [formControl]="foodControl" name="food">
+                    <mat-option>None</mat-option>
                     <mat-option *ngFor="let food of foods" [value]="food.value">
                         {{food.viewValue}}
                     </mat-option>

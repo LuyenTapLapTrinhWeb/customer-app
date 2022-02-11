@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material/material.module';
 import { ComboboxAutocompleteTableComponent } from './combobox-autocomplete-table/combobox-autocomplete-table.component';
 import { IdUploadModalComponent } from './id-upload-modal/id-upload-modal.component';
-import { SelectInfinityScrollComponent } from './infinity-scroll/infinity-scroll.component';
 import { ScreenBarComponent } from './screen-list-bar/screen-bar.component';
 import { ScreenListButtonComponent } from './screen-list-button/screen-list-button.component';
 import { ScreenListGuideComponent } from './screen-list-guide/screen-list-guide.component';
@@ -26,7 +25,6 @@ import { ScreenListToggleComponent } from './screen-list-toggle/screen-list-togg
     TableReuseableComponent,
     ComboboxAutocompleteTableComponent,
     IdUploadModalComponent,
-    SelectInfinityScrollComponent
   ],
   imports: [
     MaterialModule,
@@ -45,7 +43,6 @@ import { ScreenListToggleComponent } from './screen-list-toggle/screen-list-togg
     TableReuseableComponent,
     ComboboxAutocompleteTableComponent,
     IdUploadModalComponent,
-    SelectInfinityScrollComponent
   ]
 })
 export class DesignModule { }

@@ -31,8 +31,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectFilterModule } from 'mat-select-filter';
-import { MatSelectInfiniteScrollModule } from 'ng-mat-select-infinite-scroll';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
 
@@ -71,9 +69,7 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    NgxMatSelectSearchModule,
-    MatSelectFilterModule,
-    MatSelectInfiniteScrollModule,
+    MatSelectFilterModule
   ]
 })
 export class MaterialModule { }
