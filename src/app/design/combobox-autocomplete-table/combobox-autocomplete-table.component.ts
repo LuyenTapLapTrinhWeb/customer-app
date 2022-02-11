@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { scan } from 'rxjs/operators';
-import { InfinityScrollOption } from '../infinity-scroll/infinity-scroll-option';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatSelectChange } from '@angular/material/select';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
+import { startWith } from 'rxjs/operators';
+import { State, STATES } from './state';
 
 @Component({
   selector: 'app-combobox-autocomplete-table',
@@ -10,30 +12,49 @@ import { InfinityScrollOption } from '../infinity-scroll/infinity-scroll-option'
   styleUrls: ['./combobox-autocomplete-table.component.scss']
 })
 export class ComboboxAutocompleteTableComponent implements OnInit {
-  /* ================================================================================= */
-  // variable of infinite scroll
-  /* ================================================================================= */
+  /* default all data */
+  states: State[] = STATES;
+  /* new control */
+  selectCtrl = new FormControl(this.states);
+  inputCtrl = new FormControl();
+  /* new form */
   myForm: FormGroup;
-  listDataInfinityScrollOption: InfinityScrollOption[] = [];
-  chucVuTouch: boolean = false;
-  /* ================================================================================= */
-  constructor(fb: FormBuilder) {
-    this.myForm = fb.group({
-      id: [null]
-    })
+  public filteredList5 = this.states.slice();
+  /* default one data */
+  selectedData: State = {
+    id: 1, flag: 'us',
+    name: 'my', population: '2m4'
+  };
+  filteredOptions: Observable<State[]>;
+
+  constructor(private builder: FormBuilder) {
+    this.myForm = this.builder.group({
+      select: this.selectCtrl,
+      input: this.inputCtrl
+    });
   }
 
   ngOnInit(): void {
-    this.getListScroll();
+    this.filteredOptions = this.myForm.get('select').valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value)),
+    );
   }
 
-  changeIDCHUCVU(Loai: string, Ma: string) {
-    this.myForm.patchValue({ IDCHUCVU: Ma })
-    // this.theSelected.IDCHUCVU=parseInt(Ma)
+  selectedValue(event: MatSelectChange): void {
+    console.log(event.source, event.value);
+    /* change data */
+    this.selectedData = {
+      id: event.value.id,
+      flag: event.value.flag,
+      name: event.value.name,
+      population: event.value.population
+    };
+    console.log(this.selectedData);
   }
-  getListScroll(): void {
-    for (let i = 0; i < 150; i++) {
-      this.listDataInfinityScrollOption.push({ value: i.toString(), label: i.toString() });
-    }
+  private _filter(value: string): State[] {
+    const filterValue = value.toLowerCase();
+
+    return this.states.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 }

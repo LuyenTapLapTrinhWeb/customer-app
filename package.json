@@ -26,6 +26,8 @@
     "@angular/animations": "^13.0.0 || ^14.0.0-0",
     "@angular/cdk": "^13.2.2",
     "@angular/cli": "^13.2.3",
+    "@angular/common": "^13.2.2",
+    "@angular/compiler": "^13.2.2",
     "@angular/core": "^13.2.2",
     "@angular/forms": "^13.0.0 || ^14.0.0-0",
     "@angular/material": "^13.2.2",
