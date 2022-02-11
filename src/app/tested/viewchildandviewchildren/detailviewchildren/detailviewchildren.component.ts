@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { DetailviewchildService } from './detailviewchild.service';
@@ -7,6 +7,7 @@ import { transitionPage } from 'src/app/animations/reuse/transitionPage.animatio
 import { transitionY } from 'src/app/animations/reuse/transitionTable.animation';
 import { ChangeDetectorRef } from '@angular/core';
 import { NgModel } from '@angular/forms';
+//import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-detailviewchildren',

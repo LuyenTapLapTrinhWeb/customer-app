@@ -71,9 +71,9 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatSelectFilterModule,
     NgxMatSelectSearchModule,
-    MatSelectInfiniteScrollModule
+    MatSelectFilterModule,
+    MatSelectInfiniteScrollModule,
   ]
 })
 export class MaterialModule { }

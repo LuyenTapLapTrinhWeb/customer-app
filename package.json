@@ -22,11 +22,22 @@
   },
   "homepage": "https://github.com/LuyenTapLapTrinhWeb/customer-app#readme",
   "dependencies": {
+    "@angular-devkit/build-angular": "^13.2.3",
     "@angular/animations": "^13.0.0 || ^14.0.0-0",
     "@angular/cdk": "^13.2.2",
     "@angular/cli": "^13.2.3",
+    "@angular/core": "^13.2.2",
     "@angular/forms": "^13.0.0 || ^14.0.0-0",
     "@angular/material": "^13.2.2",
+    "@angular/platform-browser": "^13.2.2",
+    "@angular/platform-browser-dynamic": "^13.2.2",
+    "@angular/router": "^13.2.2",
+    "mat-select-filter": "^2.4.0",
+    "ng-mat-select-infinite-scroll": "^3.0.1",
+    "ngx-mat-select-search": "^4.0.2",
     "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "webpack": "^5.68.0"
   }
 }

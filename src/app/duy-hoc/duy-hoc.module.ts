@@ -9,7 +9,6 @@ import { DuyHoc2Component } from './duy-hoc/duy-hoc2/duy-hoc2.component';
 import { DuyHoc3Component } from './duy-hoc/duy-hoc3/duy-hoc3.component';
 import { DuyHocEditComponent } from './duy-hoc/duy-hoc-edit/duy-hoc-edit.component';
 import { DesignModule } from '../design/design.module';
-import { SelectInfinityScrollComponent } from '../design/infinity-scroll/infinity-scroll.component';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { SelectInfinityScrollComponent } from '../design/infinity-scroll/infinit
     DuyHoc2Component,
     DuyHoc3Component,
     DuyHocEditComponent,
-    SelectInfinityScrollComponent
   ],
   imports: [
     RouterModule.forChild([
