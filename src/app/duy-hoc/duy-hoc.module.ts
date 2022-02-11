@@ -8,8 +8,8 @@ import { DuyHoc1Component } from './duy-hoc/duy-hoc1/duy-hoc1.component';
 import { DuyHoc2Component } from './duy-hoc/duy-hoc2/duy-hoc2.component';
 import { DuyHoc3Component } from './duy-hoc/duy-hoc3/duy-hoc3.component';
 import { DuyHocEditComponent } from './duy-hoc/duy-hoc-edit/duy-hoc-edit.component';
-import { OrdersModule } from '../orders/orders.module';
 import { DesignModule } from '../design/design.module';
+import { SelectInfinityScrollComponent } from '../design/infinity-scroll/infinity-scroll.component';
 
 
 @NgModule({
@@ -20,6 +20,7 @@ import { DesignModule } from '../design/design.module';
     DuyHoc2Component,
     DuyHoc3Component,
     DuyHocEditComponent,
+    SelectInfinityScrollComponent
   ],
   imports: [
     RouterModule.forChild([
@@ -35,7 +36,7 @@ import { DesignModule } from '../design/design.module';
     ]),
     MaterialModule,
     SharingModule,
-    DesignModule
+    DesignModule,
   ],
 })
 export class DuyHocModule { }

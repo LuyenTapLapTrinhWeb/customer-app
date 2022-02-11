@@ -1,35 +1,17 @@
 
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import { scan, takeUntil } from 'rxjs/operators';
 import { InfinityScrollOption } from './infinity-scroll-option';
 import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIconLiteral.service';
-import {
-  ACTIONSEVENTID,
-  ADDING,
-  BARSVGICONS,
-  DELETING,
-  EDITING,
-  RELOADING,
-  TOOLTIPTEXT,
-} from 'src/app/design/screen-list-button/screen-list-button.data';
 
 @Component({
   selector: 'app-infinity-scroll',
   templateUrl: './infinity-scroll.component.html'
 })
 // export class SelectComponent implements OnInit {
-export class SelectComponent implements OnInit, OnChanges, OnDestroy {
+export class SelectInfinityScrollComponent implements OnInit, OnChanges, OnDestroy {
   @Input() data$: Array<InfinityScrollOption> =
     new Array<InfinityScrollOption>();
   @Input() dataExtra: Array<InfinityScrollOption> =
@@ -62,7 +44,7 @@ export class SelectComponent implements OnInit, OnChanges, OnDestroy {
   isSearch = '';
   ngUnsubscribe = new Subject();
   constructor(private svgicon: SvgIconLiteralService) {
-    this.svgicon.addMultiMatIconSvgCustomObservable(BARSVGICONS);
+    // this.svgicon.addMultiMatIconSvgCustomObservable(BARSVGICONS);
   }
   ngOnInit(): void {
     const dt = this.cloneObject(this.data$);
