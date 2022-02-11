@@ -8,9 +8,9 @@ import { SvgIconLiteralService } from 'src/app/services/SvgIconLiteralts/svgIcon
 
 @Component({
   selector: 'app-infinity-scroll',
-  templateUrl: './infinity-scroll.component.html'
+  templateUrl: './infinity-scroll.component.html',
+  styleUrls: ['./infinity-scroll.component.scss']
 })
-// export class SelectComponent implements OnInit {
 export class SelectInfinityScrollComponent implements OnInit, OnChanges, OnDestroy {
   @Input() data$: Array<InfinityScrollOption> =
     new Array<InfinityScrollOption>();
