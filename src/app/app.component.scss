@@ -23,6 +23,13 @@
     text-align: left;
   }
 }
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  .text-left {
+    text-align: center;
+  }
+}
 .mat-nav-list {
   flex-flow: row wrap;
 }

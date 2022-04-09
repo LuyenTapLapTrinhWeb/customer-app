@@ -1,11 +1,6 @@
 <mat-drawer-container class="example-container" autosize color="primary">
   <mat-drawer color="primary" #drawer class="example-sidenav" mode="side">
-    <div class="flex-column">
-      <a class="text-left" mat-button [routerLink]="['tested']" routerLinkActive="active" appHightlight>Tested</a>
-      <a class="text-left" mat-button [routerLink]="['customers']" routerLinkActive="active" appHightlight>Customers</a>
-      <a class="text-left" mat-button [routerLink]="['orders']" routerLinkActive="active" appHightlight>Orders</a>
-      <a class="text-left" mat-button [routerLink]="['testapi']" routerLinkActive="active" appHightlight>Test API</a>
-    </div>
+
   </mat-drawer>
 
   <div class="example-sidenav-content">
@@ -13,6 +8,13 @@
       <button color="primary" type="button" mat-button (click)="drawer.toggle()" appHightlight>
         <mat-icon>menu</mat-icon>
       </button>
+      <div class="flex-row">
+        <a class="text-left" mat-button [routerLink]="['tested']" routerLinkActive="active" appHightlight>Tested</a>
+        <a class="text-left" mat-button [routerLink]="['customers']" routerLinkActive="active"
+          appHightlight>Customers</a>
+        <a class="text-left" mat-button [routerLink]="['orders']" routerLinkActive="active" appHightlight>Orders</a>
+        <a class="text-left" mat-button [routerLink]="['testapi']" routerLinkActive="active" appHightlight>Test API</a>
+      </div>
     </mat-toolbar>
     <div class="wrapper">
       <router-outlet></router-outlet>
