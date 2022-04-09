@@ -1,0 +1,166 @@
+<section class="section">
+    <article class="article form">
+        <div class="form-container">
+            <form class="form-container--form" [formGroup]="todieutriFormGroup" autocomplete="false">
+                <div class="row">
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Bệnh chính</mat-label>
+                        <input matInput placeholder="Mã bệnh chính" formControlName="textIDbenhchinh"
+                            (change)="onPatchValueTextbenhchinh($event.target.value)">
+                        <!-- <mat-error
+                            *ngIf="(todieutriFormGroup.get('textIDbenhchinh').touched || todieutriFormGroup.get('textIDbenhchinh').dirty) && todieutriFormGroup.get('textIDbenhchinh').invalid">
+                            Không tìm thấy bệnh chính
+                        </mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Tên bệnh chính</mat-label>
+                        <mat-select formControlName="selectedbenhchinh"
+                            (valueChange)="onPatchValueSelectedbenhchinh($event)">
+                            <mat-option *ngFor="let benhchinh of benhchinhs" [value]="benhchinh">
+                                {{benhchinh.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button mat-icon-button matTooltip="Bệnh kèm theo">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                    <button mat-icon-button><mat-icon>icon_name</mat-icon></button>
+                </div>
+                <div class="row">
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Ngày</mat-label>
+                        <input matInput placeholder="Ngày" formControlName="textngay">
+                    </mat-form-field>
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Giờ</mat-label>
+                        <input matInput placeholder="Giờ" formControlName="textgio">
+                    </mat-form-field>
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Giờ</mat-label>
+                        <input matInput placeholder="Số tờ" formControlName="textsoto">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Phòng</mat-label>
+                        <input matInput placeholder="Phòng" formControlName="textphong">
+                    </mat-form-field>
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Giường</mat-label>
+                        <input matInput placeholder="Giường" formControlName="textgiuong">
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field class="form-container--form--form-control">
+                    <mat-label>Y Lệnh</mat-label>
+                    <textarea matInput placeholder="Mô tả y lệnh" formControlName="textylenh"></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="form-container--form--form-control">
+                    <mat-label>Diễn biến</mat-label>
+                    <textarea matInput placeholder="Mô tả diễn biến" formControlName="textdienbien"></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="form-container--form--form-control">
+                    <mat-label>Bác sĩ</mat-label>
+                    <mat-select formControlName="selectedbacsi">
+                        <mat-option *ngFor="let bacsi of bacsis" [value]="bacsi">
+                            {{bacsi.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="form-container--form--form-control">
+                    <mat-label>Chăm sóc</mat-label>
+                    <mat-select formControlName="selectedchamsoc">
+                        <mat-option *ngFor="let chamsoc of chamsocs" [value]="chamsoc">
+                            {{chamsoc.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </div>
+    </article>
+    <article class="article table">
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" class="table-container--table" matSort>
+                <!-- header + merge header -->
+                <ng-container matColumnDef="Ngaygio">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2" mat-sort-header> Ngày giờ </th>
+                </ng-container>
+                <!-- Header merge colspan-->
+                <ng-container matColumnDef="Dienbien">
+                    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2" mat-sort-header> Diễn biến </th>
+                </ng-container>
+                <!-- Header merge colspan-->
+                <ng-container matColumnDef="Ylenh">
+                    <th mat-header-cell *matHeaderCellDef [attr.colspan]="2" mat-sort-header> Y lệnh </th>
+                </ng-container>
+                <!-- header merge rowspan -->
+                <ng-container matColumnDef="In">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2" mat-sort-header>In</th>
+                </ng-container>
+                <ng-container matColumnDef="Ky">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2" mat-sort-header>Ký</th>
+                </ng-container>
+
+
+                <!-- column hien thi theo thu tu merge-->
+
+
+                <ng-container matColumnDef="ngaygio">
+                    <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}" mat-sort-header> Ngày giờ
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{formatDateTimeNow(element.ngaygio)}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="dienbien.bacsi">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Bác sĩ </th>
+                    <td mat-cell *matCellDef="let element"> {{element.dienbien.bacsi.name }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="dienbien.dienbien">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Diễn biến </th>
+                    <td mat-cell *matCellDef="let element"> {{printDienBien(element.dienbien ) }} </td>
+                </ng-container>
+                <ng-container matColumnDef="ylenh.bacsi">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Bác sĩ </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ylenh.bacsi.name }} </td>
+                </ng-container>
+                <ng-container matColumnDef="ylenh.ylenh">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Y lệnh</th>
+                    <td mat-cell *matCellDef="let element"> {{printYlenh(element.ylenh) }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="in">
+                    <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}" mat-sort-header> In </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-checkbox (click)="$event.stopPropagation()" [(ngModel)]="element.in"
+                            (change)="$event ? selection.toggle(element) : null"
+                            [checked]="selection.isSelected(element)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="ky">
+                    <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}" mat-sort-header> Ký </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-checkbox (click)="$event.stopPropagation()" [(ngModel)]="element.ky"
+                            (change)="$event ? selection.toggle(element) : null"
+                            [checked]="selection.isSelected(element)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <!-- quy tac merge -->
+                <tr mat-header-row *matHeaderRowDef="displayHeadersMergeColumns"></tr>
+                <!-- column list -->
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #paginator class="table-container--paginator" [length]="100" [pageSize]="10"
+                [pageSizeOptions]="[1, 5, 10, 25, 100]" aria-label="Select page" showFirstLastButtons>
+            </mat-paginator>
+        </div>
+    </article>
+</section>

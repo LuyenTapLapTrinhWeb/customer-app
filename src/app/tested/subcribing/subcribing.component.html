@@ -1,13 +1,12 @@
 <div class="container" [@transition]>
     <div class="column--2--xs bg-menu">
         <ul class="link-list">
-            <li class="link-list-item left-circle" *ngFor="let link of links" routerLinkActive="active-child">
-                <a mat-button class="navigateButton" routerLink="{{link.link}}">{{link.name |
-                    titlecase}}</a>
+            <li class="link-list-item left-circle" *ngFor="let link of links" routerLinkActive="active">
+                <a mat-button class="navigateButton" routerLink="{{link.link}}">{{link.name | titlecase}}</a>
             </li>
         </ul>
     </div>
-    <div class="column--10 bg-content">
+    <div class="column--12 bg-content">
         <router-outlet></router-outlet>
     </div>
 </div>

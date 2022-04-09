@@ -22,6 +22,7 @@ import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailvi
 import { RxComponent } from './rx/rx.component';
 import { RxOperatorComponent } from './rx/rx-operator/rx-operator.component';
 import { CancelingOservationComponent } from './rx/canceling-oservation/canceling-oservation.component';
+import { DanhSachDieuTriComponent } from './danh-sach-dieu-tri/danh-sach-dieu-tri.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { CancelingOservationComponent } from './rx/canceling-oservation/cancelin
     RxComponent,
     RxOperatorComponent,
     CancelingOservationComponent,
+    DanhSachDieuTriComponent
   ],
   imports: [
     CommonModule,

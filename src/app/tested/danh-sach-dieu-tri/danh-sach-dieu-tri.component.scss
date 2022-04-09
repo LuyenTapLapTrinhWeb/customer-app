@@ -1,0 +1,51 @@
+$border-table: 1px solid #ebebeb;
+$border-table-td: 1px solid #e2e8f0;
+.section {
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-flow: row;
+    .article {
+        &.form {
+            width: 30%;
+        }
+        &.table {
+            width: 100%;
+        }
+    }
+    .table-container {
+        &--table {
+            border: $border-table;
+            box-shadow: 0px 8px 16px 0px #ebebeb;
+            border-radius: 4px;
+            width: 100%;
+            tr > th {
+                background: #4f46e5;
+                color: #fff;
+                border: $border-table;
+                padding: 4px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            tr > td {
+                border: $border-table;
+                padding: 8px;
+            }
+            // ::ng-deep .mat-sort-header-container {
+            //     justify-content: center;
+            // }
+        }
+        // &--paginator{
+
+        // }
+    }
+    .form-container {
+        &--form {
+            display: flex;
+            flex-flow: row wrap;
+            &--form-control {
+                width: 100%;
+            }
+        }
+    }
+}

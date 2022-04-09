@@ -1,4 +1,4 @@
-.active-child {
+.active {
   color: #1e88e5;
   font-size: 20px;
   background: #fafafa;
@@ -15,7 +15,7 @@
     border-radius: 4px;
   }
   .bg-menu {
-    background: #2F333F;
+    background: #2f333f;
     color: white;
     margin: 4px;
     border-radius: 4px;
@@ -36,8 +36,10 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-  .active-child {
+  .active {
     font-size: 0.9rem;
+    color: #30323e;
+    background: #fff;
   }
   .container {
     display: flex;
