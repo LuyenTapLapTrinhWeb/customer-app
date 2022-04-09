@@ -8,6 +8,12 @@
   flex-direction: row;
   justify-content: space-around;
   font-size: 20px;
+  .bg-content {
+    background: #0000001f;
+    color: white;
+    margin: 4px;
+    border-radius: 4px;
+  }
 }
 
 .navigateButton {
