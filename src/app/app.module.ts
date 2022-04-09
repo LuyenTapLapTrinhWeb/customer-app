@@ -16,7 +16,6 @@ import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
-import { DuyHocModule } from './duy-hoc/duy-hoc.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -29,13 +28,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
     SharingModule,
     TestModule,
     TestapiModule,
-    DuyHocModule
   ],
   providers: [
     WINDOW_PROVIDERS,
