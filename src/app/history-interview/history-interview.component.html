@@ -1,0 +1,17 @@
+<section>
+    <article class="history-interview-container">
+        <div class="history-interview-loop">
+            <mat-card class="history-interview-card" *ngFor="let history of histories; let i = index;">
+                <mat-card-header>
+                    <mat-card-title class="detail-info-interview">
+                        <span>{{history.companyName| uppercase}}</span>
+                        <span>{{history.interviewTime| date:"dd/MM/yyyy"}}</span>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="email-image-interview">
+                    <img mat-card-image [src]="history.src" [alt]="history.companyName">
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </article>
+</section>
