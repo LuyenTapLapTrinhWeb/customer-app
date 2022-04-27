@@ -24,6 +24,7 @@ import { RxOperatorComponent } from './rx/rx-operator/rx-operator.component';
 import { CancelingOservationComponent } from './rx/canceling-oservation/canceling-oservation.component';
 import { DanhSachDieuTriComponent } from './danh-sach-dieu-tri/danh-sach-dieu-tri.component';
 import { DialogAddDanhSachDieuTriComponent } from './danh-sach-dieu-tri/dialog-danh-sach-dieu-tri/dialog-danh-sach-dieu-tri.component';
+import { DialogRemoveConfirmQuestionComponent } from './danh-sach-dieu-tri/dialog-remove-confim-question/dialog-remove-confim-question.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { DialogAddDanhSachDieuTriComponent } from './danh-sach-dieu-tri/dialog-d
     RxOperatorComponent,
     CancelingOservationComponent,
     DanhSachDieuTriComponent,
-    DialogAddDanhSachDieuTriComponent
+    DialogAddDanhSachDieuTriComponent,
+    DialogRemoveConfirmQuestionComponent
   ],
   imports: [
     CommonModule,

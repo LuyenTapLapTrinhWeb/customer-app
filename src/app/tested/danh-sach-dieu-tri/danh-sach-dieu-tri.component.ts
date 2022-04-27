@@ -1,3 +1,5 @@
+import { DialogRemoveConfirmQuestionComponent } from './dialog-remove-confim-question/dialog-remove-confim-question.component';
+import { DialogEditDieuTriDetailsComponent } from './dialog-dieu-tri-details/dieu-tri-details.component';
 import { SelectionModel } from "@angular/cdk/collections";
 import { Component, OnInit, AfterViewInit, ViewChild, Output, EventEmitter } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
@@ -145,11 +147,18 @@ export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-  openDialogPrint() {
-    const dialogRef = this.dialog.open(DialogAddDanhSachDieuTriComponent);
+  openDialogEdit() {
+    const dialogRef = this.dialog.open(DialogEditDieuTriDetailsComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  openDialogDelete() {
+    // const dialogRef = this.dialog.open(DialogRemoveConfirmQuestionComponent);
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 }

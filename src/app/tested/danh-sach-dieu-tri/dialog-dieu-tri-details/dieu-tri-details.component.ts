@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dieu-tri-details.component.html',
   styleUrls: ['./dieu-tri-details.component.scss']
 })
-export class DieuTriDetailsComponent implements OnInit {
+export class DialogEditDieuTriDetailsComponent implements OnInit {
 
   constructor() { }
 
