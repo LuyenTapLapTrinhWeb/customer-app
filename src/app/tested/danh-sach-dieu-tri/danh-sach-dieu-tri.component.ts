@@ -140,25 +140,38 @@ export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
     let result = `${ylenh.bacsi.name} ${ylenh.chidinhdichvu.mota} ${ylenh.todieutri}`;
     return result;
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   openDialogAdd() {
-    const dialogRef = this.dialog.open(DialogAddDanhSachDieuTriComponent);
+    const dialogRef = this.dialog.open(DialogAddDanhSachDieuTriComponent, {
+      hasBackdrop: true,
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  openDialogEdit() {
-    const dialogRef = this.dialog.open(DialogEditDieuTriDetailsComponent);
+  openDialogEdit(element: ToDieuTri) {
+
+    const dialogRef = this.dialog.open(DialogEditDieuTriDetailsComponent, {
+      hasBackdrop: true,
+      data: element,
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  openDialogDelete() {
-    // const dialogRef = this.dialog.open(DialogRemoveConfirmQuestionComponent);
+  openDialogDelete(element: ToDieuTri) {
+    const dialogRef = this.dialog.open(DialogRemoveConfirmQuestionComponent, {
+      hasBackdrop: true,
+      data: element,
+    });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
