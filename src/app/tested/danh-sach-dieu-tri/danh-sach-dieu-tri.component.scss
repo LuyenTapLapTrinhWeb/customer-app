@@ -4,13 +4,24 @@ $border-table-td: 1px solid #e2e8f0;
     height: 100%;
     padding: 16px;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     .article {
+        background: rgba(255, 255, 255, 0.494);
+        color: black;
+        padding: 8px;
+        display: grid;
+        grid: min-content/1fr;
+        grid-template-areas:
+            "buttons-action"
+            "table";
+        &.buttons-action {
+            grid-area: buttons-action;
+        }
         &.form {
             width: 30%;
         }
         &.table {
-            width: 100%;
+            grid-area: table;
         }
     }
     .table-container {
@@ -42,7 +53,7 @@ $border-table-td: 1px solid #e2e8f0;
     .form-container {
         &--form {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row;
             &--form-control {
                 width: 100%;
             }

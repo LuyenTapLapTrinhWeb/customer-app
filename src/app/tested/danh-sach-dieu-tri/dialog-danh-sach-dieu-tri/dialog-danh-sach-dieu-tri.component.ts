@@ -1,29 +1,26 @@
-import { SelectionModel } from "@angular/cdk/collections";
-import { Component, OnInit, AfterViewInit, ViewChild, Output, EventEmitter } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { MatDialog } from "@angular/material/dialog";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatSort } from "@angular/material/sort";
-import { MatTableDataSource } from "@angular/material/table";
-import { DialogAddDanhSachDieuTriComponent } from "./dialog-danh-sach-dieu-tri/dialog-danh-sach-dieu-tri.component";
-import { BacSi } from "./model/BACSI";
-import { BenhChinh } from "./model/BENHCHINH";
-import { ChamSoc } from "./model/CHAMSOC";
-import { DienBien } from "./model/DIENBIEN";
-import { ToDieuTri } from "./model/TODIEUTRI";
-import { TODIEUTRI } from "./model/TODIEUTRI.data";
-import { YLenh } from "./model/YLENH";
-import { DatePositionFormat, DateSymbolFormat } from "./service/date-symbol-format.enum";
-import { IPropertyTranferDate } from "./service/date-transfer.interface";
-import { TransferDate } from "./service/date-transfer.static";
-
+import { SelectionModel } from '@angular/cdk/collections';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { BacSi } from '../model/BACSI';
+import { BenhChinh } from '../model/BENHCHINH';
+import { ChamSoc } from '../model/CHAMSOC';
+import { DienBien } from '../model/DIENBIEN';
+import { ToDieuTri } from '../model/TODIEUTRI';
+import { TODIEUTRI } from '../model/TODIEUTRI.data';
+import { YLenh } from '../model/YLENH';
+import { DatePositionFormat, DateSymbolFormat } from '../service/date-symbol-format.enum';
+import { IPropertyTranferDate } from '../service/date-transfer.interface';
+import { TransferDate } from '../service/date-transfer.static';
 
 @Component({
-  selector: 'danh-sach-to-dieu-tri',
-  templateUrl: './danh-sach-dieu-tri.component.html',
-  styleUrls: ['./danh-sach-dieu-tri.component.scss']
+  selector: 'app-dialog-danh-sach-dieu-tri',
+  templateUrl: './dialog-danh-sach-dieu-tri.component.html',
+  styleUrls: ['./dialog-danh-sach-dieu-tri.component.scss']
 })
-export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
+export class DialogAddDanhSachDieuTriComponent implements OnInit {
   benhchinhs!: BenhChinh[];
   bacsis: BacSi[];
   chamsocs: ChamSoc[];
@@ -37,12 +34,12 @@ export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
   todieutriFormGroup: FormGroup;
 
   /* table */
-  displayedColumns: string[] = ['ngaygio', 'dienbien.bacsi', 'dienbien.dienbien', 'ylenh.bacsi', 'ylenh.ylenh', 'in', 'ky', 'edit', 'remove'];
-  displayHeadersMergeColumns: string[] = ['Ngaygio', 'Dienbien', 'Ylenh', 'In', 'Ky', 'Actions'];
+  displayedColumns: string[] = ['ngaygio', 'dienbien.bacsi', 'dienbien.dienbien', 'ylenh.bacsi', 'ylenh.ylenh', 'in', 'ky'];
+  displayHeadersMergeColumns: string[] = ['Ngaygio', 'Dienbien', 'Ylenh', 'In', 'Ky'];
 
   dataSource = new MatTableDataSource<ToDieuTri>([]);
   // todieutris: ToDieuTri[];
-  constructor(private fb: FormBuilder, public dialog: MatDialog) {
+  constructor(private fb: FormBuilder) {
     this.benhchinhs = [];
     this.bacsis = [];
     this.chamsocs = [];
@@ -138,18 +135,5 @@ export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
     let result = `${ylenh.bacsi.name} ${ylenh.chidinhdichvu.mota} ${ylenh.todieutri}`;
     return result;
   }
-  openDialogAdd() {
-    const dialogRef = this.dialog.open(DialogAddDanhSachDieuTriComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-  openDialogPrint() {
-    const dialogRef = this.dialog.open(DialogAddDanhSachDieuTriComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 }
