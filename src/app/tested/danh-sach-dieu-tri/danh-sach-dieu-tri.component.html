@@ -69,18 +69,16 @@
                 <ng-container matColumnDef="in">
                     <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}" mat-sort-header> In </th>
                     <td mat-cell *matCellDef="let element">
-                        <mat-checkbox (click)="$event.stopPropagation()" [(ngModel)]="element.in"
-                            (change)="$event ? selection.toggle(element) : null"
-                            [checked]="selection.isSelected(element)">
+                        <mat-checkbox [(ngModel)]="element.in" (change)="selectionIn.toggle(element)"
+                            [checked]="selectionIn.isSelected(element)">
                         </mat-checkbox>
                     </td>
                 </ng-container>
                 <ng-container matColumnDef="ky">
                     <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}" mat-sort-header> Ký </th>
                     <td mat-cell *matCellDef="let element">
-                        <mat-checkbox (click)="$event.stopPropagation()" [(ngModel)]="element.ky"
-                            (change)="$event ? selection.toggle(element) : null"
-                            [checked]="selection.isSelected(element)">
+                        <mat-checkbox [(ngModel)]="element.ky" (change)="selectionKy.toggle(element)"
+                            [checked]="selectionKy.isSelected(element)">
                         </mat-checkbox>
                     </td>
                 </ng-container>

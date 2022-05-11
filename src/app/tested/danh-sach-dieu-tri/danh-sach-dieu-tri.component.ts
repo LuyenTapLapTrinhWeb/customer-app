@@ -54,6 +54,8 @@ export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   /* checkbox */
   selection = new SelectionModel<ToDieuTri>(true, []);
+  selectionIn = new SelectionModel<boolean>(true, []);
+  selectionKy = new SelectionModel<boolean>(true, []);
   /* event emitter */
   @Output() private onTodieutriFormGroupChange = new EventEmitter<any>();
 
@@ -101,6 +103,12 @@ export class DanhSachDieuTriComponent implements OnInit, AfterViewInit {
       }
     });
     this.onTodieutriFormGroupChange.emit(this.todieutriFormGroup);
+    this.selectionIn.changed.subscribe((changes) => {
+      console.log('selectionIn', changes.added.length)
+    })
+    this.selectionKy.changed.subscribe((changes) => {
+      console.log('selectionKy', changes.added.length)
+    })
   }
   onPatchValueTextbenhchinh(textIDbenhchinh: string): void {
     if (!textIDbenhchinh) {
