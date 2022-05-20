@@ -1,27 +1,23 @@
 <div class="container">
-    <div class="row">
-        <ul class="list-link-flex">
-            <li appHightlight routerLinkActive="active">
-                <a class="graphic-text" mat-button routerLink="subcribing">Subcribing</a>
-            </li>
-            <li appHightlight routerLinkActive="active">
-                <a class="graphic-text" mat-button routerLink="todo">To-Do</a>
-            </li>
-            <li appHightlight routerLinkActive="active">
-                <a class="graphic-text" mat-button routerLink="codetogether">Code-Together</a>
-            </li>
-            <li appHightlight routerLinkActive="active">
-                <a class="graphic-text" mat-button routerLink="openclosed">Open-Closed</a>
-            </li>
-            <li appHightlight routerLinkActive="active">
-                <a class="graphic-text" mat-button routerLink="rxjs">RXJS Best Practices</a>
-            </li>
-            <li appHightlight routerLinkActive="active">
-                <a class="graphic-text" mat-button routerLink="merge-header-table">Merge header table</a>
-            </li>
-        </ul>
-    </div>
-    <div class="row">
-        <router-outlet></router-outlet>
-    </div>
+    <ul class="list-link row-flex">
+        <li appHightlight routerLinkActive="active">
+            <a class="graphic-text" mat-button routerLink="subcribing">Subcribing</a>
+        </li>
+        <li appHightlight routerLinkActive="active">
+            <a class="graphic-text" mat-button routerLink="todo">To-Do</a>
+        </li>
+        <li appHightlight routerLinkActive="active">
+            <a class="graphic-text" mat-button routerLink="codetogether">Code-Together</a>
+        </li>
+        <li appHightlight routerLinkActive="active">
+            <a class="graphic-text" mat-button routerLink="openclosed">Open-Closed</a>
+        </li>
+        <li appHightlight routerLinkActive="active">
+            <a class="graphic-text" mat-button routerLink="rxjs">RXJS Best Practices</a>
+        </li>
+        <li appHightlight routerLinkActive="active">
+            <a class="graphic-text" mat-button routerLink="merge-header-table">Merge header table</a>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
 </div>
