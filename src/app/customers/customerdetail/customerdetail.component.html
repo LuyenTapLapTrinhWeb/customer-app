@@ -19,27 +19,31 @@
             </mat-card-actions>
         </mat-card>
     </div>
-    <mat-card class="example-card" *ngIf="!customer.avatar.avatars">
-        <mat-card-header>
-            <img mat-card-avatar class="example-header-image" src="{{BaseUrl + customer.avatar.avatar}}"
+
+    <div *ngIf="!customer.avatar.avatars" class="example--container">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar class="example-header-image" src="{{BaseUrl + customer.avatar.avatar}}"
+                    alt="{{customer.name}}">
+                <mat-card-title>{{customer.name}}</mat-card-title>
+                <mat-card-subtitle>{{customer.name}} {{customer.id}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image class="example-header-image-list" src="{{BaseUrl + customer.avatar.avatar}}"
                 alt="{{customer.name}}">
-            <mat-card-title>{{customer.name}}</mat-card-title>
-            <mat-card-subtitle>{{customer.name}} {{customer.id}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image class="example-header-image-list" src="{{BaseUrl + customer.avatar.avatar}}"
-            alt="{{customer.name}}">
-        <mat-card-content>
-            <p>
-                {{customer.bio}}
-            </p>
-        </mat-card-content>
-        <mat-card-actions class="flex-button">
-            <button mat-button [routerLink]="['/customers', prev]">&#8592;</button>
-            <button mat-button [routerLink]="['/customers', next]">&#8594;</button>
-        </mat-card-actions>
-    </mat-card>
-</div>
-<div *ngIf="!customer" [@visibility]='visibilityState'>
-    <mat-spinner *ngIf="!errMess"></mat-spinner>
-    <div *ngIf="errMess">{{errMess.message}}</div>
+            <mat-card-content>
+                <p>
+                    {{customer.bio}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions class="flex-button">
+                <button mat-button [routerLink]="['/customers', prev]">&#8592;</button>
+                <button mat-button [routerLink]="['/customers', next]">&#8594;</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div *ngIf="!customer" [@visibility]='visibilityState'>
+        <mat-spinner *ngIf="!errMess"></mat-spinner>
+        <div *ngIf="errMess">{{errMess.message}}</div>
+    </div>
 </div>

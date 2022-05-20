@@ -48,6 +48,10 @@
   background-image: url("../../public/images/avatar/cat-217679.jpg");
   object-fit: cover;
   height: 100%;
+  /* grid system */
+  align-items: center;
+  grid-template-columns: 1fr;
+  display: grid;
 }
 .active {
   background: #ffd87d;
