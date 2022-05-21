@@ -17,6 +17,7 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ThietKeWebComponent } from './thiet-ke-web/thiet-ke-web.component';
 
 @NgModule({
   declarations: [
