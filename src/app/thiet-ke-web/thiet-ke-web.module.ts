@@ -14,9 +14,9 @@ const routes: Routes = [
       { path: 'home', component: WelcomePageComponent, },
       { path: 'html5', component: HomePageComponent, },
       { path: 'css3', component: CascadeCssRuleComponent, },
+      { path: '**', component: PageNotFoundComponent, },
     ]
   },
-  { path: '**', redirectTo: 'home', },
 ]
 @NgModule({
   declarations: [

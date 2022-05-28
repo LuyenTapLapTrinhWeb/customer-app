@@ -13,7 +13,8 @@
             </ul>
             <div class="welcome-content">
                 <img class="welcome-img-responsive" [src]="welcomeContent.src" [alt]="welcomeContent.alt">
-                <button class="welcome-gotohtml5btn" type="button" routerLink="html5">Go to HTML5</button>
+                <button (click)="gotohtml5()" class="welcome-gotohtml5btn" type="button" routerLink="html5">Go to
+                    HTML5</button>
             </div>
         </div>
     </div>
