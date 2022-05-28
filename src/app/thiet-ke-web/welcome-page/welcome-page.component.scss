@@ -1,0 +1,37 @@
+.welcome {
+    &-container {
+        display: grid;
+        grid-template: 1fr/1fr;
+        align-items: center;
+        justify-content: center;
+        font-family: roboto, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    &-heading {
+        text-align: center;
+        color: #134e95;
+        font-weight: 500;
+        font-size: 40px;
+    }
+    &-introduction {
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        &-info {
+            padding: 8px;
+        }
+    }
+    &-img-responsive {
+        height: auto;
+        width: 400px;
+        max-width: 100%;
+    }
+    &-content {
+        display: flex;
+        flex: auto;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+    }
+}

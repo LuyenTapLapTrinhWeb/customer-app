@@ -3,29 +3,26 @@
     display: grid;
     grid:
         "header " 1fr
-        "section1 " min-content
-        "section2 " min-content
-        "pies " max-content
+        "section" min-content
         "footer " 1fr
         / 1fr;
     @media screen and (min-width: 600px) {
         grid:
             "header header" 1fr
-            "section1 section1" min-content
-            "section2 section2" min-content
-            "pies pies " max-content
+            "section section" min-content
             "footer footer" 1fr/
             1fr 2fr;
     }
     @media screen and (min-width: 800px) {
         grid:
             "header header header" 1fr
-            "section1 section1 section1" min-content
-            "section2 section2 section2" min-content
-            "pies pies pies" max-content
+            "section section section" min-content
             "footer footer footer" 1fr/
             1fr 2fr 1fr;
     }
+}
+section {
+    grid-area: section;
 }
 header {
     grid-area: header;
@@ -85,7 +82,6 @@ header {
             padding: 0;
             .item {
                 padding-bottom: 4px;
-                border-width: 0;
                 height: 75px;
                 width: 200px;
                 align-items: center;
@@ -106,38 +102,9 @@ header {
                 padding-bottom: 16px;
                 transition: all 0.3s ease-in-out;
                 cursor: pointer;
+                background: black;
             }
         }
-    }
-}
-/* --------------------------------------------- */
-#section1 {
-    grid-area: section1;
-    padding: 16px;
-    #HTML5 {
-        text-align: center;
-        color: #134e95;
-        font-weight: 500;
-        font-size: 40px;
-    }
-    p {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 100;
-        code {
-            color: rgb(233, 118, 118);
-        }
-    }
-}
-#section2 {
-    grid-area: section2;
-    padding: 16px;
-    display: flex;
-    flex-flow: row;
-    p {
-        text-align: justify;
-        font-size: 20px;
-        font-weight: 100;
     }
 }
 footer {
@@ -148,25 +115,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
-#pies {
-    grid-column: pies;
-    display: grid;
-    grid: auto-flow max-content max-content/ repeat(12, 1fr);
-    grid-gap: 0.5em;
-}
-#pies img {
-    grid-column: span 12;
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
-    border: 1em solid #999;
-    @media screen and(min-width: 426px) {
-        grid-column: span 6;
-    }
-    @media screen and(min-width: 1024px) {
-        grid-column: span 4;
-    }
-    @media screen and(min-width: 1440px) {
-        grid-column: span 3;
-    }
+.active {
+    color: #2895cb;
+    border-bottom: 3px solid #2895cb;
 }
