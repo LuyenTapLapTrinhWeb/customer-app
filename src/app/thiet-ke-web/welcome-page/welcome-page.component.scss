@@ -16,15 +16,16 @@
     }
     &-introduction {
         display: flex;
-        align-items: center;
         flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
         &-info {
             padding: 8px;
         }
     }
     &-img-responsive {
         height: auto;
-        width: 400px;
+        // width: 500px;
         max-width: 100%;
     }
     &-content {
@@ -32,6 +33,18 @@
         flex: auto;
         justify-content: center;
         align-items: center;
-        flex-flow: row wrap;
+        flex-flow: column;
+    }
+    &-gotohtml5btn {
+        background: #7f7f7f;
+        height: 60px;
+        width: 200px;
+        color: #fff;
+        border: none;
+        font-size: 24px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: 300;
+        outline: 0;
     }
 }

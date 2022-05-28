@@ -11,10 +11,10 @@
                 <li class="item" routerLink="responsive" routerLinkActive='active'><a>Responsive Design</a></li>
                 <li class="item" routerLink="resources" routerLinkActive='active'><a>Resources</a></li>
             </ul>
+            <div class="welcome-content">
+                <img class="welcome-img-responsive" [src]="welcomeContent.src" [alt]="welcomeContent.alt">
+                <button class="welcome-gotohtml5btn" type="button" routerLink="html5">Go to HTML5</button>
+            </div>
         </div>
-    </div>
-    <div class="welcome-content">
-        <img class="welcome-img-responsive" [src]="welcomeContent.src" [alt]="welcomeContent.alt">
-        <a href="html5">Go to HTML5</a>
     </div>
 </div>
