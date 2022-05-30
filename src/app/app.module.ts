@@ -18,14 +18,13 @@ import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './404/page-not-found.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     OpenclosedComponent,
     Codetogether1Component,
     StickyHuongDanSudungComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
