@@ -62,7 +62,7 @@ section {
             min-width: 320px;
         }
         h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin: 10px 0;
         }
         p.text {
@@ -81,6 +81,7 @@ section {
                 margin: 10px;
                 background: url("../../../assets/pies/background.png");
                 border: solid 1px #ccc;
+                box-shadow: 0px 1px 1px 4px #ffc682;
                 &-img-responsive {
                     height: 64%;
                     width: 100%;
