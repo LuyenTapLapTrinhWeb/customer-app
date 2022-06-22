@@ -7,8 +7,8 @@ export class Pie {
     dataorder: string;
 }
 export let PIES: Pie[] = [
-    { src: 'assets/pies/1.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'pies-order' },
-    { src: 'assets/pies/2.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'pies-order' },
+    { src: 'assets/pies/1.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'pie' },
+    { src: 'assets/pies/2.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'cherry' },
     { src: 'assets/pies/3.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'pies-order' },
     { src: 'assets/pies/4.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'pies-order' },
     { src: 'assets/pies/5.png', alt: 'Apple pie', title: 'Apple Pie', price: 11.11, desc: "Best our pie apple", dataorder: 'pies-order' },

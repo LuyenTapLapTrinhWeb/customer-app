@@ -10,6 +10,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from '../404/page-not-found.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ResponsiveSiteComponent } from './responsive-site/responsive-site.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharingModule } from '../shared/sharing.module';
+import { ResponsiveOrderComponent } from './responsive-order/responsive-order.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,7 @@ const routes: Routes = [
           { path: '', component: ResponsiveHomeComponent },
           { path: 'homepage', component: ResponsiveHomeComponent },
           { path: 'pies', component: ResponsivePiesComponent },
+          { path: 'pies/:id', component: ResponsiveOrderComponent },
           { path: 'contact', component: ResponsiveContactComponent },
           { path: '**', component: PageNotFoundComponent },
         ]
@@ -37,14 +41,19 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ThietKeWebComponent,
+    WelcomePageComponent,
     CascadeCssRuleComponent,
     HomePageComponent,
     ResponsiveSiteComponent,
     ResponsiveHomeComponent,
     ResponsiveContactComponent,
+    ResponsivePiesComponent,
+    ResponsiveOrderComponent,
   ],
   imports: [
     CommonModule,
+    SharingModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ]
 })

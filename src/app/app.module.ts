@@ -18,6 +18,7 @@ import { CustomPaginator } from './services/CustomPaginatorConfiguration';
 import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './404/page-not-found.component';
+import { ThietKeWebModule } from './thiet-ke-web/thiet-ke-web.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { PageNotFoundComponent } from './404/page-not-found.component';
     SharingModule,
     TestModule,
     TestapiModule,
+    ThietKeWebModule
   ],
   providers: [
     WINDOW_PROVIDERS,

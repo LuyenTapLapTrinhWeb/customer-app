@@ -47,5 +47,6 @@ export class TodosComponent implements OnInit, AfterViewInit {
   }
   removeItem(event: any, i): void {
     this.subsItems.splice(i, 1);
+    console.log('fu')
   }
 }

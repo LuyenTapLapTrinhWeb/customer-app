@@ -69,7 +69,7 @@ import { MatSelectFilterModule } from 'mat-select-filter';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatSelectFilterModule
+    MatSelectFilterModule,
   ]
 })
 export class MaterialModule { }

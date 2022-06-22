@@ -8,9 +8,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class ResponsiveSiteComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
+
   }
 }

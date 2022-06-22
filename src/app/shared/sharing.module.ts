@@ -1,3 +1,4 @@
+import { MaterialModule } from './material/material.module';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DesignModule } from '../design/design.module';
@@ -14,7 +15,8 @@ import { StickyDirective } from '../services/stickyElement/sticky.directive';
     StickyDirective,
     FormsModule,
     ReactiveFormsModule,
-    DesignModule
+    DesignModule,
+    MaterialModule,
   ]
 })
 export class SharingModule { }

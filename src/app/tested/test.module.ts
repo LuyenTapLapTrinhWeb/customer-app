@@ -54,8 +54,8 @@ import { DialogRemoveConfirmQuestionComponent } from './danh-sach-dieu-tri/dialo
     CommonModule,
     SharingModule,
     MaterialModule,
+    HttpClientModule,
     TestRoutingModule,
-    HttpClientModule
   ]
 })
 export class TestModule { }

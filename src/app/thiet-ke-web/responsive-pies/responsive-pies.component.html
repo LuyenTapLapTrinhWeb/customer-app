@@ -4,25 +4,20 @@
         <img src="assets/pies/logo.svg" alt="patheny's pies shop">
     </aside>
     <article>
-        <section class="columns-desktop">
-            <div class="pie">
-                <img class="pie-img-responsive" src="assets/pies/1.png" alt="Apple pie">
+        <section class="columns-desktop" *ngIf="items">
+            <div class="pie" *ngFor="let item of items; let i=index">
+                <img class="pie-img-responsive" src="{{item.src}}" alt="{{item.alt}}">
                 <div class="columns">
-                    <div class="title">Apple Pie</div>
-                    <div class="price">$12.95</div>
+                    <div class="title">{{item.title}}</div>
+                    <div class="price">{{item.price | currency}}</div>
                 </div>
-                <p class="desc">Our famous apple pie</p>
-                <button data-order="apple-pie">Order</button>
-            </div>
-            <div class="pie">
-                <img class="pie-img-responsive" src="assets/pies/2.png" alt="Cherri pie">
-                <div class="columns">
-                    <div class="title">Cherri Pie</div>
-                    <div class="price">$12.95</div>
-                </div>
-                <p class="desc">Our famous cherri pie</p>
-                <button data-order="cherri-pie">Order</button>
+                <p class="desc">{{item.desc}}</p>
+                <button [id]="item.dataorder" (click)="order($event)"
+                    [routerLink]="['/thiet-ke-web-luyentap/responsive/pies', item.dataorder]">Order</button>
             </div>
         </section>
+        <div *ngIf="!items">
+            <mat-spinner></mat-spinner>
+        </div>
     </article>
 </main>
