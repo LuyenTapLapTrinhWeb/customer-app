@@ -1,6 +1,10 @@
-<section [@toggleTrigger]>
+<section [@toggleTrigger] appSticky>
     <article>
-        <h1>Welcome to Order page!</h1>
+        <div class="container">
+            <div class="welcome-page">
+                <h1>Welcome to Order page!</h1>
+            </div>
+        </div>
     </article>
     <article>
         <div class="container">
@@ -18,5 +22,17 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="router-links">
+                <a mat-raised-button color="primary" class="router-link" [routerLink]="['/orders/thuoc-tan-duoc']"
+                    routerLinkActive="router-link-active">Thuốc tân dược</a>
+                <a mat-raised-button color="primary" class="router-link" [routerLink]="['/orders/nhan-vien']"
+                    routerLinkActive="router-link-active">Nhân viên</a>
+                <a mat-raised-button color="primary" class="router-link"
+                    [routerLink]="['/orders/huong-dan-su-dung-sticky']" routerLinkActive="router-link-active">Sticky
+                    Element</a>
+            </div>
+        </div>
     </article>
+    <router-outlet></router-outlet>
 </section>

@@ -7,12 +7,15 @@
             </div>
         </div>
     </article>
-    <article class="flex__card--container">
+    <article class="flex__card--container" *ngIf="items">
         <mat-card class="flex__card--card" *ngFor="let item of items" [@transitionY]='state'>
-            <img mat-card-image class="img-responsive" [src]="item.svg" [alt]="item.name">
-            <mat-card-actions class="flex__card--actions">
+            <img mat-card-image class="img-responsive" [src]="item.svgUrl" [alt]="item.name">
+            <mat-card-actions class="flex__card--actions actions">
                 <button mat-button class="flex__card--button">{{item.name | uppercase }}</button>
             </mat-card-actions>
         </mat-card>
+    </article>
+    <article *ngIf="!items">
+        <mat-spinner></mat-spinner>
     </article>
 </section>

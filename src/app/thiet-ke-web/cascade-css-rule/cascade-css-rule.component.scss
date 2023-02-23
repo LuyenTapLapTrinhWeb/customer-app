@@ -1,0 +1,100 @@
+.section-css-container {
+    display: grid;
+    grid:
+        "nav" min-content
+        "content" 1fr/1fr;
+    @media screen and (min-width: 426px) {
+        grid: "nav content";
+    }
+    p,
+    a {
+        font-size: 16px;
+    }
+    h1 {
+        color: red;
+        font-size: 40px;
+    }
+    #nav {
+        grid-area: nav;
+    }
+    #content {
+        grid-area: content;
+        padding: 16px;
+    }
+    .nav-link {
+        float: left;
+        width: 100%;
+        ul {
+            width: 300px;
+            border: 1px solid #e7e7e7;
+            background-color: #f3f3f3;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-flow: column;
+            li {
+                color: white;
+                float: left;
+                a {
+                    display: block;
+                    color: #666;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+            }
+            li:hover:not(.actived) {
+                background-color: rgb(228, 111, 111);
+                a {
+                    color: white;
+                }
+            }
+            li.actived {
+                background-color: #008cba;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+    .heading {
+        color: blue;
+        font-size: 32px;
+    }
+    .compare {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    pre code {
+        background-color: #eee;
+        border: 1px solid #999;
+        display: block;
+        padding: 20px;
+    }
+    section {
+        background: rgb(129, 7, 138);
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        article {
+            height: 50%;
+            background: rgb(186, 40, 196);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            div {
+                height: 50%;
+                background: rgb(125, 51, 130);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

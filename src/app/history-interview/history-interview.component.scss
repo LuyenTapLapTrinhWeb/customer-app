@@ -1,0 +1,30 @@
+.history-interview-container {
+  height: 100vh;
+  .history-interview-loop {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #0000003b;
+    padding: 16px;
+    overflow: auto;
+    height: 100%;
+    .history-interview-card {
+      margin: 4px;
+      .email-image-interview {
+        height: 400px;
+        // width: 400px;
+        img {
+          height: 100%;
+        }
+      }
+      // .detail-info-interview {
+      // }
+    }
+    .history-interview-card:hover {
+      transform: scale(1.75);
+      z-index: 1;
+    }
+  }
+}

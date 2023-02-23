@@ -1,6 +1,7 @@
 export class CategoriesOperators {
     name: string;
     svg?: string;
+    svgUrl?: string;
 }
 
 export let CATEGORIESOPERATORS = [

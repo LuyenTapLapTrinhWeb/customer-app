@@ -1,0 +1,34 @@
+<!-- section start -->
+<!-- ================ -->
+<div id="section1">
+    <h1 id="HTML5"><span>HTML5</span></h1>
+
+    <p>HTML stands for HyperText Markup Language. By default a web browser will display exactly what you type. If
+        you have a great picture to share, how can you make sure that the computer displays the picture, and not the
+        filename of the picture? ? A markup language allows you to <em>tag</em> your content so that computer knows
+        how to display it. <br>
+
+        <code> &lt;img src = "myPicture.jpg"&gt;</code>
+    </p>
+</div>
+<div id="section2">
+    <div>
+        <img src="assets/thiet-ke-web-luyen-tap-layout/images/HTML5_1Color_Black.png" height="256" alt="HTML5 logo">
+    </div>
+    <div>
+        <p>HTML is the heart of web pages and HTML5 is the latest version to be approved by the World Wide Web
+            Consortium (W3C). This markup language provides the tools needed to organize and present your content.
+        </p>
+
+        <p>In the beginnning you will focus on the learning the most common tags and how to use them. Once you have
+            a grasp on the proper sytax, you will focus on learning the semantics. <em>Semantics </em>is the
+            underlying meaning of something. So while tags will often have a certain visual appearance that conveys
+            information (things in italics are important), they also convey that information in a nonvisual way too.
+            This is important since it conveys the same importance to people using screen readers and other
+            assistive devices. </p>
+    </div>
+</div>
+<!-- section end -->
+<div id="pies">
+    <img [src]="img.src" [alt]="img.alt" *ngFor="let img of images">
+</div>

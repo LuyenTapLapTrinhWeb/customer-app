@@ -1,0 +1,40 @@
+<div class="app-aside">
+    <h1 class="app-aside-title">SNOWSTORM FHIR {{version}}</h1>
+    <h3 class="app-aside-introduction">
+        <a routerLink="/home" fragment="introduction" class="app-aside-introduction-subtitle">Introduction</a>
+    </h3>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree app-aside-category">
+        <!-- This is the tree node template for leaf nodes -->
+        <!-- There is inline padding applied to this node using styles.
+          This padding value depends on the mat-icon-button width. -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+            {{node.name}}
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+            <div class="app-aside-category-api mat-tree-node">
+                <div class="app-aside-category-api-arrowfolder">
+                    <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+                        <mat-icon class="mat-icon-rtl-mirror">
+                            {{treeControl.isExpanded(node) ? 'arrow_drop_down' : 'arrow_right'}}
+                        </mat-icon>
+                    </button>
+                    <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeControl.isExpanded(node) ? 'folder_open' : 'folder'}}
+                    </mat-icon>
+                    <span class="app-aside-category-api-arrowfolder-title">
+                        <a routerLink="/home" fragment="{{node.name}}" class="app-aside-category-api-links-api-text">
+                            <a>{{node.name}}</a>
+                        </a>
+                        <span class="{{node.method | lowercase}}">{{node.method}}</span>
+                    </span>
+                </div>
+            </div>
+            <!-- There is inline padding applied to this div using styles.
+                This padding value depends on the mat-icon-button width.  -->
+            <div [class.example-tree-invisible]="!treeControl.isExpanded(node)" role="group">
+                <ng-container matTreeNodeOutlet></ng-container>
+            </div>
+        </mat-nested-tree-node>
+    </mat-tree>
+</div>

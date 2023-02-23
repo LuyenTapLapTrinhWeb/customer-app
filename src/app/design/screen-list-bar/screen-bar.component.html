@@ -1,0 +1,11 @@
+<div class="containers-banner" *ngIf="screenListBar">
+    <h1 class="containers-banner-title">{{screenListBar.title || 'vui lòng insert tiêu đề'}}</h1>
+    <div class="containers-banner-group-button">
+        <app-screen-list-button *ngFor="let button of screenListBar.buttons" [screenListButton]='button'
+            (click)="onClickEventEmitter(button)">
+        </app-screen-list-button>
+    </div>
+</div>
+<div *ngIf="!screenListBar">
+    Chưa có screenListBar...
+</div>

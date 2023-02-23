@@ -12,24 +12,37 @@ import { OpenclosedComponent } from './tested/openclosed/openclosed.component';
 import { Codetogether1Component } from './tested/codetogether1/codetogether1.component';
 import { TestModule } from './tested/test.module';
 import { TestapiModule } from './testapi/testapi.module';
-
+import { WINDOW_PROVIDERS } from './services/stickyElement/window.service';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomPaginator } from './services/CustomPaginatorConfiguration';
+import { StickyHuongDanSudungComponent } from './services/stickyElement/sticky-huong-dan-su-dung/sticky-huong-dan-su-dung.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './404/page-not-found.component';
+import { ThietKeWebModule } from './thiet-ke-web/thiet-ke-web.module';
 @NgModule({
   declarations: [
     AppComponent,
     OpenclosedComponent,
     Codetogether1Component,
+    StickyHuongDanSudungComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
     SharingModule,
     TestModule,
-    TestapiModule
+    TestapiModule,
+    ThietKeWebModule
   ],
-  providers: [{ provide: 'BaseUrl', useValue: BaseUrl }],
+  providers: [
+    WINDOW_PROVIDERS,
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
+    { provide: 'BaseUrl', useValue: BaseUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

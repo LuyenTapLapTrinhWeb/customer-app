@@ -1,0 +1,72 @@
+<section class="danh-muc-container">
+    <article>
+        <h1>Angular 2 Recursive List</h1>
+        <div class="wrapper-nav-menu">
+            <ul class="wrapper-nav-menu-list dropdown">
+                <ng-template #recursiveList let-list>
+                    <li class="wrapper-nav-menu-list-item" *ngFor="let menu of list">
+                        <div class="wrapper-nav-menu-list-item-enter" id="{{menu.matIconId}}" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            (mouseenter)="dropdownMenuEnter(menu.matIconId, menu.svgIconEnter)"
+                            (mouseleave)="dropdownMenuLeave(menu.matIconId, menu.svgIcon )">
+                            <mat-icon *ngIf="menu.children.length > 0" class="wrapper-nav-menu-list-item-enter-icon"
+                                svgIcon="{{isExpanded ? menu.svgIconEnter: menu.svgIcon}}"></mat-icon>
+                            <a class="wrapper-nav-menu-list-item-enter-link">{{menu.name}}</a>
+                            <mat-icon *ngIf="menu.children.length > 0" svgIcon="arrow-folder-right"
+                                class="arrow-folder-right">
+                            </mat-icon>
+                        </div>
+                        <ul class="dropdown_menu" *ngIf="menu.children.length > 0"
+                            (mouseenter)="dropdownMenuEnter(menu.matIconId, menu.svgIconEnter)"
+                            (mouseleave)="dropdownMenuLeave(menu.matIconId, menu.svgIcon )">
+                            <li *ngFor="let submenu of menu.children">
+                                <a class="dropdown-item"
+                                    (click)="convertTabString(submenu.mouseClickId, submenu.mouseClickName)">{{submenu.name}}
+                                    <mat-icon *ngIf="submenu.children.length > 0" svgIcon="arrow-folder-right"
+                                        class="arrow-folder-right">
+                                    </mat-icon>
+                                </a>
+                                <ul class="submenu" *ngIf="submenu.children.length > 0">
+                                    <ng-container
+                                        *ngTemplateOutlet="recursiveList; context:{ $implicit: submenu.children }">
+                                    </ng-container>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
+                <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: list }"></ng-container>
+            </ul>
+        </div>
+    </article>
+    <article>
+        <app-screen-bar class="containers" (onReloadingEventEmitter)="getDataLoadingFirstTime($event)"
+            (onAddingEventEmitter)="themBanGhi($event)" [screenListBar]="screenListBar">
+        </app-screen-bar>
+    </article>
+    <article>
+        <mat-card>
+            <mat-card-content class="containers">
+                <div class="containers-tu-khoa">
+                    <app-screen-list-selection [selectionOptionList]="selectionOptionList"
+                        (selectionOptionByEventEmitter)="selectionOptionBy($event)">
+                    </app-screen-list-selection>
+                    <app-screen-list-input-search class="custom-input-search"
+                        [screenListInputSearch]="screenListInputSearch"
+                        (screenListInputSearchEventEmitter)="onClickBtnSearch($event)"></app-screen-list-input-search>
+                </div>
+                <div class="containers-danh-sach-khu-vuc">
+                    <app-screen-list-toggle [toggleName]="'Danh sách khu vực'"
+                        (toggleEventEmitter)="onToggleTinhThanh($event)">
+                    </app-screen-list-toggle>
+                    <app-screen-list-toggle [toggleName]="'Thông tin bảo hiểm'"
+                        (toggleEventEmitter)="toggleBaoHiem($event)">
+                    </app-screen-list-toggle>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </article>
+    <article>
+        <app-screen-list-table></app-screen-list-table>
+    </article>
+</section>

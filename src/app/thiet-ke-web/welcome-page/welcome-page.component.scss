@@ -1,0 +1,57 @@
+.welcome {
+    &-container {
+        display: grid;
+        grid-template: 1fr/1fr;
+        align-items: center;
+        justify-content: center;
+        font-family: roboto, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    &-heading {
+        text-align: center;
+        color: #134e95;
+        font-weight: 500;
+        font-size: 40px;
+    }
+    &-introduction {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        &-info {
+            padding: 8px;
+        }
+    }
+    &-img-responsive {
+        height: auto;
+        // width: 500px;
+        max-width: 100%;
+    }
+    &-content {
+        display: flex;
+        flex: auto;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+    &-gotohtml5btn {
+        background: #7f7f7f;
+        height: 60px;
+        width: 200px;
+        color: #fff;
+        border: none;
+        font-size: 24px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: 300;
+        outline: 0;
+    }
+    &-gotohtml5btn:hover {
+        background: #204892;
+        cursor: pointer;
+    }
+    .active {
+        padding: 10px;
+    }
+}

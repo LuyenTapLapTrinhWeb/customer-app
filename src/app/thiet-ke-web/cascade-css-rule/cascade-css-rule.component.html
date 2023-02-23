@@ -1,0 +1,47 @@
+<section class="section-css-container">
+    <div id="nav" class="nav-link">
+        <ul class="nav-link-list">
+            <li class="nav-link-list-button tablink" (click)="openCity($event,'London')"> <a> Specificity</a> </li>
+            <li class="nav-link-list-button tablink" (click)="openCity($event,'Paris')"> <a> Inheritance</a> </li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="London" class="city">
+            <h1>SPECIFICITY CLASS</h1>
+            <p>Tính cụ thể của specificity class hơn thẻ element html </p>
+            <pre><code><h1>h1</h1></code></pre>
+            <pre><code><h1 class="heading">h1</h1></code></pre>
+            <div class="compare">
+                <h1 class="heading">div h1 Chứa tính cụ thể có specificity class .heading</h1>
+                <h1> div chứa thẻ h1 </h1>
+            </div>
+            <div class="code">
+                <pre>
+                    <code>
+                        {{codeSpecificity}}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div id="Paris" class="city">
+            <h1>INHERITANCE CLASS</h1>
+            <p>Tính kế thừa của Inheritance class giữa các thẻ element html giúp cho bạn không cần phải lặp lại các quy
+                tắc
+                class giữa chúng</p>
+            <section>
+                <article>
+                    <div>
+                        <p>HELLOOOOOO INHERITANCE</p>
+                    </div>
+                </article>
+            </section>
+            <div class="code">
+                <pre>
+                    <code>
+                        {{codeInheritance}}
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>

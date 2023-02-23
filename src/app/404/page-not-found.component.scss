@@ -1,0 +1,29 @@
+/* #230088 #B537FA #E33DD5 #FA375C #F05235 */
+$go-home-color: #f05235;
+.messages {
+  font-weight: 700;
+  color: #fa375c;
+  background: rgb(181, 55, 250, 0.5);
+  border: #e33dd5 1px solid;
+  width: 80vw;
+  border-radius: 1em;
+}
+
+.center {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.go-home-color {
+  color: $go-home-color;
+}
+.active-link {
+  text-decoration: none;
+  padding: 1em;
+}
+.active-link:hover {
+  color: #b537fa;
+  text-decoration: underline;
+  cursor: pointer;
+}

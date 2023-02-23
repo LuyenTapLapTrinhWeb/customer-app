@@ -1,0 +1,47 @@
+.autocomplete-filter {
+  width: 100%;
+  &-input {
+    width: 100%;
+  }
+  &-table {
+    width: 100%;
+    &-container {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      &-tr {
+        &-option {
+          .label {
+            width: 100px;
+            margin: 4px;
+            .img-responsive {
+              width: 100%;
+              padding: 4px;
+            }
+          }
+          .label-filter-row {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            .th {
+              width: 100%;
+            }
+          }
+          ::ng-deep .mat-option-text {
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+      .thead {
+        height: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+      }
+    }
+  }
+}

@@ -1,20 +1,28 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-canceling-oservation',
   templateUrl: './canceling-oservation.component.html',
   styleUrls: ['./canceling-oservation.component.scss']
 })
-export class CancelingOservationComponent implements OnInit, AfterViewInit {
-
+export class CancelingOservationComponent implements OnInit, OnChanges {
+  @ViewChild('timeDiv') timeDiv: HTMLElement;
+  @ViewChild('timerButton') button: HTMLElement;
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
-  ngAfterViewInit(): void {
-    const timeDiv = document.getElementById('times');
-    const button = document.getElementById('timerButton');
+  ngOnChanges(): void {
+    if (document.getElementById('times') != null) {
+      this.timeDiv = document.getElementById('times');
+    }
+    if (document.getElementById('timerButton') != null) {
+      this.button = document.getElementById('timerButton');
+    }
     const timer$ = new Observable(subscribe => {
       let i = 0;
       const intervalID = setInterval(() => {
@@ -25,14 +33,15 @@ export class CancelingOservationComponent implements OnInit, AfterViewInit {
         clearInterval(intervalID);
       };
     });
-
-    const timerSubcritptions = timer$.subscribe(
-      value => timeDiv.innerHTML += `${new Date().toLocaleTimeString()} (${value}) <br>`,
+    const cancelTimes$ = fromEvent(this.button, 'click');
+    timer$.pipe(
+      takeUntil(cancelTimes$)
+    ).subscribe(
+      value => {
+        this.timeDiv.innerHTML = this.timeDiv.innerHTML + `${new Date().toLocaleTimeString()} (${value}) <br>`;
+      },
       null,
       () => { console.log('All done!'); }
     );
-    fromEvent(button, 'click').subscribe(event => {
-      timerSubcritptions.unsubscribe();
-    });
   }
 }

@@ -22,6 +22,9 @@ import { DetailviewchildrenComponent } from './viewchildandviewchildren/detailvi
 import { RxComponent } from './rx/rx.component';
 import { RxOperatorComponent } from './rx/rx-operator/rx-operator.component';
 import { CancelingOservationComponent } from './rx/canceling-oservation/canceling-oservation.component';
+import { DanhSachDieuTriComponent } from './danh-sach-dieu-tri/danh-sach-dieu-tri.component';
+import { DialogAddDanhSachDieuTriComponent } from './danh-sach-dieu-tri/dialog-danh-sach-dieu-tri/dialog-danh-sach-dieu-tri.component';
+import { DialogRemoveConfirmQuestionComponent } from './danh-sach-dieu-tri/dialog-remove-confim-question/dialog-remove-confim-question.component';
 
 
 @NgModule({
@@ -43,13 +46,16 @@ import { CancelingOservationComponent } from './rx/canceling-oservation/cancelin
     RxComponent,
     RxOperatorComponent,
     CancelingOservationComponent,
+    DanhSachDieuTriComponent,
+    DialogAddDanhSachDieuTriComponent,
+    DialogRemoveConfirmQuestionComponent
   ],
   imports: [
     CommonModule,
     SharingModule,
     MaterialModule,
+    HttpClientModule,
     TestRoutingModule,
-    HttpClientModule
   ]
 })
 export class TestModule { }

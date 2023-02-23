@@ -1,0 +1,21 @@
+<div class="welcome-container">
+    <div class="welcome-introduction">
+        <img class="welcome-img-responsive" [src]="welcomeBanner.src" [alt]="welcomeBanner.alt">
+        <div class="welcome-introduction-info">
+            <h1 class="welcome-heading">Welcome to my website</h1>
+            <p>This is a website learning by doing</p>
+            <ul id="welcome-list-item">
+                <li class="item" routerLink="html5" routerLinkActive='active'><a>HTML5</a></li>
+                <li class="item" routerLink="css3" routerLinkActive='active'><a>CSS3</a></li>
+                <li class="item" routerLink="javascript" routerLinkActive='active'><a>JavaScript</a></li>
+                <li class="item" routerLink="responsive" routerLinkActive='active'><a>Responsive Design</a></li>
+                <li class="item" routerLink="resources" routerLinkActive='active'><a>Resources</a></li>
+            </ul>
+            <div class="welcome-content">
+                <img class="welcome-img-responsive" [src]="welcomeContent.src" [alt]="welcomeContent.alt">
+                <button (click)="gotohtml5()" class="welcome-gotohtml5btn" type="button" routerLink="html5">Go to
+                    HTML5</button>
+            </div>
+        </div>
+    </div>
+</div>

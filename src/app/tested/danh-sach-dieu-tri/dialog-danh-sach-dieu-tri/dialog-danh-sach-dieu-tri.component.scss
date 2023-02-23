@@ -1,0 +1,27 @@
+$border-table: 1px solid #ebebeb;
+$border-table-td: 1px solid #e2e8f0;
+.section {
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-flow: column;
+    .article {
+        background: rgba(255, 255, 255, 0.494);
+        color: black;
+        padding: 8px;
+        display: grid;
+        grid: min-content/1fr;
+        grid-template-areas:
+            "buttons-action"
+            "table";
+        &.buttons-action {
+            grid-area: buttons-action;
+        }
+        &.form {
+            width: 30%;
+        }
+        &.table {
+            grid-area: table;
+        }
+    }
+}

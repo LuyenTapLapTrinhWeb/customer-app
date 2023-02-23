@@ -1,0 +1,23 @@
+<main>
+    <aside class="aside">
+        <!-- <img src="assets/pies/logo.png" alt="patheny's pies shop"> -->
+        <img src="assets/pies/logo.svg" alt="patheny's pies shop">
+    </aside>
+    <article>
+        <section class="columns-desktop" *ngIf="items">
+            <div class="pie" *ngFor="let item of items; let i=index">
+                <img class="pie-img-responsive" src="{{item.src}}" alt="{{item.alt}}">
+                <div class="columns">
+                    <div class="title">{{item.title}}</div>
+                    <div class="price">{{item.price | currency}}</div>
+                </div>
+                <p class="desc">{{item.desc}}</p>
+                <button [id]="item.dataorder" (click)="order($event)"
+                    [routerLink]="['/thiet-ke-web-luyentap/responsive/pies', item.dataorder]">Order</button>
+            </div>
+        </section>
+        <div *ngIf="!items">
+            <mat-spinner></mat-spinner>
+        </div>
+    </article>
+</main>

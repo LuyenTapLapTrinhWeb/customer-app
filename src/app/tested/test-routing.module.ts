@@ -1,3 +1,4 @@
+import { DanhSachDieuTriComponent } from './danh-sach-dieu-tri/danh-sach-dieu-tri.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Codetogether1Component } from './codetogether1/codetogether1.component';
@@ -55,6 +56,7 @@ const routes: Routes = [
       testComponent,
       { path: 'codetogether', component: Codetogether1Component },
       { path: 'openclosed', component: OpenclosedComponent },
+      { path: 'merge-header-table', component: DanhSachDieuTriComponent },
       todoComponent,
       { path: 'rxjs', component: RxComponent }
       // { path: '**', redirectTo: 'subcribing', pathMatch: 'full' },

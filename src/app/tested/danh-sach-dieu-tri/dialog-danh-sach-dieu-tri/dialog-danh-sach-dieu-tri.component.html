@@ -1,0 +1,93 @@
+<h2 mat-dialog-title>Danh sách điều trị - thêm mới</h2>
+<mat-dialog-content class="mat-typography">
+    <section class="section">
+        <article class="article form">
+            <div class="form-container">
+                <form class="form-container--form" [formGroup]="todieutriFormGroup" autocomplete="false">
+                    <div class="row">
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Bệnh chính</mat-label>
+                            <input matInput placeholder="Mã bệnh chính" formControlName="textIDbenhchinh"
+                                (change)="onPatchValueTextbenhchinh($event.target.value)">
+                            <!-- <mat-error
+                                *ngIf="(todieutriFormGroup.get('textIDbenhchinh').touched || todieutriFormGroup.get('textIDbenhchinh').dirty) && todieutriFormGroup.get('textIDbenhchinh').invalid">
+                                Không tìm thấy bệnh chính
+                            </mat-error> -->
+                        </mat-form-field>
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Tên bệnh chính</mat-label>
+                            <mat-select formControlName="selectedbenhchinh"
+                                (valueChange)="onPatchValueSelectedbenhchinh($event)">
+                                <mat-option *ngFor="let benhchinh of benhchinhs" [value]="benhchinh">
+                                    {{benhchinh.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <button mat-icon-button matTooltip="Bệnh kèm theo">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                        <button mat-icon-button>
+                            <mat-icon>icon_name</mat-icon>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Ngày</mat-label>
+                            <input matInput placeholder="Ngày" formControlName="textngay">
+                        </mat-form-field>
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Giờ</mat-label>
+                            <input matInput placeholder="Giờ" formControlName="textgio">
+                        </mat-form-field>
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Giờ</mat-label>
+                            <input matInput placeholder="Số tờ" formControlName="textsoto">
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Phòng</mat-label>
+                            <input matInput placeholder="Phòng" formControlName="textphong">
+                        </mat-form-field>
+                        <mat-form-field class="form-container--form--form-control">
+                            <mat-label>Giường</mat-label>
+                            <input matInput placeholder="Giường" formControlName="textgiuong">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Y Lệnh</mat-label>
+                        <textarea matInput placeholder="Mô tả y lệnh" formControlName="textylenh"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Diễn biến</mat-label>
+                        <textarea matInput placeholder="Mô tả diễn biến" formControlName="textdienbien"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Bác sĩ</mat-label>
+                        <mat-select formControlName="selectedbacsi">
+                            <mat-option *ngFor="let bacsi of bacsis" [value]="bacsi">
+                                {{bacsi.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="form-container--form--form-control">
+                        <mat-label>Chăm sóc</mat-label>
+                        <mat-select formControlName="selectedchamsoc">
+                            <mat-option *ngFor="let chamsoc of chamsocs" [value]="chamsoc">
+                                {{chamsoc.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </form>
+            </div>
+        </article>
+    </section>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Bỏ qua</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Lưu</button>
+</mat-dialog-actions>

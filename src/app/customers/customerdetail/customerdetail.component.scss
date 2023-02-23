@@ -1,6 +1,7 @@
 .example-card {
   max-width: 400px;
   margin-left: 1em;
+  height: 100%;
 }
 .example-card:first-child {
   margin-left: 0;
@@ -14,9 +15,16 @@
   background-size: cover;
 }
 .example {
+  // &--container {
+  //   display: flex;
+  //   flex-flow: row wrap;
+  // }
   &--container {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid: auto-flow 1fr / repeat(auto-fit, 28em);
+    justify-content: space-evenly;
+    align-items: center;
+    grid-gap: 1em;
   }
   &--image {
     width: 100%;
